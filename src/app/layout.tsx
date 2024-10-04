@@ -1,5 +1,6 @@
 // import type { Metadata } from "next";
 import "./globals.css";
+import { Vazirmatn } from "next/font/google";
 
 // export const metadata: Metadata = {
 //   title: "PWA NextJS",
@@ -22,13 +23,20 @@ import "./globals.css";
 //   ],
 // };
 
+const vazir = Vazirmatn({
+  subsets: ["arabic"],
+  display: "swap",
+  weight: ["100", "300", "500", "800"],
+  variable: "--font-vazir",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={vazir.variable}>
       <body>{children}</body>
     </html>
   );
