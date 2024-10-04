@@ -9,4 +9,4 @@ serwist
 tailwindcss
 vazir
 Vazirmatn
-صفحه
+Swiper
