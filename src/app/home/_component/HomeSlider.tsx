@@ -7,6 +7,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import { cn } from "@/lib/utils";
 
 const HomeSlider = () => {
   return (
@@ -20,16 +21,31 @@ const HomeSlider = () => {
         }}
         pagination={true}
         modules={[Pagination, Autoplay]}
+        className={cn("sm:w-4/5 h-48 rounded-md")}
       >
-        {/* back: <HomeSliderMap /> */}
-        <SwiperSlide>
+        {/* back: (change the hardcode and automate the process with mapping on the data from backed and pass them to the forward component) <HomeSliderMap /> */}
+        <SwiperSlide className={cn("w-full h-full")}>
           <Image
-            src={
-              "https://images.unsplash.com/photo-1727117774086-074d19d8df85?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            }
+            src={"/icon512_maskable.png"}
             alt="the first one"
-            width={100}
-            height={100}
+            fill={true}
+            className={cn("object-fill")}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={cn("w-full h-full")}>
+          <Image
+            src={"/icon512_maskable.png"}
+            alt="the first one"
+            fill={true}
+            className={cn("object-fill")}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={cn("w-full h-full")}>
+          <Image
+            src={"/icon512_maskable.png"}
+            alt="the first one"
+            fill={true}
+            className={cn("object-fill")}
           />
         </SwiperSlide>
       </Swiper>
