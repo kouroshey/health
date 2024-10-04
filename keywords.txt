@@ -1,5 +1,6 @@
 commitlint
 nextjs
+serwist
 tailwindcss
 vazir
 Vazirmatn
