@@ -34,5 +34,6 @@ yarn-error.log*
 next-env.d.ts
 
 # Auto Generated PWA files
-**/public/sw.js
+**/public/sw*
 **/public/workbox-*.js
+public/swe-worker*

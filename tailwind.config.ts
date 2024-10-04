@@ -3,11 +3,7 @@ import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     container: {
       padding: {
@@ -68,10 +64,27 @@ const config: Config = {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        sm: "0.4rem",
+        md: "0.8rem",
+        lg: "1rem",
+        xl: "1.5rem",
       },
+    },
+    fontSize: {
+      xs: "0.5rem",
+      sm: "0.8rem",
+      md: "1rem",
+      lg: "1.5rem",
+      xl: "2rem",
+      "2xl": "3rem",
+      "3xl": "5rem",
+    },
+    screens: {
+      xs: "360px",
+      sm: "560px",
+      md: "760px",
+      lg: "960px",
+      xl: "1280px",
     },
   },
   plugins: [tailwindcssAnimate],

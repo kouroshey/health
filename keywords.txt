@@ -1,5 +1,11 @@
+clsx
 commitlint
+linebreak
+lucide
 nextjs
+Precache
+precaching
+serwist
 tailwindcss
 vazir
 Vazirmatn
