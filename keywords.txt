@@ -3,3 +3,4 @@ nextjs
 tailwindcss
 vazir
 Vazirmatn
+Swiper
