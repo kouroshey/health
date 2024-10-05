@@ -27,6 +27,7 @@ const config: Config = {
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
+          dark: "var(--primary-dark)",
         },
         gray: "var(--gray)",
         black: "var(--black)",
