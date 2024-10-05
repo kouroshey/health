@@ -3,6 +3,7 @@ commitlint
 linebreak
 lucide
 nextjs
+Parens
 Precache
 precaching
 serwist
