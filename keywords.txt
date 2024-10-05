@@ -6,7 +6,7 @@ nextjs
 Precache
 precaching
 serwist
+Swiper
 tailwindcss
 vazir
 Vazirmatn
-Swiper
