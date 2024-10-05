@@ -5,6 +5,7 @@ linebreak
 lucide
 metods
 nextjs
+Parens
 Precache
 precaching
 serwist

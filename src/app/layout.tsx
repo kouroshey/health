@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
 import { Vazirmatn } from "next/font/google";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "PWA NextJS",

@@ -1,9 +1,7 @@
 {
   "version": "0.2",
-  "language": "fa, en",
-  "ignorePaths": [
-    "node_modules"
-  ],
+  "language": "fa,en",
+  "ignorePaths": ["node_modules"],
   "dictionaryDefinitions": [
     {
       "name": "keywords",
@@ -11,7 +9,5 @@
       "path": "./keywords.txt"
     }
   ],
-  "dictionaries": [
-    "keywords"
-  ]
+  "dictionaries": ["keywords"]
 }
