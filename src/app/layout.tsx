@@ -4,8 +4,8 @@ import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PWA NextJS",
-  description: "It's a simple progressive web application made with NextJS",
+  title: "نارنج",
+  description: "پایش و کنترل سلامت کودکان",
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
