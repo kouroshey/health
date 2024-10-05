@@ -13,6 +13,7 @@
     "cspell": "cspell lint \"src/**/*.{js,ts,tsx}\""
   },
   "dependencies": {
+    "@cspell/dict-fa-ir": "^4.0.0",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-slot": "^1.1.0",
