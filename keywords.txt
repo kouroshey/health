@@ -1,12 +1,15 @@
 clsx
 commitlint
+hookform
 linebreak
 lucide
+metods
 nextjs
 Precache
 precaching
 serwist
+Swiper
 tailwindcss
+unindex
 vazir
 Vazirmatn
-Swiper

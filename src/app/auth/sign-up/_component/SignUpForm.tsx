@@ -1,5 +1,13 @@
 const SignUpForm = () => {
-  return <div>فرم ثبت نام</div>;
+  return (
+    <div>
+      {/* <FormProvider> */}
+      <form>
+        <input />
+      </form>
+      {/* </FormProvider> */}
+    </div>
+  );
 };
 
 export default SignUpForm;

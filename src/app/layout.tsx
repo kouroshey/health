@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
-      <body>{children}</body>
+      <body className="container py-2 md:py-5">{children}</body>
     </html>
   );
 }

@@ -92,5 +92,8 @@ const config: Config = {
     },
   },
   plugins: [tailwindcssAnimate],
+  corePlugins: {
+    container: false,
+  },
 };
 export default config;
