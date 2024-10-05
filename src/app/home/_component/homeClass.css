@@ -1,0 +1,13 @@
+.homeSlider {
+  .swiper-pagination-bullet-active {
+    background-color: var(--primary) !important;
+  }
+  .swiper-pagination-bullet {
+    background-color: var(--white);
+    border-radius: 12px !important;
+    width: 13px !important;
+    height: 3px !important;
+    margin: 1px !important;
+    opacity: 1 !important;
+  }
+}
