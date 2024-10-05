@@ -7,15 +7,10 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  corePlugins: {
+    container: false,
+  },
   theme: {
-    container: {
-      padding: {
-        DEFAULT: ".5rem",
-        sm: ".5rem",
-        md: "1rem",
-        lg: "2rem",
-      },
-    },
     extend: {
       fontFamily: {
         vazir: ["var(--font-vazir)"],

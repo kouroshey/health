@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
 import { Vazirmatn } from "next/font/google";
+
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "PWA NextJS",
@@ -32,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
-      <body>{children}</body>
+      <body className="container py-2 md:py-5">{children}</body>
     </html>
   );
 }
