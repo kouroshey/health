@@ -1,6 +1,6 @@
 {
   "version": "0.2",
-  "language": "en",
+  "language": "fa,en",
   "ignorePaths": ["node_modules"],
   "dictionaryDefinitions": [
     {
