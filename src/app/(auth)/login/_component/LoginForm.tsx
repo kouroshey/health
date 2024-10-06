@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
+import Image from "next/image";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({
@@ -30,18 +31,19 @@ const LoginForm = () => {
   return (
     <FormProvider {...methods}>
       <form
-        className="w-full flex flex-col justify-between h-full"
+        className="w-fll flex flex-col w-full justify-between gap-12 items-center"
         onSubmit={handleSubmit(onSubmit)}
       >
         <Input
           type="text"
-          label="لطفا شماره تماس خود را وارد کنید"
+          label="شماره موبایل"
           placeholder="*********09"
           name="phone"
           icon={<BsPhone color="gray" />}
           errors={errors}
           maxLength={11}
         />
+        <Image src="orange.svg" alt="orange-image" width={100} height={100} />
 
         <Button variant="contained" color="primary" className="w-full">
           ارسال کد تایید
