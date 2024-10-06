@@ -55,8 +55,6 @@
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
@@ -93,34 +91,34 @@
     --gradient-tangerine-gradient: linear-gradient(90deg);
     --black: rgba(3, 3, 25, 1);
     --white: rgba(255, 255, 255, 1);
-    --primary-100: rgba(230, 251, 238, 1);
-    --primary-200: rgba(206, 245, 220, 1);
-    --primary-300: rgba(169, 236, 195, 1);
-    --primary-400: rgba(118, 218, 157, 1);
-    --primary-500: rgba(76, 208, 128, 1);
-    --primary-600: rgba(42, 186, 99, 1);
-    --primary-700: rgba(37, 147, 82, 1);
-    --primary-800: rgba(35, 116, 68, 1);
-    --primary-900: rgba(31, 96, 59, 1);
-    --secondary-100: rgba(255, 245, 223, 1);
-    --secondary-200: rgba(255, 232, 191, 1);
-    --secondary-300: rgba(255, 207, 130, 1);
-    --secondary-400: rgba(255, 190, 108, 1);
-    --secondary-500: rgba(255, 174, 88, 1);
-    --secondary-600: rgba(250, 146, 62, 1);
-    --secondary-700: rgba(247, 107, 14, 1);
-    --secondary-800: rgba(200, 83, 17, 1);
-    --secondary-900: rgba(161, 69, 18, 1);
-    --gray-900: rgba(20, 28, 36, 1);
-    --gray-800: rgba(32, 43, 55, 1);
-    --gray-700: rgba(52, 64, 81, 1);
-    --gray-600: rgba(65, 78, 98, 1);
-    --gray-500: rgba(99, 112, 131, 1);
-    --gray-400: rgba(151, 161, 175, 1);
-    --gray-200: rgba(228, 231, 236, 1);
-    --gray-100: rgba(242, 244, 247, 1);
+    --secondary-100: rgba(230, 251, 238, 1);
+    --secondary-200: rgba(206, 245, 220, 1);
+    --secondary-300: rgba(169, 236, 195, 1);
+    --secondary-400: rgba(118, 218, 157, 1);
+    --secondary-500: rgba(76, 208, 128, 1);
+    --secondary-600: rgba(42, 186, 99, 1);
+    --secondary-700: rgba(37, 147, 82, 1);
+    --secondary-800: rgba(35, 116, 68, 1);
+    --secondary-900: rgba(31, 96, 59, 1);
+    --primary-100: rgba(254, 238, 199, 1);
+    --primary-200: rgba(253, 219, 138, 1);
+    --primary-300: rgba(251, 195, 78, 1);
+    --primary-400: rgba(250, 168, 29, 1);
+    --primary-500: rgba(244, 137, 12, 1);
+    --primary-600: rgba(216, 100, 7, 1);
+    --primary-700: rgba(179, 67, 10, 1);
+    --primary-800: rgba(145, 52, 15, 1);
+    --primary-900: rgba(120, 43, 15, 1);
     --gray-50: rgba(249, 250, 251, 1);
+    --gray-100: rgba(242, 244, 247, 1);
+    --gray-200: rgba(228, 231, 236, 1);
     --gray-300: rgba(206, 210, 218, 1);
+    --gray-400: rgba(151, 161, 175, 1);
+    --gray-500: rgba(99, 112, 131, 1);
+    --gray-600: rgba(65, 78, 98, 1);
+    --gray-700: rgba(52, 64, 81, 1);
+    --gray-800: rgba(32, 43, 55, 1);
+    --gray-900: rgba(20, 28, 36, 1);
     --info-900: rgba(0, 59, 102, 1);
     --info-800: rgba(0, 89, 153, 1);
     --info-700: rgba(0, 118, 204, 1);
@@ -229,7 +227,6 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
     --chart-1: 220 70% 50%;
@@ -237,15 +234,6 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
