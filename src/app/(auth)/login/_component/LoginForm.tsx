@@ -1,23 +1,15 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import {
-  LoginFormSchema,
-  LoginFormType,
-} from "../../sign-up/models/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
+import { LoginFormSchema, LoginFormType } from "../_models/Validations";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({
     resolver: zodResolver(LoginFormSchema),
     mode: "onChange",
-    defaultValues: {
-      age: "",
-      family_name: "",
-      name: "",
-    },
   });
 
   const {

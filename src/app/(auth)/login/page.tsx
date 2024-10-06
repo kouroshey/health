@@ -10,8 +10,8 @@ const LoginPage = () => {
   return (
     <div className="w-full gap-3 px-3 backdrop-blur-lg">
       <div className="flex flex-col gap-4 justify-start items-center h-full w-full">
-        <div className="mb-10 flex flex-col gap-2">
-          <h2 className="font-bold text-xl text-center text-secondary">
+        <div className="mb-10 flex flex-col gap-2 items-center">
+          <h2 className="font-bold text-xl text-center text-primary">
             ورود به نارنج
           </h2>
           <p className="text-gray-400">
@@ -22,7 +22,7 @@ const LoginPage = () => {
           {isLoggedIn && (
             <Link
               href={"/login"}
-              className="text-primary font-light text-sm text-center underline underline-offset-2 cursor-pointer hover:text-primary-600"
+              className="text-gray-400 font-light text-sm text-center w-max after:absolute after:w-full after:h-[2px] after:rounded-sm after:left-0 after:bg-primary relative after:-bottom-1 cursor-pointer hover:text-primary-600"
             >
               تغییر شماره موبایل
             </Link>
