@@ -41,13 +41,13 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 33.6, 91%, 50.2%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 146.8, 60.8%, 55.7%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 214.3, 13%, 63.9%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 210 40% 96.1%;
@@ -60,16 +60,13 @@
 
     --radius: 0.5rem;
 
-    --success: 210 40% 96.1%;
+    --success: 150.5, 50.4%, 50%;
     --success-foreground: 215.4 16.3% 46.9%;
 
-    --info: 210 40% 96.1%;
-    --info-foreground: 215.4 16.3% 46.9%;
-
-    --warning: 210 40% 96.1%;
+    --warning: 37.7, 100%, 55.3%;
     --warning-foreground: 215.4 16.3% 46.9%;
 
-    --error: 210 40% 96.1%;
+    --error: 0, 89.9%, 63.1%;
     --error-foreground: 215.4 16.3% 46.9%;
     /* Color Styles  */
     --gradient-grey: linear-gradient(90deg);
@@ -100,7 +97,7 @@
     --secondary-700: rgba(37, 147, 82, 1);
     --secondary-800: rgba(35, 116, 68, 1);
     --secondary-900: rgba(31, 96, 59, 1);
-    --primary-100: rgba(254, 238, 199, 1);
+    --primary-100: rgba(244, 137, 12, 1);
     --primary-200: rgba(253, 219, 138, 1);
     --primary-300: rgba(251, 195, 78, 1);
     --primary-400: rgba(250, 168, 29, 1);

@@ -1,22 +1,9 @@
+import { ReactElement } from "react";
 import { FieldErrors } from "react-hook-form";
 
-type EmployeeFieldName =
-  | "firstName"
-  | "middleName"
-  | "lastName"
-  | "birthDate"
-  | "gender"
-  | "phoneNumber"
-  | "email"
-  | "startAt"
-  | "endAt"
-  | "jobPosition"
-  | "teams"
-  | "designation"
-  | "billable"
-  | "billableHours";
+type FormFieldNames = "mobile" | "phone";
 export interface InputErrorProps {
-  name: EmployeeFieldName;
+  name: FormFieldNames;
   errors: FieldErrors;
 }
 
@@ -24,6 +11,9 @@ export interface InputProps extends InputErrorProps {
   label: string;
   type?: "text" | "email" | "time";
   placeholder?: string;
+  icon?: ReactElement;
+  maxLength?: number;
+  minLength?: number;
 }
 
 export interface SelectProps extends InputProps {

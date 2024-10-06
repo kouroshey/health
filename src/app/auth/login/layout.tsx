@@ -6,7 +6,11 @@ export const metadata: Metadata = {
 };
 
 const LoginLayout = ({ children }: { children: React.ReactNode }) => {
-  return <>{children}</>;
+  return (
+    <div className="h-full w-full md:w-8/12 md:max-w-md md:border md:rounded-sm py-4">
+      {children}
+    </div>
+  );
 };
 
 export default LoginLayout;

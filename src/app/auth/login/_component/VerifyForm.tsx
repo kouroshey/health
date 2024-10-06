@@ -1,21 +1,17 @@
+import React from "react";
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import {
-  LoginFormSchema,
-  LoginFormType,
-} from "../../sign-up/models/validations";
+import { LoginFormSchema, VerifyFormType } from "../models/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
-import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
+import { BiSolidMessage } from "react-icons/bi";
 
-const LoginForm = () => {
-  const methods = useForm<LoginFormType>({
+const VerifyLoginForm = () => {
+  const methods = useForm<VerifyFormType>({
     resolver: zodResolver(LoginFormSchema),
     mode: "onChange",
     defaultValues: {
-      age: "",
-      family_name: "",
-      name: "",
+      verify_code: "",
     },
   });
 
@@ -24,7 +20,7 @@ const LoginForm = () => {
     formState: { errors },
   } = methods;
 
-  const onSubmit: SubmitHandler<LoginFormType> = (data) => {
+  const onSubmit: SubmitHandler<VerifyFormType> = (data) => {
     console.log(data);
   };
   return (
@@ -35,20 +31,19 @@ const LoginForm = () => {
       >
         <Input
           type="text"
-          label="لطفا شماره تماس خود را وارد کنید"
-          placeholder="*********09"
+          label="کد تایید"
           name="phone"
-          icon={<BsPhone color="gray" />}
+          icon={<BiSolidMessage color="gray" />}
           errors={errors}
-          maxLength={11}
+          maxLength={5}
         />
 
         <Button variant="contained" color="primary" className="w-full">
-          ارسال کد تایید
+          تایید شماره تلفن
         </Button>
       </form>
     </FormProvider>
   );
 };
 
-export default LoginForm;
+export default VerifyLoginForm;
