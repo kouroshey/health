@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
   icons: [
-    { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
-    { rel: "icon", url: "icons/icon-128x128.png" },
+    { rel: "icon", url: "/icons-orange.png" },
+    { rel: "apple-touch-icon", url: "/icons-orange.png" },
   ],
 };
 
@@ -33,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
-      <body className="container py-2 md:py-5">{children}</body>
+      <body>
+        <div className="container py-2 md:py-5">{children}</div>
+      </body>
     </html>
   );
 }
