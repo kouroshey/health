@@ -31,7 +31,7 @@ const FeedingBanners = () => {
                 fill={true}
                 className="rounded-md"
               />
-              <h3 className="absolute flex items-center justify-center text-center backdrop-blur-[1px] text-white h-full w-full text-md md:text-lg">
+              <h3 className="absolute flex items-center justify-center text-center backdrop-blur-[1px] text-white h-full w-full text-md">
                 {feature.name}
               </h3>
             </div>

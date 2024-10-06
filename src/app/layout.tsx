@@ -4,14 +4,14 @@ import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PWA NextJS",
-  description: "It's a simple progressive web application made with NextJS",
+  title: "نارنج",
+  description: "پایش و کنترل سلامت کودکان",
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
   icons: [
-    { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
-    { rel: "icon", url: "icons/icon-128x128.png" },
+    { rel: "icon", url: "/icons-orange.png" },
+    { rel: "apple-touch-icon", url: "/icons-orange.png" },
   ],
 };
 
@@ -33,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
-      <body className="container py-2 md:py-5">{children}</body>
+      <body>
+        <div className="container py-2 md:py-5">{children}</div>
+      </body>
     </html>
   );
 }

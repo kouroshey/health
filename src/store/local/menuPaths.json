@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/profile",
+    "name": "/پروفایل",
+    "knowAs": "profile",
+    "icon": "BsPerson"
+  },
+  {
+    "path": "/",
+    "name": "خانه",
+    "knownAs": "home",
+    "icon": "RiHome5Fill"
+  },
+  {
+    "path": "/notification",
+    "name": "پیام ها",
+    "knownAs": "notification",
+    "icon": "IoIosNotificationsOutline"
+  },
+  {
+    "path": "/stats",
+    "name": "گزارشات",
+    "knownAs": "stats",
+    "icon": "IoStatsChartOutline"
+  }
+]

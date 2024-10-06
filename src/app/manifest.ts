@@ -13,6 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/",
     scope: "/",
     background_color: "#2EC6FE",
+    // back: change the icon with the real one
     icons: [
       {
         purpose: "maskable",

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "تغذیه های سالم",
 };
 
-export default function RootLayout({
+export default function FeedingLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -18,7 +18,7 @@ export default function RootLayout({
         <div className="absolute right-0 h-full">
           ‌<BackPage />
         </div>
-        <h1 className="w-full m-auto text-lg text-center text-primary_dark">
+        <h1 className="w-full m-auto text-lg text-center text-primary">
           تغذیه
         </h1>
       </div>
