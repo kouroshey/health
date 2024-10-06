@@ -18,7 +18,7 @@ export default function FeedingLayout({
         <div className="absolute right-0 h-full">
           ‌<BackPage />
         </div>
-        <h1 className="w-full m-auto text-lg text-center text-secondary">
+        <h1 className="w-full m-auto text-lg text-center text-primary">
           تغذیه
         </h1>
       </div>

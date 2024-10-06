@@ -21,7 +21,7 @@ const iconMap: { [key: string]: ReactElement } = {
 const MobileMenu = () => {
   const pathname = usePathname();
   return (
-    <div className="flex items-center justify-between md:hidden fixed bottom-0 right-0 w-full h-14 border-t border-gray rounded-t-lg px-12 bg-white">
+    <div className="flex items-center justify-between md:hidden fixed bottom-0 right-0 w-full h-14 border-t border-gray-300 rounded-t-lg px-12 bg-white">
       {paths.map((item) => {
         const isActive = pathname === item.path;
         const iconComponent = iconMap[item.icon];
@@ -30,12 +30,12 @@ const MobileMenu = () => {
           <CustomPagination
             key={item.path}
             isActive={isActive}
-            activeClassName="text-[#faa81d] shadow-md p-1 rounded-sm shadow-primary-300"
+            activeClassName="text-primary shadow-md p-1 rounded-sm shadow-primary-300"
             href={item.path}
           >
             <span>
               {React.cloneElement(iconComponent, {
-                className: isActive ? "text-[#faa81d}" : "text-[#666]",
+                className: isActive ? "text-primary" : "text-gray-500",
               })}
             </span>
           </CustomPagination>

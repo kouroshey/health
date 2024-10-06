@@ -71,6 +71,7 @@ const config: Config = {
           100: "var(--secondary-100)",
         },
         gray: {
+          DEFAULT: "hsl(var(--gray))",
           900: "var(--gray-900)",
           800: "var(--gray-800)",
           700: "var(--gray-700)",
@@ -83,7 +84,7 @@ const config: Config = {
           50: "var(--gray-50)",
         },
         info: {
-          DEFAULT: "hsl(var(--error))",
+          DEFAULT: "hsl(var(--info))",
           foreground: "hsl(var(--error-foreground))",
           900: "var(--info-900)",
           800: "var(--info-800)",
@@ -97,6 +98,7 @@ const config: Config = {
           50: "var(--info-50)",
         },
         success: {
+          DEFAULT: "hsl(var(--success))",
           900: "var(--success-900)",
           800: "var(--success-800)",
           700: "var(--success-700)",
@@ -109,6 +111,7 @@ const config: Config = {
           50: "var(--success-50)",
         },
         warning: {
+          DEFAULT: "hsl(var(--warning))",
           900: "var(--warning-900)",
           800: "var(--warning-800)",
           700: "var(--warning-700)",
@@ -121,6 +124,7 @@ const config: Config = {
           50: "var(--warning-50)",
         },
         error: {
+          DEFAULT: "hsl(var(--error))",
           900: "var(--error-900)",
           800: "var(--error-800)",
           700: "var(--error-700)",
@@ -161,6 +165,7 @@ const config: Config = {
           50: "var(--light-green-50)",
         },
         green: {
+          DEFAULT: "hsl(var(--green))",
           900: "var(--green-900)",
           800: "var(--green-800)",
           700: "var(--green-700)",
