@@ -1,0 +1,23 @@
+[
+  {
+    "name": "صبحانه",
+    "link": "/feeding/meals/breakfast",
+    "default": true
+  },
+  {
+    "name": "میان وعده صبح",
+    "link": "/feeding/meals/morning-snack"
+  },
+  {
+    "name": "ناهار",
+    "link": "/feeding/meals/lunch"
+  },
+  {
+    "name": "میان وعده عصر",
+    "link": "/feeding/meals/evening-snack"
+  },
+  {
+    "name": "شام",
+    "link": "/feeding/meals/dinner"
+  }
+]

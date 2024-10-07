@@ -4,13 +4,13 @@ import { useRouter } from "next/navigation";
 
 import { BsArrowRight } from "react-icons/bs";
 
-// import Button from "./ui/button/button";
+import Button from "./button";
 
 type Props = {
   link?: string;
 };
 
-const BackPage = ({ link }: Props) => {
+const BackButton = ({ link }: Props) => {
   const router = useRouter();
 
   function clickBack() {
@@ -19,14 +19,14 @@ const BackPage = ({ link }: Props) => {
   }
 
   return (
-    // back: change this button with custom component that made for icons
-    <button
+    <Button
+      variant={"text"}
+      size={"sm"}
       onClick={() => (link ? router.push(link) : clickBack())}
-      className="h-full absolute"
-    >
-      <BsArrowRight className="text-lg text-black" />
-    </button>
+      className="h-full inline pr-0"
+      startIcon={<BsArrowRight className="text-lg text-black" />}
+    />
   );
 };
 
-export default BackPage;
+export default BackButton;

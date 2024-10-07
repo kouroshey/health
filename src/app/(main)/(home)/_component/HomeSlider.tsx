@@ -27,7 +27,7 @@ const HomeSlider = () => {
         {/* back: (change the hardcode and automate the process with mapping on the data from backed and pass them to the forward component) <HomeSliderMap /> */}
         <SwiperSlide className="w-full h-full relative">
           <Image
-            src={"/icon512_maskable.png"}
+            src={"/slide-1.webp"}
             alt="the first one"
             fill={true}
             className="object-fill rounded-md"
@@ -35,7 +35,7 @@ const HomeSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="w-full h-full relative">
           <Image
-            src={"/icon512_maskable.png"}
+            src={"/slide-2.webp"}
             alt="the first one"
             fill={true}
             className="object-fill rounded-md"
@@ -43,7 +43,7 @@ const HomeSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="w-full h-full relative">
           <Image
-            src={"/icon512_maskable.png"}
+            src={"/slide-3.webp"}
             alt="the first one"
             fill={true}
             className="object-fill rounded-md"

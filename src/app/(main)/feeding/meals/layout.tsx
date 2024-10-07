@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "تغذیه",
-  description: "صفحه تغذیه",
+  title: "وعده های غذایی",
+  description: "صفحه وعده های غذایی",
 };
 
-export default function FeedingLayout({
+export default function MealsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
