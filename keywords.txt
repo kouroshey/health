@@ -8,9 +8,11 @@ nextjs
 Parens
 Precache
 precaching
+Repost
 serwist
 Swiper
 tailwindcss
 unindex
 vazir
 Vazirmatn
+webp
