@@ -1,11 +1,5 @@
 [
   {
-    "path": "/profile",
-    "name": "/پروفایل",
-    "knowAs": "profile",
-    "icon": "BsPerson"
-  },
-  {
     "path": "/",
     "name": "خانه",
     "knownAs": "home",
@@ -22,5 +16,11 @@
     "name": "گزارشات",
     "knownAs": "stats",
     "icon": "IoStatsChartOutline"
+  },
+  {
+    "path": "/profile",
+    "name": "پروفایل",
+    "knowAs": "profile",
+    "icon": "BsPerson"
   }
 ]
