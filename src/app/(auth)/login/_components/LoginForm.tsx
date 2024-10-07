@@ -6,10 +6,7 @@ import { Input } from "@/components/ui/input/input";
 import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
-import {
-  LoginFormSchema,
-  LoginFormType,
-} from "@/app/auth/login/models/validations";
+import { LoginFormSchema, LoginFormType } from "../_models/Validations";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({
