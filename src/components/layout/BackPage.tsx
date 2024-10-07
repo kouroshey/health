@@ -15,7 +15,7 @@ const BackPage = ({ title, icon, link }: backPageType) => {
       <div className="absolute right-0 top-0 h-full">
         ‌<BackButton link={link} />
       </div>
-      <h1 className="w-full m-auto text-lg text-center text-primary">
+      <h1 className="w-full m-auto font-bold text-lg text-center text-primary">
         {title}
       </h1>
       {icon && <div className="absolute left-0 top-0">{icon}</div>}
