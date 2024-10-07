@@ -1,10 +1,15 @@
+"use client";
+
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
-import { LoginFormSchema, LoginFormType } from "../_models/Validations";
+import {
+  LoginFormSchema,
+  LoginFormType,
+} from "@/app/auth/login/models/validations";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({

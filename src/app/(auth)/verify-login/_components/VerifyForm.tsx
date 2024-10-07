@@ -1,6 +1,7 @@
-import React from "react";
+"use client";
+
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { LoginFormSchema, VerifyFormType } from "../_models/Validations";
+import { VerifyFormSchema, VerifyFormType } from "../_models/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
@@ -9,11 +10,8 @@ import Image from "next/image";
 
 const VerifyLoginForm = () => {
   const methods = useForm<VerifyFormType>({
-    resolver: zodResolver(LoginFormSchema),
+    resolver: zodResolver(VerifyFormSchema),
     mode: "onChange",
-    defaultValues: {
-      verify_code: "",
-    },
   });
 
   const {
