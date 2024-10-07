@@ -1,0 +1,7 @@
+.mealItemScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.mealItemScroll::-webkit-scrollbar {
+  display: none;
+}
