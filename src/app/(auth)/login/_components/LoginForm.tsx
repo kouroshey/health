@@ -37,7 +37,12 @@ const LoginForm = () => {
           errors={errors}
           maxLength={11}
         />
-        <Image src="orange.svg" alt="orange-image" width={100} height={100} />
+        <Image
+          src="/image/orange.svg"
+          alt="orange-image"
+          width={100}
+          height={100}
+        />
 
         <Button variant="contained" color="primary" className="w-full">
           ارسال کد تایید

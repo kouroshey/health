@@ -1,11 +1,21 @@
-// export const config = {
-//
-// }
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const middleware = () => {};
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
 
-export default middleware;
+  if (pathname === "/verify-login") {
+    const hasVerifyToken = false;
+    console.log("asdf");
 
-// separate login from verify login route
-// write a middleware to set cookie
-// and set permission to redirect to verify-login
+    if (!hasVerifyToken) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|public|image).*)"],
+};

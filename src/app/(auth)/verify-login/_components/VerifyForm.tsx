@@ -37,7 +37,7 @@ const VerifyLoginForm = () => {
           maxLength={5}
         />
         <Image
-          src="orange-glasses.svg"
+          src="/image/orange-glasses.svg"
           alt="orange-image"
           width={100}
           height={100}
