@@ -1,15 +1,10 @@
+"use client";
+
 import { FC, useState } from "react";
 import { InputProps } from "./types";
 import { InputErrorMessage } from "./InputErrorMessage";
 import { useFormContext } from "react-hook-form";
 import { cva } from "class-variance-authority";
-
-// const variantStyles = {
-//   outlined: {
-//     transparent: "bg-transparent text-gray-700",
-//   },
-//   filled: {},
-// };
 
 const inputStyles = cva("border border-300 rounded-sm px-4 py-2 w-full", {
   variants: {
