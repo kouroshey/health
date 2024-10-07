@@ -8,7 +8,7 @@ export default function Error({ reset }: { reset: () => void }) {
   return (
     <div className="h-[90vh] w-full flex flex-col justify-center items-center gap-y-3">
       <Image
-        src={"/orange.svg"}
+        src={"/image/orange.svg"}
         alt="not found icon"
         width={100}
         height={100}

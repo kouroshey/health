@@ -18,7 +18,7 @@ const page = ({ params }: { params: { mealsType: string } }) => {
         icon={
           <div className="relative h-9 w-8">
             <Image
-              src={"/orange-drink.svg"}
+              src={"/image/orange-drink.svg"}
               alt="orange drink"
               fill={true}
               sizes="(max-width: 768px) 20vw, (max-width: 1200px) 40vw, 33vw"
