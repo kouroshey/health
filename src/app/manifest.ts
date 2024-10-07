@@ -2,18 +2,17 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Health and Wellness",
-    short_name: "HAW",
-    description: "An example of how to use Serwist in Next.js",
+    name: "نارنج",
+    short_name: "نارنج",
+    description: "سلامت کودکان",
     display: "standalone",
     orientation: "portrait",
-    theme_color: "#8936FF",
-    dir: "auto",
+    theme_color: "#f48e0c",
+    dir: "rtl",
     lang: "fa-ir",
     start_url: "/",
     scope: "/",
-    background_color: "#2EC6FE",
-    // back: change the icon with the real one
+    background_color: "white",
     icons: [
       {
         purpose: "maskable",
