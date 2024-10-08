@@ -13,7 +13,7 @@ const MealsCard = () => {
           <Image
             src="/salad.png"
             alt="description of ..."
-            className="rounded-r-md pb-[1px]"
+            className="rounded-r-md pb-[1px] object-contain"
             fill={true}
             sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
           />
@@ -67,7 +67,7 @@ const MealsCard = () => {
           <Image
             src="/berger.png"
             alt="description of ..."
-            className="rounded-r-md pb-[1px]"
+            className="rounded-r-md pb-[1px] object-contain"
             fill={true}
             sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
           />
@@ -121,7 +121,7 @@ const MealsCard = () => {
           <Image
             src="/smoothie.png"
             alt="description of ..."
-            className="rounded-r-md pb-[1px]"
+            className="rounded-r-md pb-[1px] object-contain"
             fill={true}
             sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
           />

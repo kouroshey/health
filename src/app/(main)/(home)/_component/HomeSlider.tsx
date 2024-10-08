@@ -30,7 +30,7 @@ const HomeSlider = () => {
             src={"/slide-1.webp"}
             alt="the first one"
             fill={true}
-            className="object-fill rounded-md"
+            className="object-cover rounded-md"
           />
         </SwiperSlide>
         <SwiperSlide className="w-full h-full relative">

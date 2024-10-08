@@ -13,7 +13,7 @@ const FeatureBanners = () => {
               src={item.cover}
               alt={item.name}
               fill={true}
-              className="rounded-md"
+              className="rounded-md object-cover"
             />
             <h3 className="absolute flex items-center justify-center backdrop-blur-[1px] text-white h-full w-full text-md">
               {item.name}

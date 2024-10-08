@@ -22,7 +22,7 @@ const MobileMenu = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex md:hidden fixed bottom-0 right-0 w-full justify-center mb-1">
+    <div className="flex md:hidden fixed bottom-2 right-0 w-full justify-center mb-1">
       <div className="flex items-center justify-between shadow-lg rounded-md px-4 sm:px-8 w-full sm:w-1/2 mx-3 py-1 bg-white">
         {paths.map((item) => {
           const isActive = pathname === item.path;
@@ -35,7 +35,7 @@ const MobileMenu = () => {
               activeClassName="text-primary shadow-md py-1 px-2 rounded-sm shadow-primary-300"
               href={item.path}
             >
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col gap-1 justify-center items-center">
                 <span>
                   {React.cloneElement(iconComponent, {
                     className: isActive ? "text-primary" : "text-gray-500",
