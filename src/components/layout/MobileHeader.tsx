@@ -6,7 +6,6 @@ import React from "react";
 
 const MobileHeader = () => {
   const pathname = usePathname();
-  console.log(pathname);
   if (pathname === "/") {
     return (
       <div className="w-full px-4 relative md:hidden h-12 py-8 flex-center gap-2">

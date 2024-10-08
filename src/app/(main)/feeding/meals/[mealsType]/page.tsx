@@ -26,9 +26,7 @@ const page = ({ params }: { params: { mealsType: string } }) => {
           </div>
         }
       />
-      <div className="py-4">
-        <NavMealsItem />
-      </div>
+      <NavMealsItem />
     </div>
   );
 };

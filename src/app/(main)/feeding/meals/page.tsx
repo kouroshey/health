@@ -20,9 +20,7 @@ const page = () => {
           </div>
         }
       />
-      <div className="py-4">
-        <NavMealsItem />
-      </div>
+      <NavMealsItem />
       <MealsCard />
     </>
   );

@@ -41,7 +41,7 @@ const PersonalDetails = () => {
         <FileInput
           fileType="all"
           isLoading={isLoading}
-          title="آپلود آواتار جدید"
+          title="آپلود پروفایل جدید"
           uploadHandler={() => {}}
         />
       </div>
