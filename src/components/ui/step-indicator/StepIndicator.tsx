@@ -25,7 +25,7 @@ const StepIndicator: React.FC<StepIndicatorProps> = ({
               ${
                 isActive
                   ? "w-8 bg-primary rounded-full"
-                  : "w-2 bg-secondary-300 rounded-full"
+                  : "w-2 bg-gray-300 rounded-full"
               }`}
           />
         );

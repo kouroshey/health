@@ -2,9 +2,8 @@
 
 import { useRouter } from "next/navigation";
 
-import { BsArrowRight } from "react-icons/bs";
-
 import Button from "./button";
+import { FaArrowRight } from "react-icons/fa6";
 
 type Props = {
   link?: string;
@@ -24,7 +23,7 @@ const BackButton = ({ link }: Props) => {
       size={"sm"}
       onClick={() => (link ? router.push(link) : clickBack())}
       className="h-full inline pr-0"
-      startIcon={<BsArrowRight className="text-lg text-black" />}
+      startIcon={<FaArrowRight size="25" color="gray" />}
     />
   );
 };

@@ -6,7 +6,7 @@ import feedingBannersData from "@/store/local/feedingBannersData.json";
 const FeedingBanners = () => {
   return (
     <div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {feedingBannersData.map((item) => (
           <Link key={item.path} href={item.path} className="w-full h-32">
             <div className="h-full w-full relative rounded-md">

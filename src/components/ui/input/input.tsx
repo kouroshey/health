@@ -7,7 +7,7 @@ import { useFormContext } from "react-hook-form";
 import { cva } from "class-variance-authority";
 
 const inputStyles = cva(
-  "border border-300 rounded-sm px-4 py-2 w-full text-md text-gray-500",
+  "border border-300 rounded-sm px-4 py-2 w-full text-md text-gray-500 outline-0",
   {
     variants: {
       error: {
@@ -43,7 +43,10 @@ export const Input: FC<InputProps> = ({
   return (
     <div className="form w-full">
       <div className="w-full">
-        <label htmlFor={name} className="text-gray-400 font-light text-sm">
+        <label
+          htmlFor={name}
+          className="text-gray-400 font-light text-sm md:text-md"
+        >
           {label}
         </label>
         <div className="relative w-full">

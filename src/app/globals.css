@@ -6,6 +6,9 @@
   .primary-h1 {
     @apply font-bold text-xl text-center text-primary;
   }
+  .primary-h2 {
+    @apply font-bold text-lg text-center text-primary;
+  }
   .flex-center {
     @apply flex justify-center items-center;
   }

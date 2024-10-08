@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./mealsItemStyle.css";
 import Button from "@/components/ui/button/button";
 import { BiRepost, BiSolidDislike, BiSolidLike } from "react-icons/bi";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const MealsCard = () => {
   return (
@@ -55,7 +56,8 @@ const MealsCard = () => {
             <Button
               variant={"text"}
               size={"sm"}
-              className="text-xs text-black px-0"
+              className="text-xs text-primary px-0 gap-0"
+              endIcon={<MdKeyboardArrowLeft />}
             >
               جزییات بیشتر
             </Button>
@@ -109,7 +111,8 @@ const MealsCard = () => {
             <Button
               variant={"text"}
               size={"sm"}
-              className="text-xs text-black px-0"
+              className="text-xs text-primary px-0 gap-0"
+              endIcon={<MdKeyboardArrowLeft />}
             >
               جزییات بیشتر
             </Button>
@@ -163,7 +166,8 @@ const MealsCard = () => {
             <Button
               variant={"text"}
               size={"sm"}
-              className="text-xs text-black px-0"
+              className="text-xs text-primary px-0 gap-0"
+              endIcon={<MdKeyboardArrowLeft />}
             >
               جزییات بیشتر
             </Button>

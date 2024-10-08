@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
 
 import "./globals.css";
+import MobileHeader from "@/components/layout/MobileHeader";
 
 export const metadata: Metadata = {
   title: "نارنج",
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
+        <MobileHeader />
         <div className="container py-2 md:py-5">{children}</div>
       </body>
     </html>
