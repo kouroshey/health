@@ -24,10 +24,7 @@ const LoginForm = () => {
   };
   return (
     <FormProvider {...methods}>
-      <form
-        className="w-fll flex flex-col w-full justify-between gap-12 items-center"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+      <form className="form-center" onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="text"
           label="شماره موبایل"
