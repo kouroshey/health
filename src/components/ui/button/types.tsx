@@ -10,6 +10,7 @@ export type ButtonProps = {
   endIcon?: ReactNode;
   children?: ReactNode;
   className?: string;
+  isDisable?: boolean;
 } & (
   | {
       asLink: true;

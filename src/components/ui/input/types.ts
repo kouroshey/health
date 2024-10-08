@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { FieldErrors } from "react-hook-form";
 
-type FormFieldNames = "mobile" | "phone";
+type FormFieldNames = "mobile" | "phone" | "name" | "family_name";
 export interface InputErrorProps {
   name: FormFieldNames;
   errors: FieldErrors;

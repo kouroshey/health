@@ -5,8 +5,7 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (pathname === "/verify-login") {
-    const hasVerifyToken = false;
-    console.log("asdf");
+    const hasVerifyToken = true;
 
     if (!hasVerifyToken) {
       return NextResponse.redirect(new URL("/login", request.url));

@@ -141,8 +141,8 @@ const config: Config = {
           foreground: "var(--popover-foreground)",
         },
         muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
           DEFAULT: "var(--accent)",

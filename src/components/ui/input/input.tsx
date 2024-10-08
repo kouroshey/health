@@ -6,17 +6,20 @@ import { InputErrorMessage } from "./InputErrorMessage";
 import { useFormContext } from "react-hook-form";
 import { cva } from "class-variance-authority";
 
-const inputStyles = cva("border border-300 rounded-sm px-4 py-2 w-full", {
-  variants: {
-    error: {
-      true: "border-red-500",
-      false: "border-gray-300",
+const inputStyles = cva(
+  "border border-300 rounded-sm px-4 py-2 w-full text-md text-gray-500",
+  {
+    variants: {
+      error: {
+        true: "border-red-500",
+        false: "border-gray-300",
+      },
+    },
+    defaultVariants: {
+      error: false,
     },
   },
-  defaultVariants: {
-    error: false,
-  },
-});
+);
 
 export const Input: FC<InputProps> = ({
   label,

@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  max-width: 100%;
-  padding-inline: 1rem;
+@layer components {
+  .primary-h1 {
+    @apply font-bold text-xl text-center text-primary;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .form-center {
+    @apply flex flex-col w-full justify-between gap-8 items-center;
+  }
 }
 
 @media (min-width: 560px) {
@@ -47,10 +54,8 @@
     --secondary: 146.8, 60.8%, 55.7%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 214.3, 13%, 63.9%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46 --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
