@@ -2,25 +2,26 @@
   {
     "path": "/",
     "name": "خانه",
-    "knownAs": "home",
-    "icon": "RiHome5Fill"
+    "knownAs": "home"
   },
   {
-    "path": "/notification",
-    "name": "پیام ها",
-    "knownAs": "notification",
-    "icon": "IoIosNotificationsOutline"
+    "path": "/test",
+    "name": "افزودن فرد جدید",
+    "knownAs": "test"
   },
   {
-    "path": "/stats",
+    "path": "/test",
     "name": "گزارشات",
-    "knownAs": "stats",
-    "icon": "IoStatsChartOutline"
+    "knownAs": "test"
   },
   {
-    "path": "/profile",
-    "name": "پروفایل",
-    "knowAs": "profile",
-    "icon": "BsPerson"
+    "path": "/dashboard",
+    "name": "داشبورد",
+    "knownAs": "dashboard"
+  },
+  {
+    "path": "/test",
+    "name": "لیست افراد",
+    "knowAs": "personsList"
   }
 ]
