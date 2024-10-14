@@ -2,7 +2,6 @@
 
 import { cloneElement, ReactElement } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 import { IoDocumentText, IoMenuOutline } from "react-icons/io5";
 import { IoIosAddCircle } from "react-icons/io";
@@ -34,12 +33,12 @@ const MobileHeader = () => {
           </SheetTrigger>
           <SheetContent className="rounded-l-md text-xs">
             <SheetHeader className="absolute left-2 top-0">
-              <Image
+              {/* <Image
                 src={"./icon512_maskable.png"}
                 alt="logo"
                 width={50}
                 height={50}
-              />
+              /> */}
             </SheetHeader>
             <div className="py-5 text-xs">
               {paths.map((item) => {
