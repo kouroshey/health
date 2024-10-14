@@ -1,11 +1,11 @@
-import FeatureBanners from "./_component/FeatureBanners";
+import FeatureCards from "./_component/FeatureCards";
 import HomeSlider from "./_component/HomeSlider";
 
 const HomePage = () => {
   return (
     <div>
       <HomeSlider />
-      <FeatureBanners />
+      <FeatureCards />
     </div>
   );
 };

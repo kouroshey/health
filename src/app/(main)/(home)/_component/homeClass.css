@@ -2,6 +2,9 @@
   .swiper-pagination-bullet-active {
     background-color: hsl(var(--primary)) !important;
   }
+  .swiper-pagination {
+    bottom: 0.01rem;
+  }
   .swiper-pagination-bullet {
     background-color: var(--white);
     border-radius: 12px !important;
