@@ -2,26 +2,31 @@
   {
     "path": "/",
     "name": "خانه",
-    "knownAs": "home"
+    "knownAs": "home",
+    "icon": "RiHome5Fill"
   },
   {
     "path": "/test",
     "name": "افزودن فرد جدید",
-    "knownAs": "test"
+    "knownAs": "test",
+    "icon": "IoIosAddCircle"
   },
   {
     "path": "/test",
     "name": "گزارشات",
-    "knownAs": "test"
+    "knownAs": "test",
+    "icon": "IoDocumentText"
   },
   {
     "path": "/dashboard",
     "name": "داشبورد",
-    "knownAs": "dashboard"
+    "knownAs": "dashboard",
+    "icon": "TbHeartRateMonitor"
   },
   {
     "path": "/test",
     "name": "لیست افراد",
-    "knowAs": "personsList"
+    "knowAs": "personsList",
+    "icon": "FaUsers"
   }
 ]
