@@ -35,7 +35,7 @@ const MobileHeader = () => {
           <SheetContent className="rounded-l-md text-xs">
             <SheetHeader className="absolute left-2 top-0">
               <Image
-                src={"/icon512_maskable.png"}
+                src={"./icon512_maskable.png"}
                 alt="logo"
                 width={50}
                 height={50}

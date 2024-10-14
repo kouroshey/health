@@ -3,6 +3,14 @@ import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
+  safelist: [
+    "bg-blue-400",
+    "bg-green-500",
+    "bg-red-500",
+    "bg-indigo-300",
+    "bg-sky-600",
+    "bg-primary",
+  ],
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
