@@ -29,10 +29,10 @@ const MobileHeader = () => {
     return (
       <div className="w-full px-4 sticky top-0 z-10 bg-white md:hidden h-12 py-4 flex justify-between items-center gap-2">
         <Sheet>
-          <SheetTrigger>
-            <IoMenuOutline className="text-gray-500" size={30} />
+          <SheetTrigger className="outline-none">
+            <IoMenuOutline className="text-gray-500 outline-none" size={30} />
           </SheetTrigger>
-          <SheetContent className="rounded-l-md">
+          <SheetContent className="rounded-l-md text-xs">
             <SheetHeader className="absolute left-2 top-0">
               <Image
                 src={"/icon512_maskable.png"}
@@ -41,7 +41,7 @@ const MobileHeader = () => {
                 height={50}
               />
             </SheetHeader>
-            <div className="py-5">
+            <div className="py-5 text-xs">
               {paths.map((item) => {
                 const isActive = pathname === item.path;
                 const iconComponent = iconMap[item.icon];
@@ -50,7 +50,7 @@ const MobileHeader = () => {
                   <PaginationLink
                     key={item.path}
                     isActive={isActive}
-                    className="text-primary flex items-center gap-x-3 w-full py-2"
+                    className="text-primary text-xs flex items-center gap-x-3 w-full py-2"
                     href={item.path}
                   >
                     <span>
@@ -59,7 +59,7 @@ const MobileHeader = () => {
                       })}
                     </span>
                     <h3
-                      className={`text-[1.2rem] ${isActive ? "text-primary" : "text-gray-500"}`}
+                      className={`text-md ${isActive ? "text-primary" : "text-gray-500"}`}
                     >
                       {item.name}
                     </h3>
@@ -69,18 +69,9 @@ const MobileHeader = () => {
             </div>
           </SheetContent>
         </Sheet>
-        <div className="flex items-center gap-x-1 relative">
-          <span className="text-sm text-gray-500 pt-[4px]">
-            تعداد افراد زیر مجموعه :
-          </span>
-          <Button
-            className="text-sm px-2 pt-[4px] h-fit rounded-full"
-            variant="contained"
-            size="sm"
-          >
-            5
-          </Button>
-        </div>
+        <Button variant="contained" size="sm">
+          کاربران زیرمجموعه: ۶
+        </Button>
       </div>
     );
   }

@@ -7,7 +7,7 @@
   },
   {
     "path": "/test",
-    "name": "افزودن فرد جدید",
+    "name": "افزودن کاربر جدید",
     "knownAs": "test",
     "icon": "IoIosAddCircle"
   },
@@ -25,7 +25,7 @@
   },
   {
     "path": "/test",
-    "name": "لیست افراد",
+    "name": "لیست کاربران",
     "knowAs": "personsList",
     "icon": "FaUsers"
   }

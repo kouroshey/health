@@ -17,26 +17,6 @@
   }
 }
 
-@media (min-width: 560px) {
-  .container {
-    padding-inline: 3rem;
-  }
-}
-
-@media (min-width: 960px) {
-  .container {
-    max-width: 900px;
-    padding-inline: unset;
-    margin-inline: auto;
-  }
-}
-
-@media (min-width: 1370px) {
-  .container {
-    max-width: 1180px;
-  }
-}
-
 @layer base {
   html {
     font-family: var(--font-vazir);
