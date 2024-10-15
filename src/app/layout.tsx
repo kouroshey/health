@@ -36,7 +36,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
         <MobileHeader />
-        <div className="container py-2 md:py-5">{children}</div>
+        <div className="container pb-4">{children}</div>
       </body>
     </html>
   );

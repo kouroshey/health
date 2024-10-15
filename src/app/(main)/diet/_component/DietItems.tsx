@@ -1,20 +1,20 @@
 import Link from "next/link";
 
-import { PiCookingPotBold, PiForkKnife } from "react-icons/pi";
+import { PiCookingPotBold } from "react-icons/pi";
 import { FaPlateWheat, FaWeightScale } from "react-icons/fa6";
 import { IoIosArrowBack } from "react-icons/io";
 import { routes } from "@/store/local/routes.static";
 
 export const dietItems = [
   {
-    path: `${routes.diet.root}/${routes.diet.dietaryAdvice}`,
+    path: `${routes.diet.root}/${routes.diet.supplementaryAdvice}`,
     cover: "/slide-1.webp",
     name: "توصیه های غذایی",
     description: "راهنمایی‌های علمی و به‌روز برای داشتن تغذیه‌ای سالم‌تر.",
     icon: <FaPlateWheat />,
   },
   {
-    path: "/",
+    path: "#",
     cover: "/slide-2.webp",
     name: "محاسبه کالری و برنامه غذایی",
     description:
@@ -22,18 +22,11 @@ export const dietItems = [
     icon: <FaWeightScale />,
   },
   {
-    path: "/",
+    path: `${routes.diet.root}/${routes.diet.cookingMethods}`,
     cover: "/slide-3.webp",
     name: "روش صحیح طبخ غذا",
     description: "روش‌های بهینه و سالم برای پخت غذاهای متنوع و مغذی.",
     icon: <PiCookingPotBold />,
-  },
-  {
-    path: "/",
-    cover: "/slide-4.webp",
-    name: "وعده های غذایی",
-    description: "پیشنهادهای متعادل برای وعده‌های غذایی روزانه.",
-    icon: <PiForkKnife />,
   },
 ];
 

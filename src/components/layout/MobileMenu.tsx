@@ -3,28 +3,27 @@
 import React, { ReactElement } from "react";
 import { usePathname } from "next/navigation";
 
-import { BsPerson } from "react-icons/bs";
-import { IoStatsChart } from "react-icons/io5";
-
 import PaginationLink from "../ui/PaginationLink";
 import { mobileMenuItems } from "@/store/local/mobileMenu.static";
 import { BiHomeAlt2 } from "react-icons/bi";
 import { HiOutlineBell } from "react-icons/hi";
+import { LuUser } from "react-icons/lu";
+import { RxBarChart } from "react-icons/rx";
 
 const iconMap: { [key: string]: ReactElement } = {
-  profile: <BsPerson />,
-  home: <BiHomeAlt2 color="primary" />,
+  profile: <LuUser />,
+  home: <BiHomeAlt2 />,
   notification: <HiOutlineBell />,
-  stats: <IoStatsChart />,
+  stats: <RxBarChart />,
 };
 
 const MobileMenu = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center justify-between md:hidden fixed bottom-0 right-0 w-full border-t border-gray-100 bg-white">
+    <div className="flex bg-slate-50 shadow-sm rounded-t-sm items-center justify-between md:hidden fixed bottom-0 right-0 w-full border-t border-gray-100 bg-white">
       {mobileMenuItems.map((item) => {
-        const isActive = pathname.startsWith(item.path);
+        const isActive = pathname === item.path;
         const iconComponent = iconMap[item.icon];
 
         return (
@@ -44,7 +43,7 @@ const MobileMenu = () => {
                 })}
               </span>
               <span
-                className={`text-sm my-1 ${isActive ? "text-primary after:bottom-0 after:absolute after:w-full after:bg-primary after:left-0 after:h-1 after:transition-all after:rounded-md" : "text-gray-500"}`}
+                className={`text-xs my-1 ${isActive ? "text-primary after:bottom-0 after:absolute after:w-full after:bg-primary after:left-0 after:h-1 after:transition-all after:rounded-md" : "text-gray-500"}`}
               >
                 {item.name}
               </span>

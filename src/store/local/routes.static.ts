@@ -1,6 +1,7 @@
 export const routes = {
   diet: {
     root: "/diet",
-    dietaryAdvice: "supplementary-advice",
+    supplementaryAdvice: "supplementary-advice",
+    cookingMethods: "cooking-methods",
   },
 };
