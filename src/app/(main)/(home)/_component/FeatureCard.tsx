@@ -1,6 +1,5 @@
-import Link from "next/link";
+import { HomeFeature } from "@/store/local/home.static";
 
-import { HomeFeature, homeFeaturesDetails } from "@/store/local/home.static";
 import { IoDocumentText } from "react-icons/io5";
 import { IoFastFood } from "react-icons/io5";
 import { BiDumbbell } from "react-icons/bi";
@@ -17,7 +16,7 @@ const iconsArray: Record<string, JSX.Element> = {
   notifications: <FaBell />,
 };
 
-const Card: React.FC<HomeFeature> = ({ icon, name, bgColor }) => {
+const FeatureCard: React.FC<HomeFeature> = ({ icon, name, bgColor }) => {
   return (
     <div className="card flex justify-center items-center flex-col gap-1">
       <div
@@ -32,22 +31,4 @@ const Card: React.FC<HomeFeature> = ({ icon, name, bgColor }) => {
   );
 };
 
-const FeatureCards = () => {
-  return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-8">
-      {homeFeaturesDetails.map((card) => (
-        <Link key={card.path} href={card.path} className="w-full h-24">
-          <Card
-            key={card.icon}
-            path={card.path}
-            icon={card.icon}
-            name={card.name}
-            bgColor={card.bgColor}
-          />
-        </Link>
-      ))}
-    </div>
-  );
-};
-
-export default FeatureCards;
+export default FeatureCard;

@@ -1,4 +1,4 @@
-export const homeFeaturesDetails = [
+export const featuresDetails = [
   {
     path: "#",
     icon: "reports",
@@ -6,7 +6,7 @@ export const homeFeaturesDetails = [
     bgColor: "bg-blue-400",
   },
   {
-    path: "#",
+    path: "feeding",
     icon: "feeding",
     name: "تغذیه",
     bgColor: "bg-green-500",
@@ -37,4 +37,4 @@ export const homeFeaturesDetails = [
   },
 ];
 
-export type HomeFeature = (typeof homeFeaturesDetails)[number];
+export type HomeFeature = (typeof featuresDetails)[number];
