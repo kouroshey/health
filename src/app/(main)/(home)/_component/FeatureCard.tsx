@@ -9,7 +9,7 @@ import { FaBell } from "react-icons/fa";
 
 const iconsArray: Record<string, JSX.Element> = {
   reports: <IoDocumentText />,
-  feeding: <IoFastFood />,
+  diet: <IoFastFood />,
   activity: <BiDumbbell />,
   health: <TbActivityHeartbeat />,
   sleep: <FaBed />,

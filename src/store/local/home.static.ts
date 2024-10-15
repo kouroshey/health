@@ -6,8 +6,8 @@ export const featuresDetails = [
     bgColor: "bg-blue-400",
   },
   {
-    path: "feeding",
-    icon: "feeding",
+    path: "diet",
+    icon: "diet",
     name: "تغذیه",
     bgColor: "bg-green-500",
   },
