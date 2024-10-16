@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { Vazirmatn } from "next/font/google";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
 
 import "./globals.css";
 import MobileHeader from "@/components/layout/MobileHeader";
@@ -16,15 +16,31 @@ export const metadata: Metadata = {
   ],
 };
 
-export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
-};
-
-const vazir = Vazirmatn({
-  subsets: ["arabic"],
-  display: "swap",
-  weight: ["100", "300", "500", "800"],
+const vazir = localFont({
+  src: [
+    {
+      path: "/fonts/Vazirmatn-Thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Vazirmatn-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Vazirmatn-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "/fonts/Vazirmatn-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
   variable: "--font-vazir",
+  display: "swap",
 });
 
 export default function RootLayout({
