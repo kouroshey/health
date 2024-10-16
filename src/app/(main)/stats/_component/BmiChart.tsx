@@ -75,14 +75,14 @@ const BMIChart = () => {
         position: "top",
       },
       title: {
-        display: true,
+        display: false,
         text: "نمودار BMI به سن",
       },
     },
     scales: {
       x: {
         title: {
-          display: true,
+          display: false,
           text: "سن (سال)",
         },
       },

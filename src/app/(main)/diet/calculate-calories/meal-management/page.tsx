@@ -1,3 +1,5 @@
+"use client";
+
 import BackPage from "@/components/layout/BackPage";
 import { routes } from "@/store/local/routes.static";
 import React from "react";
@@ -11,6 +13,7 @@ import { BiCheese } from "react-icons/bi";
 import { CiPizza, CiSaveDown2 } from "react-icons/ci";
 import Button from "@/components/ui/button/button";
 import { IoReturnDownBack, IoShareSocialSharp } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 
 const items: MealItem[] = [
   {
@@ -34,13 +37,14 @@ const items: MealItem[] = [
 ];
 
 export default function Mealmanagement() {
+  const router = useRouter();
   return (
-    <main className="flex flex-col gap-6">
+    <main className="flex flex-col">
       <BackPage
         title="مدیریت رژیم غذایی"
         link={`${routes.diet.root}/${routes.diet.calculateCalories}`}
       />
-      <div className="flex text-sm md:text-md justify-between items-center text-gray-600">
+      <div className="flex text-sm md:text-md justify-between items-center flex-col text-gray-600">
         <p className="flex gap-1 items-center">
           <span className="flex gap-1 items-center">
             <FaUser />
@@ -56,7 +60,7 @@ export default function Mealmanagement() {
           <span>۱۴۰۳/۶/۲۳</span>
         </p>
       </div>
-      <hr className="border rounded-md" />
+      <hr className="border rounded-md my-5" />
       <div className="flex flex-col gap-5">
         <MealDetails
           items={items}
@@ -95,6 +99,11 @@ export default function Mealmanagement() {
             size="sm"
             color="error"
             endIcon={<IoReturnDownBack />}
+            onClick={() => {
+              router.push(
+                `${routes.diet.root}/${routes.diet.calculateCalories}`,
+              );
+            }}
           >
             بازگشت
           </Button>

@@ -38,7 +38,7 @@ const items: ListItemProps[] = [
 export default function SupplementaryAdvice() {
   return (
     <>
-      <BackPage title="توصیه‌های تکمیلی" link="/" />
+      <BackPage title="توصیه‌های تکمیلی" link={routes.diet.root} />
       <List items={items} />
     </>
   );

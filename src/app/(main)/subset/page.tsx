@@ -11,7 +11,7 @@ const SubsetPage = () => {
   return (
     <main>
       <BackPage
-        title={subsetsList.length > 0 ? "لیست افراد زیر مجموعه" : "زیرمجموعه"}
+        title={subsetsList.length > 0 ? "لیست افراد زیرمجموعه" : "زیرمجموعه"}
         link="/"
       />
       {subsetsList.length > 0 ? (

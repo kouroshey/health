@@ -41,6 +41,10 @@ export default function MealPlan() {
     >
       {/* صبحانه */}
       <div>
+        <p className="text-gray-500 mb-4 text-sm md:text-md">
+          لطفا جهت تولید رژیم غذایی مناسب شما، تمامی فیلد‌ها را پر کرده و در آخر
+          دکمه‌ی «ثبت» را بفشارید.
+        </p>
         <p className="text-md flex gap-1 items-center mb-3 after:absolute after:rounded-md after:right-0 after:w-full w-max after:h-[1px] after:bottom-0 after:bg-primary-500 relative">
           <MdOutlineFreeBreakfast />
           صبحانه

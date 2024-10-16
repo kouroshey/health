@@ -1,3 +1,4 @@
+import { routes } from "@/store/local/routes.static";
 import Link from "next/link";
 import React from "react";
 import { FaUsers } from "react-icons/fa6";
@@ -6,19 +7,19 @@ import { IoDocumentText, IoExit } from "react-icons/io5";
 
 const optionDetails = [
   {
-    path: "/subset",
+    path: routes.subset.root,
     name: "لیست کاربران",
     knowAs: "personsList",
     icon: <FaUsers size={20} />,
   },
   {
-    path: "/test",
+    path: routes.subset.add,
     name: "افزودن کاربر جدید",
     knownAs: "test",
     icon: <IoIosAddCircle color="primary" size={20} />,
   },
   {
-    path: "/test",
+    path: "/stats",
     name: "گزارشات",
     knownAs: "test",
     icon: <IoDocumentText size={20} />,

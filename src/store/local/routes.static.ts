@@ -15,7 +15,7 @@ export const routes = {
     result: "result",
   },
   physicalActivity: {
-    root: "physical-activity",
+    root: "/physical-activity",
     result: "result",
   },
   sleep: {
@@ -27,4 +27,10 @@ export const routes = {
   profile: {
     root: "profile",
   },
+  subset: {
+    root: "/subset",
+    add: "subset/add",
+    dashboard: "subset/dashboard",
+  },
+  logout: "logout",
 };

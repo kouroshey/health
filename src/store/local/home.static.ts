@@ -2,9 +2,9 @@ import { routes } from "./routes.static";
 
 export const featuresDetails = [
   {
-    path: "#",
+    path: routes.stats.root,
     icon: "reports",
-    name: "گزارشات من",
+    name: "گزارشات",
     bgColor: "bg-blue-400",
   },
   {

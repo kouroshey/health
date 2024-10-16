@@ -24,7 +24,10 @@ export const quizResultCardsDetails: ResultCardProps[] = [
 const Result = () => {
   return (
     <main>
-      <BackPage title="تحلیل اولیه آزمون فعالیت بدنی" link="/" />
+      <BackPage
+        title="تحلیل اولیه آزمون"
+        link={`${routes.physicalActivity.root}`}
+      />
       <div className="w-full h-[35vh] max-h-[40vh] relative mt-5  rounded-sm">
         <Image
           src={physicalActivityBg}

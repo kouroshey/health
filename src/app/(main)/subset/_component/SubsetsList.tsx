@@ -1,5 +1,5 @@
+import Avatar from "@/components/ui/Avatar/Avatar";
 import type { Subset } from "@/store/local/users.static";
-import Image from "next/image";
 import Link from "next/link";
 
 const SubsetsList = ({ subList }: { subList: Subset[] }) => {
@@ -10,28 +10,27 @@ const SubsetsList = ({ subList }: { subList: Subset[] }) => {
           return (
             <Link
               key={sub.id}
-              className="flex items-center border rounded-lg shadow-md gap-x-5 w-full px-3 py-4"
+              className="flex items-center border border-gray-100 bg-slate-50 rounded-md shadow-sm gap-x-5 w-full px-3 py-4"
               href={`/subset/dashboard/${sub.id}`}
             >
-              <div className="rounded-full border w-[75px] h-[75px] relative">
-                <Image
-                  src={"/avatars/boy-black.svg"}
-                  alt={`پروفایل ${sub.name}`}
-                  fill
-                  className="rounded-full"
-                />
-              </div>
-              <div>
-                <h5 className="text-lg text-gray-600">
-                  {sub.name}
-                  <span> {sub.familyName}</span>
-                </h5>
-                <div className="flex gap-x-3 mt-2">
-                  <h5 className="text-md text-gray-500">وزن: {sub.weight}</h5>
-                  <h5 className="text-md text-gray-500">قد: {sub.height}</h5>
-                  <h5 className="text-md text-gray-500 text-pretty">
-                    وضعیت سلامت : {sub.healthStatus}
+              <Avatar
+                src={"/avatars/boy-black.svg"}
+                alt={`پروفایل ${sub.name}`}
+                rounded
+              />
+              <div className="w-full">
+                <div className="flex justify-between w-full">
+                  <h5 className="text-md text-gray-600">
+                    {sub.name}
+                    <span> {sub.familyName}</span>
                   </h5>
+                  <p className="text-pretty text-sm bg-primary text-white px-2 py-1 rounded-sm">
+                    {sub.healthStatus}
+                  </p>
+                </div>
+                <div className="flex gap-x-3 mt-2 text-gray-500 text-sm">
+                  <p className="w-max">وزن: {sub.weight} کیلوگرم</p>
+                  <p className="w-max">قد: {sub.height} سانتیمتر</p>
                 </div>
               </div>
             </Link>

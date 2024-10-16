@@ -1,86 +1,55 @@
 "use client";
 
-import { slideThemes } from "@/app/(main)/(home)/_component/HomeSlider";
-import Button from "@/components/ui/button/button";
-import { usersData } from "@/store/local/users.static";
-import { FaRegHeart, FaUser, FaWeightScale } from "react-icons/fa6";
-import { IoBody } from "react-icons/io5";
-import { MdOutlineUpdate } from "react-icons/md";
-import { PiSmileySad, PiWarningOctagonLight } from "react-icons/pi";
-import { RxHeight } from "react-icons/rx";
+import UserDetails from "@/app/(main)/diet/calculate-calories/_component/UserDetails";
+import Link from "next/link";
+import { IoIosAddCircle } from "react-icons/io";
+import { IoBody, IoDocumentText } from "react-icons/io5";
+import { MdHistory } from "react-icons/md";
 
-const SubUserDashboard = ({ id }: { id: number }) => {
-  const findUser = usersData.subsets.find((sub) => sub.id === id);
-  const subsetHeight = Number(findUser?.height) / 100;
-  const bmi = Number(findUser?.weight) / (subsetHeight * 2);
+const optionDetails = [
+  {
+    path: "/",
+    name: "سوابق",
+    knowAs: "personsList",
+    icon: <MdHistory size={20} />,
+  },
+  {
+    path: "/test",
+    name: "افزودن وضعیت جدید",
+    knownAs: "test",
+    icon: <IoIosAddCircle color="primary" size={20} />,
+  },
+  {
+    path: "/test",
+    name: "گزارشات",
+    knownAs: "test",
+    icon: <IoDocumentText size={20} />,
+  },
+  {
+    path: "/",
+    name: "سوابق بدنی",
+    knowAs: "personsList",
+    icon: <IoBody size={20} />,
+  },
+];
+
+const SubUserDashboard = () => {
   return (
-    <div
-      className={`rounded-md px-3 py-6 h-full flex justify-between ${slideThemes[id].background} ${slideThemes[id].text}`}
-    >
-      <div className="flex flex-col justify-between text-sm">
-        <p className="flex gap-1 items-center">
-          <span className="flex gap-1 items-center">
-            <FaUser />
-            <span className="font-bold">نام: </span>
-          </span>
-          <span>{findUser?.name + " " + findUser?.familyName}</span>
-        </p>
-        <p className="flex gap-1 items-center">
-          <span className="flex gap-1 items-center">
-            <RxHeight />
-            <span className="font-bold">قد: </span>
-          </span>
-          <span>{findUser?.height} سانتیمتر</span>
-        </p>
-        <p className="flex gap-1 items-center">
-          <span className="flex gap-1 items-center">
-            <FaWeightScale />
-            <span className="font-bold">وزن: </span>
-          </span>
-          <span>{findUser?.weight} کیلوگرم</span>
-        </p>
-        <p className="flex gap-1 items-center">
-          <span className="flex gap-1 items-center">
-            <IoBody />
-            <span className="font-bold">BMI کاربر: </span>
-          </span>
-          <span>{bmi.toLocaleString()}</span>
-        </p>
-        <p className="flex gap-1 items-center">
-          <span className="flex gap-1 items-center">
-            <MdOutlineUpdate />
-            <span className="font-bold">بروزرسانی: </span>
-          </span>
-          <span>{findUser?.lastUpdate}</span>
-        </p>
-      </div>
-      <div className="flex text-sm">
-        <p className="flex gap-1 flex-col items-center">
-          <span className="font-bold">وضعیت سلامت</span>
-          <Button
-            className="text-white"
-            size="sm"
-            color={
-              findUser?.healthStatus === "سالم"
-                ? "success"
-                : findUser?.healthStatus === "ناسالم"
-                  ? "error"
-                  : "warning"
-            }
-            endIcon={
-              findUser?.healthStatus === "سالم" ? (
-                <FaRegHeart />
-              ) : findUser?.healthStatus === "ناسالم" ? (
-                <PiSmileySad />
-              ) : (
-                <PiWarningOctagonLight />
-              )
-            }
+    <div className="flex flex-col gap-2">
+      <UserDetails />
+      <ul className="flex flex-col gap-2">
+        {optionDetails.map((option, index) => (
+          <li
+            key={index}
+            className="text-gray-600 text-md md:text-lg bg-slate-50 hover:bg-slate-100 shadow-sm p-4 rounded-sm border border-gray-100"
           >
-            {findUser?.healthStatus}
-          </Button>
-        </p>
-      </div>
+            <Link className="flex items-center gap-2" href={option.path}>
+              <span className="text-primary">{option.icon}</span>
+              <span>{option.name}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

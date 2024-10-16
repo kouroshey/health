@@ -51,11 +51,18 @@ const UserDetailsForm: React.FC<UserDetailsProps> = ({ setIsEditMode }) => {
       </div>
       <FormProvider {...methods}>
         <form className="form-center" onSubmit={handleSubmit(onSubmit)}>
-          <Input errors={errors} label="نام" name="name" type="text" />
+          <Input
+            errors={errors}
+            label="نام"
+            placeholder="نام خود را وارد کنید"
+            name="name"
+            type="text"
+          />
           <Input
             errors={errors}
             label="نام خانوادگی"
             name="family_name"
+            placeholder="نام خانوادگی خود را وارد کنید"
             type="text"
           />
 

@@ -70,14 +70,14 @@ const WeightChart = () => {
         position: "top",
       },
       title: {
-        display: true,
+        display: false,
         text: "نمودار وزن به سن",
       },
     },
     scales: {
       x: {
         title: {
-          display: true,
+          display: false,
           text: "سن (سال)",
         },
       },

@@ -71,14 +71,14 @@ const GrowthChart = () => {
         position: "top",
       },
       title: {
-        display: true,
+        display: false,
         text: "نمودار قد به سن",
       },
     },
     scales: {
       x: {
         title: {
-          display: true,
+          display: false,
           text: "سن (سال)",
         },
       },

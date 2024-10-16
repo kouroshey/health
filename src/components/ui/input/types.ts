@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
 import { FieldErrors } from "react-hook-form";
 
-type FormFieldNames =
+export type FormFieldNames =
   | "mobile"
   | "phone"
   | "name"
   | "family_name"
   | "verify_code"
   | "fullName"
-  | "birthDate"
+  | "birthdate"
   | "gender"
   | "weight"
   | "height"
@@ -28,13 +28,26 @@ export interface InputProps extends InputErrorProps {
   minLength?: number;
 }
 
+export type Option = {
+  value: string;
+  label: string;
+};
+
+export type SelectOptions = Option[];
+
 export interface SelectProps extends InputProps {
-  options: {
-    value: string;
-    label: string;
-  }[];
+  options: SelectOptions;
+  defaultValue?: string;
+  onchange: (val: Option) => void;
+  trigger: () => void;
+  returnValue?: boolean;
 }
 
-export interface ReactSelectProps extends SelectProps {
+export interface ReactSelectProps extends InputErrorProps {
   isMulti: boolean;
+  defaultValue?: Option;
+  options: SelectOptions;
+  returnValue?: boolean;
+  label: string;
+  setValue: (val: Option) => void;
 }

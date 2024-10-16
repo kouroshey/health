@@ -1,4 +1,5 @@
 import BackPage from "@/components/layout/BackPage";
+import { routes } from "@/store/local/routes.static";
 import Image from "next/image";
 import blogImage from "public/slide-4.webp";
 import { FaRegClock } from "react-icons/fa6";
@@ -8,7 +9,10 @@ import { MdOutlineTimer } from "react-icons/md";
 export default function Page() {
   return (
     <main>
-      <BackPage title="توصیه‌" link="/" />
+      <BackPage
+        title="توصیه‌"
+        link={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
+      />
       <div className="flex flex-col gap-4">
         {/* image */}
         <div>

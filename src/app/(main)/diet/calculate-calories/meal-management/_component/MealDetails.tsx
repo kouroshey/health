@@ -29,7 +29,7 @@ const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="flex items-center px-2 gap-x-2 border border-slate-100 pl-2 rounded-md h-full w-full"
+            className="flex items-center px-2 gap-x-2 border border-gray-100 bg-slate-50 pl-2 rounded-md h-full w-full"
           >
             <div className="h-24 w-2/6 relative">
               <Image
