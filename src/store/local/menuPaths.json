@@ -28,5 +28,11 @@
     "name": "لیست کاربران",
     "knowAs": "personsList",
     "icon": "FaUsers"
+  },
+  {
+    "path": "/logout",
+    "name": "خروج",
+    "knowAs": "personsList",
+    "icon": "IoExit"
   }
 ]

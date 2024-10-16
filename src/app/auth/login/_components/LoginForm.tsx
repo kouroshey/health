@@ -6,21 +6,27 @@ import { Input } from "@/components/ui/input/input";
 import { BsPhone } from "react-icons/bs";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
-import { LoginFormSchema, LoginFormType } from "../_models/Validations";
+import {
+  LoginFormSchema,
+  LoginFormType,
+} from "@/app/auth/login/_models/validations";
+import { useRouter } from "next/navigation";
+import { routes } from "@/store/local/routes.static";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({
     resolver: zodResolver(LoginFormSchema),
-    mode: "onChange",
   });
+  const router = useRouter();
 
   const {
     handleSubmit,
     formState: { errors },
   } = methods;
+  console.log(errors);
 
-  const onSubmit: SubmitHandler<LoginFormType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginFormType> = () => {
+    router.push(routes.auth.verifyLogin);
   };
   return (
     <FormProvider {...methods}>

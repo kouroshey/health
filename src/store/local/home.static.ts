@@ -32,7 +32,7 @@ export const featuresDetails = [
     bgColor: "bg-sky-600",
   },
   {
-    path: "#",
+    path: "/",
     icon: "notifications",
     name: "اطلاعیه‌ها",
     bgColor: "bg-primary",

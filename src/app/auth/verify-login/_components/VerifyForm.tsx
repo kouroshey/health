@@ -7,20 +7,24 @@ import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
 import { BiSolidMessage } from "react-icons/bi";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const VerifyLoginForm = () => {
   const methods = useForm<VerifyFormType>({
     resolver: zodResolver(VerifyFormSchema),
     mode: "onChange",
   });
+  const router = useRouter();
 
   const {
     handleSubmit,
     formState: { errors },
   } = methods;
 
-  const onSubmit: SubmitHandler<VerifyFormType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<VerifyFormType> = () => {
+    router.push("/");
+    Cookies.set("is_verified", "true", { expires: 7 });
   };
   return (
     <FormProvider {...methods}>
@@ -31,7 +35,7 @@ const VerifyLoginForm = () => {
         <Input
           type="text"
           label="کد تایید"
-          name="phone"
+          name="verify_code"
           icon={<BiSolidMessage color="gray" />}
           errors={errors}
           maxLength={5}
