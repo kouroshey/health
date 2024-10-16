@@ -4,5 +4,6 @@ export const routes = {
     supplementaryAdvice: "supplementary-advice",
     cookingMethods: "cooking-methods",
     calculateCalories: "calculate-calories",
+    mealManagement: "meal-management",
   },
 };

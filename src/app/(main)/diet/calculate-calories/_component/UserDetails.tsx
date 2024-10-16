@@ -13,7 +13,7 @@ export default function UserDetails() {
         <p className="flex gap-1 items-center">
           <span className="flex gap-1 items-center">
             <FaUser />
-            <span className="font-bold">نام: </span>
+            <span className="font-bold">نام کاربر: </span>
           </span>
           <span>سعیده موسوی</span>
         </p>

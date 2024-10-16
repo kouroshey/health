@@ -11,6 +11,7 @@ import { RiDrinksLine } from "react-icons/ri";
 import { CiPizza } from "react-icons/ci";
 import { BiCheese } from "react-icons/bi";
 import { PiBowlFood } from "react-icons/pi";
+import { routes } from "@/store/local/routes.static";
 
 export default function MealPlan() {
   const {
@@ -31,7 +32,10 @@ export default function MealPlan() {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        router.push("", { scroll: false });
+        router.push(
+          `${routes.diet.calculateCalories}/${routes.diet.mealManagement}`,
+          { scroll: false },
+        );
       }}
       className="max-w-md mx-auto py-6 rounded-md flex flex-col gap-8"
     >
