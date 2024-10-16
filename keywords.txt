@@ -16,3 +16,4 @@ unindex
 vazir
 Vazirmatn
 webp
+بروزرسانی

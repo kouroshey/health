@@ -12,16 +12,11 @@ type Props = {
 const BackButton = ({ link }: Props) => {
   const router = useRouter();
 
-  function clickBack() {
-    router.back();
-    router.push("/home");
-  }
-
   return (
     <Button
       variant={"text"}
       size={"sm"}
-      onClick={() => (link ? router.push(link) : clickBack())}
+      onClick={() => (link ? router.push(link) : router.push("/"))}
       className="h-full inline pr-0"
       startIcon={<FaArrowRight size="25" color="gray" />}
     />
