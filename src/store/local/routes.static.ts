@@ -1,4 +1,8 @@
 export const routes = {
+  auth: {
+    login: "/auth/login",
+    verifyLogin: "/auth/verify-login",
+  },
   diet: {
     root: "/diet",
     supplementaryAdvice: "supplementary-advice",

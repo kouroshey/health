@@ -3,7 +3,7 @@
 import { cloneElement, ReactElement } from "react";
 import { usePathname } from "next/navigation";
 
-import { IoDocumentText, IoMenuOutline } from "react-icons/io5";
+import { IoDocumentText, IoExit, IoMenuOutline } from "react-icons/io5";
 import { IoIosAddCircle } from "react-icons/io";
 import { RiHome5Fill } from "react-icons/ri";
 import { TbHeartRateMonitor } from "react-icons/tb";
@@ -20,6 +20,7 @@ const iconMap: { [key: string]: ReactElement } = {
   IoDocumentText: <IoDocumentText size={20} />,
   TbHeartRateMonitor: <TbHeartRateMonitor size={20} />,
   FaUsers: <FaUsers size={20} />,
+  IoExit: <IoExit size={20} />,
 };
 
 const MobileHeader = () => {
@@ -41,13 +42,13 @@ const MobileHeader = () => {
               /> */}
             </SheetHeader>
             <div className="py-5 text-xs">
-              {paths.map((item) => {
+              {paths.map((item, index) => {
                 const isActive = pathname === item.path;
                 const iconComponent = iconMap[item.icon];
 
                 return (
                   <PaginationLink
-                    key={item.path}
+                    key={index}
                     isActive={isActive}
                     className="text-primary text-xs flex items-center gap-x-3 w-full py-2"
                     href={item.path}

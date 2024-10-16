@@ -12,7 +12,7 @@ export const mobileMenuItems = [
     icon: "notification",
   },
   {
-    path: "/stats",
+    path: "/",
     name: "گزارشات",
     knownAs: "stats",
     icon: "stats",
