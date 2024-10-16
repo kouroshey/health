@@ -1,3 +1,5 @@
+import { routes } from "./routes.static";
+
 export const featuresDetails = [
   {
     path: "#",
@@ -6,25 +8,25 @@ export const featuresDetails = [
     bgColor: "bg-blue-400",
   },
   {
-    path: "diet",
+    path: routes.diet.root,
     icon: "diet",
     name: "تغذیه",
     bgColor: "bg-green-500",
   },
   {
-    path: "#",
+    path: routes.physicalActivity.root,
     icon: "activity",
     name: "فعالیت بدنی",
     bgColor: "bg-red-500",
   },
   {
-    path: "#",
+    path: routes.mentalHealth.root,
     icon: "health",
     name: "سلامت و روان",
     bgColor: "bg-indigo-300",
   },
   {
-    path: "#",
+    path: routes.sleep.root,
     icon: "sleep",
     name: "خواب",
     bgColor: "bg-sky-600",
