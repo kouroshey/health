@@ -8,9 +8,11 @@ export const routes = {
   },
   mentalHealth: {
     root: "mental-health",
+    result: "result",
   },
   physicalActivity: {
     root: "physical-activity",
+    result: "result",
   },
   sleep: {
     root: "sleep",

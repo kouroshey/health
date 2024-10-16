@@ -48,6 +48,13 @@ export default function UserDetails() {
       </div>
       <div className="flex text-sm flex-col gap-2 items-center">
         <div className="flex gap-1 flex-col items-center">
+          <span className="font-bold">کالری</span>
+          <Button className="text-white" size="sm" color="primary">
+            ۱۶۸,۰۰۰
+          </Button>
+        </div>
+
+        <div className="flex gap-1 flex-col items-center">
           <span className="font-bold">وضعیت قد</span>
           <Button
             className="text-white"
@@ -63,6 +70,7 @@ export default function UserDetails() {
             {statuses.height.normal.label}
           </Button>
         </div>
+
         <div className="flex gap-1 flex-col items-center">
           <span className="font-bold">وضعیت وزن</span>
           <Button
@@ -72,12 +80,6 @@ export default function UserDetails() {
             endIcon={<BiSolidError />}
           >
             اضافه وزن
-          </Button>
-        </div>
-        <div className="flex gap-1 flex-col items-center">
-          <span className="font-bold">کالری</span>
-          <Button className="text-white" size="sm" color="primary">
-            ۱۶۸,۰۰۰
           </Button>
         </div>
       </div>

@@ -5,7 +5,7 @@ import FeatureCard from "./FeatureCard";
 
 const Features = () => {
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-8">
+    <div className="grid grid-cols-3 lg:grid-cols-4 gap-8 py-8">
       {featuresDetails.map((card) => (
         <Link key={card.path} href={card.path} className="w-full h-24">
           <FeatureCard
