@@ -4,7 +4,7 @@ import React from "react";
 import { FaUser } from "react-icons/fa6";
 import { MdOutlineFreeBreakfast, MdOutlineTimer } from "react-icons/md";
 import SaladImg from "public/salad.png";
-import MealDetails, { MealItem } from "./_component/page";
+import MealDetails, { MealItem } from "./_component/MealDetails";
 import { PiBowlFood } from "react-icons/pi";
 import { RiDrinksLine } from "react-icons/ri";
 import { BiCheese } from "react-icons/bi";
