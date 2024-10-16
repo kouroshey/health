@@ -1,10 +1,11 @@
+import Image from "next/image";
+
+import { FaArrowUpLong, FaWeightScale } from "react-icons/fa6";
+
 import BackPage from "@/components/layout/BackPage";
 import { routes } from "@/store/local/routes.static";
-import Image from "next/image";
-import Link from "next/link";
 import mentalHealthBg from "public/mental-health-bg.jpg";
-import ResaultCard, { ResultCardProps } from "./_component/ResultCard";
-import { FaArrowUpLong, FaWeightScale } from "react-icons/fa6";
+import ResultCard, { ResultCardProps } from "./_component/ResultCard";
 
 export const quizResultCardsDetails: ResultCardProps[] = [
   {
@@ -31,6 +32,7 @@ const Result = () => {
           fill
           objectFit="cover"
           className="rounded-sm"
+          sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <p className="text-gray-600 text-md text-justify py-5">
@@ -47,14 +49,14 @@ const Result = () => {
       </p>
       <div className="flex justify-between">
         {quizResultCardsDetails.map((card) => (
-          <Link key={card.path} href={card.path} className="w-full h-24">
-            <ResaultCard
+          <div className="w-full h-24" key={card.path}>
+            <ResultCard
               path={card.path}
               icon={card.icon}
               name={card.name}
               bgColor={card.bgColor}
             />
-          </Link>
+          </div>
         ))}
       </div>
     </main>

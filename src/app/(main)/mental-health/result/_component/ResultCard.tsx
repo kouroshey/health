@@ -8,7 +8,7 @@ export interface ResultCardProps {
   path: string;
 }
 
-const ResaultCard: React.FC<ResultCardProps> = ({
+const ResultCard: React.FC<ResultCardProps> = ({
   icon,
   name,
   bgColor,
@@ -30,4 +30,4 @@ const ResaultCard: React.FC<ResultCardProps> = ({
   );
 };
 
-export default ResaultCard;
+export default ResultCard;

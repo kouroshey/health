@@ -36,7 +36,7 @@ const DietItems = () => {
       <div className="flex flex-col gap-4">
         {dietItems.map((item, index) => (
           <Link key={index} href={item.path}>
-            <div className="h-full w-full relative rounded-md bg-slate-50 border text-gray-500 border-gray-100 py-4 px-2 hover:shadow-sm hover:text-primary flex justify-center">
+            <div className="h-full w-full relative rounded-md bg-slate-50 border text-gray-500 border-gray-100 py-4 px-2 hover:shadow-sm hover:text-primary transition-all duration-200 flex justify-center">
               <div className="flex flex-col gap-2 w-full">
                 <div className="w-full text-sm md:text-md flex items-center gap-2">
                   <span className="text-md md:text-lg">{item.icon}</span>
