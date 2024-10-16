@@ -38,3 +38,17 @@ export const featuresDetails = [
 ];
 
 export type HomeFeature = (typeof featuresDetails)[number];
+
+export const statuses = {
+  weight: {
+    normal: { label: "متناسب", color: "success", icon: "" },
+    overweight: { label: "اضافه وزن", color: "warning", icon: "" },
+    underweight: { label: "کمبود وزن", color: "warning", icon: "" },
+    fat: { label: "چاقی", color: "error", icon: "" },
+  },
+  height: {
+    normal: { label: "متناسب", color: "success" },
+    shortForAge: { label: "کوتاه تر از حد معمول", color: "error" },
+    tallForAge: { label: "بلند تر از حد معمول", color: "warning" },
+  },
+};

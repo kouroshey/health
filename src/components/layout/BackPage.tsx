@@ -11,7 +11,7 @@ type backPageType = {
 
 const BackPage = ({ title, icon, link }: backPageType) => {
   return (
-    <div className="w-full rounded-b-sm px-4 bg-slate-100 relative md:hidden shadow-sm border border-t-0 border-gray-200 mb-4 flex-center">
+    <div className="w-full rounded-b-sm px-4 bg-slate-50 relative md:hidden shadow-sm border border-t-0 border-gray-200 mb-4 flex-center">
       <div className="absolute right-5 top-0 h-full">
         ‌<BackButton link={link} />
       </div>
