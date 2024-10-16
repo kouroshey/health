@@ -1,3 +1,5 @@
+import { routes } from "./routes.static";
+
 export const mobileMenuItems = [
   {
     path: "/",
@@ -6,19 +8,19 @@ export const mobileMenuItems = [
     icon: "home",
   },
   {
-    path: "/notification",
-    name: "پیام ها",
+    path: "#",
+    name: "اطلاعیه‌ها",
     knownAs: "notification",
     icon: "notification",
   },
   {
-    path: "#",
-    name: "اطلاعیه‌ها",
+    path: routes.stats.root,
+    name: "گزارشات",
     knownAs: "stats",
     icon: "stats",
   },
   {
-    path: "/profile",
+    path: routes.profile.root,
     name: "پروفایل",
     knowAs: "profile",
     icon: "profile",

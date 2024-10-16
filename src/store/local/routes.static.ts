@@ -21,4 +21,10 @@ export const routes = {
   sleep: {
     root: "sleep",
   },
+  stats: {
+    root: "/stats",
+  },
+  profile: {
+    root: "profile",
+  },
 };
