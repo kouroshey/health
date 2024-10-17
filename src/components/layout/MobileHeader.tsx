@@ -56,7 +56,7 @@ const MobileHeader = () => {
   const pathname = usePathname();
   if (pathname === "/") {
     return (
-      <div className="w-full px-4 top-0 z-10 bg-white md:hidden sticky right-0 flex justify-between items-center gap-2 shadow-sm mb-4 py-6 rounded-b-md">
+      <div className="w-full px-4 sticky top-0 z-10 bg-white md:hidden h-12 flex justify-between items-center gap-2 shadow-sm mb-4 py-6 rounded-b-md">
         <Sheet>
           <SheetTrigger className="outline-none">
             <IoMenuOutline className="text-gray-500 outline-none" size={30} />

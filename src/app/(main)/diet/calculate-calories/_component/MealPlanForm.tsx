@@ -49,7 +49,7 @@ export default function MealPlan() {
           <MdOutlineFreeBreakfast />
           صبحانه
         </p>
-        <div className="grid grid-cols-2 gap-4 items-center overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
+        <div className="grid grid-cols-2 gap-4 items-center overflow-hidden">
           {meals.breakfast.map((item) => (
             <label key={item.id} className="flex items-center gap-1 w-max">
               <input

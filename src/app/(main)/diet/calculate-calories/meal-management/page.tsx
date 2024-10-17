@@ -84,7 +84,7 @@ export default function Mealmanagement() {
         />
         <MealDetails items={items} label="شام" icon={<CiPizza />} />
       </div>
-      <div className="flex gap-2 justify-between">
+      <div className="flex gap-2 justify-between py-4">
         <div className="flex gap-2">
           <Button
             className="text-white"
