@@ -33,7 +33,7 @@ const paths = [
     icon: <IoDocumentText size={20} />,
   },
   {
-    path: routes.subset.dashboard,
+    path: `${routes.subset.dashboard}/1`,
     name: "داشبورد",
     knownAs: "dashboard",
     icon: <TbHeartRateMonitor size={20} />,
