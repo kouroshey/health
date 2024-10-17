@@ -1,8 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import { Vazirmatn } from "next/font/google";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+
+import MobileHeader from "@/components/layout/MobileHeader";
 
 import "./globals.css";
-import MobileHeader from "@/components/layout/MobileHeader";
 
 export const metadata: Metadata = {
   title: "نارنج",
@@ -16,15 +17,31 @@ export const metadata: Metadata = {
   ],
 };
 
-export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
-};
-
-const vazir = Vazirmatn({
-  subsets: ["arabic"],
-  display: "swap",
-  weight: ["100", "300", "500", "800"],
+const vazir = localFont({
+  src: [
+    {
+      path: "./fonts/vazirmatn-thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/vazirmatn-extra-bold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+  ],
   variable: "--font-vazir",
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -36,7 +53,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
         <MobileHeader />
-        <div className="container py-2 md:py-5">{children}</div>
+        <div className="container pb-4">{children}</div>
       </body>
     </html>
   );

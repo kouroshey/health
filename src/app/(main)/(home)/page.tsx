@@ -1,12 +1,14 @@
-import FeatureCards from "./_component/FeatureCards";
+import Features from "./_component/Features";
 import HomeSlider from "./_component/HomeSlider";
+import SubsetsBMIChart from "./_component/SubsetsBMIChart";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <HomeSlider />
-      <FeatureCards />
-    </div>
+      <SubsetsBMIChart />
+      <Features />
+    </>
   );
 };
 

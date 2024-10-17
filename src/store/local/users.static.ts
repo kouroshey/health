@@ -56,16 +56,6 @@ export const usersData = {
       lastUpdate: "1403/2/2",
       healthStatus: "نیاز به مراقبت",
     },
-    {
-      id: 3,
-      name: "بهاره",
-      familyName: "موسوی",
-      gender: "female",
-      height: "130",
-      weight: "55",
-      lastUpdate: "1403/2/21",
-      healthStatus: "ناسالم",
-    },
   ],
 };
 

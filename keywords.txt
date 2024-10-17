@@ -1,3 +1,4 @@
+chartjs
 clsx
 commitlint
 hookform
@@ -16,3 +17,4 @@ unindex
 vazir
 Vazirmatn
 webp
+بروزرسانی

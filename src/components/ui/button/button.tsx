@@ -61,6 +61,7 @@ const Button: FC<ButtonProps> = ({
   endIcon,
   children,
   className,
+  isDisable,
   ...other
 }) => {
   const colorStyle = variantStyles[variant]?.[color];
@@ -71,6 +72,7 @@ const Button: FC<ButtonProps> = ({
       colorStyle,
       sizeStyles[size],
       className,
+      isDisable,
     ),
     children: (
       <>

@@ -16,7 +16,7 @@ import { MdOutlineUpdate } from "react-icons/md";
 import Button from "@/components/ui/button/button";
 import { PiSmileySad, PiWarningOctagonLight } from "react-icons/pi";
 
-const slideThemes = {
+export const slideThemes = {
   5: {
     background: "bg-blue-100",
     text: "text-blue-900",
