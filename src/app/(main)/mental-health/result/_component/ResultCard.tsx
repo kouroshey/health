@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { ReactElement } from "react";
 
 export interface ResultCardProps {
-  icon: ReactElement;
+  path: string;
+  icon: React.ReactNode;
   name: string;
   bgColor: string;
-  path: string;
 }
 
 const ResultCard: React.FC<ResultCardProps> = ({

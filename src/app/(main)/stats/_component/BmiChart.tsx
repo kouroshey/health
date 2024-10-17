@@ -22,7 +22,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  Filler, // برای اضافه کردن ناحیه رنگی زیر نمودار
+  Filler,
 );
 
 const BMIChart = () => {
@@ -40,16 +40,16 @@ const BMIChart = () => {
     datasets: [
       {
         label: "BMI کودک شما",
-        data: [15, 16, 16.5, 17, 18, 19, 20, 21], // داده‌های BMI
-        borderColor: "#f48e0c", // رنگ خط اصلی (رنگ اصلی شما)
-        backgroundColor: "rgba(244, 142, 12, 0.2)", // ناحیه رنگی زیر خط
+        data: [15, 16, 16.5, 17, 18, 19, 20, 21],
+        borderColor: "#f48e0c",
+        backgroundColor: "rgba(244, 142, 12, 0.2)",
         borderWidth: 2,
-        fill: true, // برای پر کردن زیر نمودار
-        pointBackgroundColor: "#f48e0c", // رنگ داخل نقاط
-        pointBorderColor: "#f48e0c", // رنگ حاشیه نقاط
-        pointRadius: 7, // اندازه نقاط
-        pointHoverRadius: 9, // اندازه نقاط هنگام hover
-        pointStyle: "rectRot", // استایل نقاط (مربع چرخیده)
+        fill: true,
+        pointBackgroundColor: "#f48e0c",
+        pointBorderColor: "#f48e0c",
+        pointRadius: 7,
+        pointHoverRadius: 9,
+        pointStyle: "rectRot",
       },
       {
         label: "صدک 50 (میانگین)",
@@ -69,10 +69,11 @@ const BMIChart = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false, // کنترل نسبت ابعاد
+    maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
+        position: "top" as const,
+        display: false,
       },
       title: {
         display: false,
@@ -98,9 +99,7 @@ const BMIChart = () => {
   };
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
-      {" "}
-      {/* ارتفاع را اینجا تنظیم کنید */}
+    <div style={{ height: "35vh", width: "100%" }}>
       <Line data={data} options={options} />
     </div>
   );

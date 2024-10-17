@@ -7,7 +7,11 @@ import Button from "@/components/ui/button/button";
 import { useRouter } from "next/navigation";
 import { routes } from "@/store/local/routes.static";
 
-const questions = [
+const questions: Array<{
+  id: keyof QuizFormType;
+  questionText: string;
+  options: Array<{ value: string; label: string }>;
+}> = [
   {
     id: "question1",
     questionText: "سوال ۱: کدام گزینه صحیح است؟",
