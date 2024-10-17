@@ -1,26 +1,9 @@
 import Image from "next/image";
-
+import BackPage from "@/components/layout/BackPage";
+import mentalHealthBg from "public/mental-health-bg.jpg";
+import ResultCard from "./_component/ResultCard";
 import { FaArrowUpLong, FaWeightScale } from "react-icons/fa6";
 
-import BackPage from "@/components/layout/BackPage";
-import { routes } from "@/store/local/routes.static";
-import mentalHealthBg from "public/mental-health-bg.jpg";
-import ResultCard, { ResultCardProps } from "./_component/ResultCard";
-
-export const quizResultCardsDetails: ResultCardProps[] = [
-  {
-    path: `${routes.diet.root}/${routes.diet.supplementaryAdvice}`,
-    icon: <FaWeightScale />,
-    name: "روش‌های کاهش وزن",
-    bgColor: "bg-green-500",
-  },
-  {
-    path: `${routes.diet.root}/${routes.diet.supplementaryAdvice}`,
-    icon: <FaArrowUpLong />,
-    name: "توصیه‌های افزایش قد",
-    bgColor: "bg-indigo-300",
-  },
-];
 const Result = () => {
   return (
     <main>
@@ -48,16 +31,22 @@ const Result = () => {
         بردارید!
       </p>
       <div className="flex justify-between">
-        {quizResultCardsDetails.map((card) => (
-          <div className="w-full h-24" key={card.path}>
-            <ResultCard
-              path={card.path}
-              icon={card.icon}
-              name={card.name}
-              bgColor={card.bgColor}
-            />
-          </div>
-        ))}
+        <div className="w-full h-24">
+          <ResultCard
+            path="/diet/supplementary-advice"
+            icon={<FaWeightScale />}
+            name="روش‌های کاهش وزن"
+            bgColor="bg-green-500"
+          />
+        </div>
+        <div className="w-full h-24">
+          <ResultCard
+            path="/diet/supplementary-advice"
+            icon={<FaArrowUpLong />}
+            name="توصیه‌های افزایش قد"
+            bgColor="bg-indigo-300"
+          />
+        </div>
       </div>
     </main>
   );

@@ -3,24 +3,8 @@ import { routes } from "@/store/local/routes.static";
 import Image from "next/image";
 import Link from "next/link";
 import physicalActivityBg from "public/physical-activity-bg.jpg";
-import ResaultCard, { ResultCardProps } from "./_component/ResultCard";
-import { BiSolidHappyBeaming } from "react-icons/bi";
-import { FaRegSadTear } from "react-icons/fa";
+import ResaultCard from "./_component/ResultCard";
 
-export const quizResultCardsDetails: ResultCardProps[] = [
-  {
-    path: `${routes.diet.root}/${routes.diet.supplementaryAdvice}`,
-    icon: <FaRegSadTear />,
-    name: "روش‌های کاهش استرس",
-    bgColor: "bg-green-500",
-  },
-  {
-    path: `${routes.diet.root}/${routes.diet.supplementaryAdvice}`,
-    icon: <BiSolidHappyBeaming />,
-    name: "توصیه‌های شاد بودن",
-    bgColor: "bg-indigo-300",
-  },
-];
 const Result = () => {
   return (
     <main>
@@ -50,16 +34,28 @@ const Result = () => {
         بردارید!
       </p>
       <div className="flex justify-between">
-        {quizResultCardsDetails.map((card) => (
-          <Link key={card.path} href={card.path} className="w-full h-24">
-            <ResaultCard
-              path={card.path}
-              icon={card.icon}
-              name={card.name}
-              bgColor={card.bgColor}
-            />
-          </Link>
-        ))}
+        <Link
+          href={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
+          className="w-full h-24"
+        >
+          <ResaultCard
+            path={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
+            icon={"FaWeightScale"}
+            name="روش‌های کاهش استرس"
+            bgColor="bg-green-500"
+          />
+        </Link>
+        <Link
+          href={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
+          className="w-full h-24"
+        >
+          <ResaultCard
+            path={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
+            icon={"FaArrowUpLong"}
+            name="توصیه‌های شاد بودن"
+            bgColor="bg-indigo-300"
+          />
+        </Link>
       </div>
     </main>
   );

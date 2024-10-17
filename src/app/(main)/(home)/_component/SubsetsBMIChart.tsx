@@ -52,8 +52,7 @@ const SubsetsBMIChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "hidden",
-        display: false,
+        display: false, // برای مخفی کردن legend
       },
       title: {
         display: true,

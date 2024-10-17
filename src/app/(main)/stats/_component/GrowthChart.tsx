@@ -68,7 +68,7 @@ const GrowthChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
+        position: "top" as const,
       },
       title: {
         display: false,
@@ -94,7 +94,7 @@ const GrowthChart = () => {
   };
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "35vh", width: "100%" }}>
       <Line data={data} options={options} />
     </div>
   );

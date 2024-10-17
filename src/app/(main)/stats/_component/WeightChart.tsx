@@ -67,7 +67,7 @@ const WeightChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: "top",
+        position: "top" as const, // استفاده از 'as const' برای مقدار ثابت
       },
       title: {
         display: false,
@@ -93,7 +93,7 @@ const WeightChart = () => {
   };
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "35vh", width: "100%" }}>
       <Line data={data} options={options} />
     </div>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactElement } from "react";
+import React from "react";
 import { usePathname } from "next/navigation";
 
 import PaginationLink from "../ui/PaginationLink";
@@ -10,7 +10,7 @@ import { HiOutlineBell } from "react-icons/hi";
 import { LuUser } from "react-icons/lu";
 import { RxBarChart } from "react-icons/rx";
 
-const iconMap: { [key: string]: ReactElement } = {
+const iconMap = {
   profile: <LuUser />,
   home: <BiHomeAlt2 />,
   notification: <HiOutlineBell />,
