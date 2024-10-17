@@ -1,16 +1,14 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { BiSolidMessage } from "react-icons/bi";
-
 import { VerifyFormSchema, VerifyFormType } from "../_models/validations";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
-import { userVerifyAction } from "./action";
+import { BiSolidMessage } from "react-icons/bi";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
 
 const VerifyLoginForm = () => {
   const methods = useForm<VerifyFormType>({
@@ -24,11 +22,10 @@ const VerifyLoginForm = () => {
     formState: { errors },
   } = methods;
 
-  const onSubmit: SubmitHandler<VerifyFormType> = async (data) => {
-    await userVerifyAction(data);
+  const onSubmit: SubmitHandler<VerifyFormType> = () => {
+    Cookies.set("is_verified", "true", { expires: 7 });
     router.push("/");
   };
-
   return (
     <FormProvider {...methods}>
       <form
