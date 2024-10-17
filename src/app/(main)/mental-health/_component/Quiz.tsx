@@ -37,16 +37,11 @@ const questions = [
 const Quiz = () => {
   const {
     register,
-    // handleSubmit,
     formState: { errors, isValid },
   } = useForm<QuizFormType>({
     resolver: zodResolver(quizSchema),
   });
   const router = useRouter();
-
-  // const onSubmit: SubmitHandler<QuizFormType> = (data) => {
-  //   console.log(data);
-  // };
 
   return (
     <form
@@ -65,14 +60,11 @@ const Quiz = () => {
           <div className="flex flex-col gap-2">
             {q.options.map((option) => (
               <div key={option.value}>
-                <label
-                  key={option.value}
-                  className="flex items-center gap-1 w-max"
-                >
+                <label className="flex items-center gap-1 w-max">
                   <input
                     type="radio"
                     value={option.value}
-                    {...register("question1")}
+                    {...register(q.id as keyof QuizFormType)}
                     className="appearance-none h-6 w-6 border border-primary-500 rounded-sm checked:bg-primary-500 checked:border-transparent focus:outline-none relative"
                   />
                   <span className="ml-2 w-max text-sm md:text-md text-gray-600">

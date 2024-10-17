@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
+import { routes } from "./store/local/routes.static";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const justHome = true;
 
   if (!pathname.startsWith("/auth")) {
     const isVerifiedCookie = request.cookies.get("is_verified");
@@ -11,10 +11,6 @@ export function middleware(request: NextRequest) {
     if (!hasVerifyToken) {
       return NextResponse.redirect(new URL(routes.auth.login, request.url));
     }
-  }
-
-  if (justHome && !["/"].includes(pathname)) {
-    return NextResponse.redirect(new URL("/", request.url));
   }
 
   return NextResponse.next();
