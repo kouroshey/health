@@ -23,8 +23,8 @@ const VerifyLoginForm = () => {
   } = methods;
 
   const onSubmit: SubmitHandler<VerifyFormType> = () => {
-    router.push("/");
     Cookies.set("is_verified", "true", { expires: 7 });
+    router.push("/");
   };
   return (
     <FormProvider {...methods}>
