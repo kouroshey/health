@@ -9,8 +9,6 @@ export function middleware(request: NextRequest) {
     const isVerifiedCookie = request.cookies.get("is_verified");
     const hasVerifyToken = isVerifiedCookie?.value === "true";
     if (!hasVerifyToken) {
-      console.log(hasVerifyToken);
-      console.log(isVerifiedCookie);
       return NextResponse.redirect(new URL(routes.auth.login, request.url));
     }
   }
