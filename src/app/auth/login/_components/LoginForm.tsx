@@ -28,6 +28,7 @@ const LoginForm = () => {
   const onSubmit: SubmitHandler<LoginFormType> = () => {
     router.push(routes.auth.verifyLogin);
   };
+
   return (
     <FormProvider {...methods}>
       <form className="form-center" onSubmit={handleSubmit(onSubmit)}>

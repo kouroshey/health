@@ -5,7 +5,7 @@ const subUserDashboardPage = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       <BackPage title={`پروفایل`} link="/subset" />
-      <SubUserDashboard id={+params.id} />
+      <SubUserDashboard id={Number(params.id)} />
     </div>
   );
 };

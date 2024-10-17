@@ -1,3 +1,4 @@
+chartjs
 clsx
 commitlint
 hookform
