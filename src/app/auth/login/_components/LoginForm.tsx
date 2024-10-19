@@ -10,23 +10,27 @@ import {
   LoginFormSchema,
   LoginFormType,
 } from "@/app/auth/login/_models/validations";
-import { useRouter } from "next/navigation";
-import { routes } from "@/store/local/routes.static";
+import { useLogin } from "../../api/useLogin";
 
 const LoginForm = () => {
+  const { mutateAsync: login } = useLogin();
+
   const methods = useForm<LoginFormType>({
     resolver: zodResolver(LoginFormSchema),
   });
-  const router = useRouter();
 
   const {
     handleSubmit,
     formState: { errors },
   } = methods;
-  console.log(errors);
 
-  const onSubmit: SubmitHandler<LoginFormType> = () => {
-    router.push(routes.auth.verifyLogin);
+  const onSubmit: SubmitHandler<LoginFormType> = async (data) => {
+    const result = await login(data);
+    if (result.code == 200) {
+      console.log(result);
+    } else {
+      console.log("error!");
+    }
   };
 
   return (
@@ -36,7 +40,7 @@ const LoginForm = () => {
           type="text"
           label="شماره موبایل"
           placeholder="*********09"
-          name="phone"
+          name="mobile"
           icon={<BsPhone color="gray" />}
           errors={errors}
           maxLength={11}
