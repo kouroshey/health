@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import MobileHeader from "@/components/layout/MobileHeader";
 
 import "./globals.css";
+import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
 
 export const metadata: Metadata = {
   title: "نارنج",
@@ -52,8 +53,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
-        <MobileHeader />
-        <div className="container pb-4">{children}</div>
+        <ReactQueryProvider>
+          <MobileHeader />
+          <div className="container pb-4">{children}</div>
+        </ReactQueryProvider>
       </body>
     </html>
   );
