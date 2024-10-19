@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { login, verifyLogin } from "./api";
+import { login, verifyLogin } from "./authApi";
 import { VerifyLoginParams } from "./types/request";
 
 const useLogin = () => {

@@ -1,10 +1,11 @@
+import appConfig from "@/config/appConfig";
 import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "نارنج",
-    short_name: "نارنج",
-    description: "سلامت کودکان",
+    name: appConfig.app_name,
+    short_name: appConfig.app_name,
+    description: appConfig.app_description,
     display: "standalone",
     orientation: "portrait",
     theme_color: "#f48e0c",
@@ -23,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         purpose: "any",
         sizes: "512x512",
-        src: "icon512_rounded.png",
+        src: appConfig.logo,
         type: "image/png",
       },
     ],
