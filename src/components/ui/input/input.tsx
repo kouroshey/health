@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { InputProps } from "./types";
 import { InputErrorMessage } from "./InputErrorMessage";
 import { useFormContext } from "react-hook-form";
@@ -31,14 +31,15 @@ export const Input: FC<InputProps> = ({
   maxLength,
   minLength,
 }) => {
-  const [inputPhrase, setInputPhrase] = useState("");
-  const { register } = useFormContext();
+  const { register, watch } = useFormContext();
   const hasError = Object.prototype.hasOwnProperty.call(errors, name);
   const iconElem = (
     <span className="absolute top-1/2 left-5 transform -translate-x-1/2 -translate-y-1/2">
       {icon ? icon : ""}
     </span>
   );
+
+  const inputValue = watch(name, "");
 
   return (
     <div className="form w-full">
@@ -58,13 +59,10 @@ export const Input: FC<InputProps> = ({
             className={inputStyles({ error: hasError })}
             maxLength={maxLength}
             minLength={minLength}
-            onChange={(event) => {
-              setInputPhrase(event.target.value);
-            }}
           />
           {maxLength && (
             <span className="absolute text-gray-500 left-0 -top-4 text-xs">
-              {maxLength}/{inputPhrase.length}
+              {inputValue.length}/{maxLength}
             </span>
           )}
         </div>
