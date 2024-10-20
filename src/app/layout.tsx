@@ -11,9 +11,15 @@ import Providers from "./providers";
 export const metadata: Metadata = {
   title: appConfig.app_name,
   description: appConfig.app_description,
-  generator: "Next.js",
   manifest: "/manifest.json",
-  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  keywords: [
+    "parens",
+    "health",
+    "sleep",
+    "diet",
+    "mental-health",
+    "physical-activity",
+  ],
   icons: [
     { rel: "icon", url: appConfig.logo },
     { rel: "apple-touch-icon", url: appConfig.logo },
