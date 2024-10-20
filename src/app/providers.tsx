@@ -10,7 +10,7 @@ function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        staleTime: 60 * 100,
+        staleTime: 60 * 1000,
       },
     },
   });
@@ -19,11 +19,8 @@ function makeQueryClient() {
 let browserQueryClient: QueryClient | undefined = undefined;
 
 function getQueryClient() {
-  if (isServer) {
-    // Server: always create a new query client
-    return makeQueryClient();
-  } else {
-    // Browser: reuse the same query client
+  if (isServer) return makeQueryClient();
+  else {
     if (!browserQueryClient) browserQueryClient = makeQueryClient();
     return browserQueryClient;
   }
