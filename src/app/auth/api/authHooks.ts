@@ -13,10 +13,10 @@ const useVerifyLogin = () => {
   });
 };
 
-const useSignup = () => {
+const useSignUp = () => {
   return useMutation({
     mutationFn: signup,
   });
 };
 
-export { useLogin, useVerifyLogin, useSignup };
+export { useLogin, useVerifyLogin, useSignUp };

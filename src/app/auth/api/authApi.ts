@@ -18,7 +18,7 @@ const login = async (
     },
   )}`;
 
-  return await apiRequest<ApiResponse<LoginResponse>>(url);
+  return await apiRequest<LoginResponse>(url);
 };
 
 const verifyLogin = async (
@@ -29,13 +29,13 @@ const verifyLogin = async (
     otp_token: params.otp_token,
   })}`;
 
-  return await apiRequest<ApiResponse<VerifyLoginResponse>>(url);
+  return await apiRequest<VerifyLoginResponse>(url);
 };
 
 const signup = async (
   params: SignupParams,
 ): Promise<ApiResponse<SignupResponse | null>> => {
-  const url = `${appConfig.baseUrl}/${authRoutes.login}?${new URLSearchParams({
+  const url = `${appConfig.baseUrl}/${authRoutes.signUp}?${new URLSearchParams({
     mobile: params.mobile,
     otp_token: params.otp_token,
     name: params.name,
@@ -43,7 +43,9 @@ const signup = async (
     gender: params.gender,
   })}`;
 
-  return await apiRequest<ApiResponse<SignupResponse>>(url);
+  return await apiRequest<SignupResponse>(url, {
+    method: "POST",
+  });
 };
 
 export { verifyLogin, login, signup };

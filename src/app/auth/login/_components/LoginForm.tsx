@@ -33,7 +33,11 @@ const LoginForm = () => {
     const result = await login(data);
     if (result.code === 200) {
       setCookie(COOKIES_TEMPLATE.mobile, data.mobile);
-      router.push(PATH_TEMPLATE.auth.verifyLogin);
+      if (result.result) {
+        router.push(PATH_TEMPLATE.auth.verifyLogin);
+      } else {
+        router.push(PATH_TEMPLATE.auth.signUp);
+      }
     } else {
       console.log("error!");
       toast.error("ش");

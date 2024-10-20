@@ -39,7 +39,7 @@ const COOKIES_TEMPLATE = {
 const PATH_TEMPLATE = {
   auth: {
     login: "/auth/login",
-    signup: "/auth/signup",
+    signUp: "/auth/sign-up",
     verifyLogin: "/auth/verify-login",
   },
   main: {

@@ -11,10 +11,12 @@ import { getCookie, setCookie } from "@/lib/helpers/cookie";
 import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 import { useEffect, useState } from "react";
 import { useLogin, useVerifyLogin } from "../../api/authHooks";
+import { useUserStore } from "@/store/users";
 
 const VerifyLoginForm = () => {
   const { mutateAsync: verifyLogin } = useVerifyLogin();
   const { mutateAsync: login } = useLogin();
+  const user = useUserStore((state) => state.user);
 
   const [isResendActive, setIsResendActive] = useState(false);
   const [mobile, setMobile] = useState("");
@@ -25,10 +27,12 @@ const VerifyLoginForm = () => {
       const mobileNumber = await getCookie(COOKIES_TEMPLATE.mobile);
       if (mobileNumber) {
         setMobile(mobileNumber.value);
+      } else {
+        router.push(PATH_TEMPLATE.auth.login);
       }
     };
     getMobileFromCookie();
-  }, []);
+  });
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -67,7 +71,6 @@ const VerifyLoginForm = () => {
     mode: "onChange",
   });
   const router = useRouter();
-  const isOldUser = true;
 
   const {
     handleSubmit,
@@ -78,15 +81,14 @@ const VerifyLoginForm = () => {
     if (mobile) {
       const result = await verifyLogin({
         mobile: mobile,
-        otp_token: data.otp_code,
+        otp_token: data.otp_token,
       });
       if (result.code === 200) {
-        setCookie(COOKIES_TEMPLATE.otpCode, data.otp_code);
-        if (isOldUser) {
-          setCookie("is_verified", "true");
-          router.push(PATH_TEMPLATE.main.home);
+        setCookie(COOKIES_TEMPLATE.otpCode, data.otp_token);
+        if (user.isNewUser) {
+          router.push(PATH_TEMPLATE.auth.signUp);
         } else {
-          router.push(PATH_TEMPLATE.auth.signup);
+          router.push(PATH_TEMPLATE.main.home);
         }
       }
     }
@@ -101,7 +103,7 @@ const VerifyLoginForm = () => {
         <Input
           type="text"
           label="کد تایید"
-          name="otp_code"
+          name="otp_token"
           icon={<BiSolidMessage color="gray" />}
           errors={errors}
           maxLength={4}
