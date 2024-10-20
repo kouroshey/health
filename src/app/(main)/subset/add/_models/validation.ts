@@ -4,7 +4,7 @@ export const AddSubFormSchema = z.object({
   fullName: z.string().min(5, {
     message: "نام و نام خانوادگی خود را کامل وارد کنید",
   }),
-  birthdate: z.number().min(1, { message: "تاریخ تولد خود را وارد کنید." }),
+  birthDate: z.number().min(1, { message: "تاریخ تولد خود را وارد کنید." }),
   gender: z.object({
     value: z.string(),
     label: z.string(),

@@ -88,7 +88,7 @@ const AddSubForm = () => {
             />
             <DateInput
               label="تاریخ تولد"
-              name="birthdate"
+              name="birthDate"
               errors={errors}
               placeholder="تاریخ تولد را وارد کنید"
               isStartDate={true}

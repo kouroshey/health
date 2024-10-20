@@ -5,10 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
-import {
-  SignUpFormSchema,
-  SignUpFormType,
-} from "@/app/auth/signUp/_models/validations";
+import { SignUpFormSchema, SignUpFormType } from "../_models/validations";
 // import { useSignUp } from "../../api/authHooks";
 import { useState } from "react";
 import { Option, SelectOptions } from "@/components/ui/input/types";
