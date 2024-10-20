@@ -1,6 +1,5 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { login, verifyLogin } from "./authApi";
-import { VerifyLoginParams } from "./types/request";
+import { useMutation } from "@tanstack/react-query";
+import { login, signup, verifyLogin } from "./authApi";
 
 const useLogin = () => {
   return useMutation({
@@ -8,12 +7,16 @@ const useLogin = () => {
   });
 };
 
-const useVerifyLogin = (params: VerifyLoginParams) => {
-  return useQuery({
-    queryKey: ["verifyLogin", params],
-    queryFn: () => verifyLogin(params),
-    enabled: false,
+const useVerifyLogin = () => {
+  return useMutation({
+    mutationFn: verifyLogin,
   });
 };
 
-export { useLogin, useVerifyLogin };
+const useSignup = () => {
+  return useMutation({
+    mutationFn: signup,
+  });
+};
+
+export { useLogin, useVerifyLogin, useSignup };

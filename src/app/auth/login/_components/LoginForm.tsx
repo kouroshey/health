@@ -11,9 +11,13 @@ import {
   LoginFormType,
 } from "@/app/auth/login/_models/validations";
 import { useLogin } from "../../api/authHooks";
+import { useRouter } from "next/navigation";
+import { authRoutes } from "@/config/apiRoutes";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const { mutateAsync: login } = useLogin();
+  const router = useRouter();
 
   const methods = useForm<LoginFormType>({
     resolver: zodResolver(LoginFormSchema),
@@ -27,9 +31,10 @@ const LoginForm = () => {
   const onSubmit: SubmitHandler<LoginFormType> = async (data) => {
     const result = await login(data);
     if (result.code == 200) {
-      console.log(result);
+      router.push(authRoutes.verifyLogin);
     } else {
       console.log("error!");
+      toast.error("ش");
     }
   };
 

@@ -1,4 +1,4 @@
-export const acceptedFileTypes = [
+const acceptedFileTypes = [
   "image/*",
   "image/jpeg",
   "image/png",
@@ -28,3 +28,10 @@ export const acceptedFileTypes = [
   ".xls",
   ".xlsx",
 ] as const;
+
+const COOKIES_TEMPLATE = {
+  accessToken: "access_token",
+  refreshToken: "refresh_token",
+};
+
+export { acceptedFileTypes, COOKIES_TEMPLATE };

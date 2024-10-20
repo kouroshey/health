@@ -1,23 +1,47 @@
 import { ApiResponse } from "@/types";
-import { LoginParams, VerifyLoginParams } from "./types/request";
-import { VerifyLoginResponse } from "./types/response";
+import { LoginParams, SignupParams, VerifyLoginParams } from "./types/request";
+import {
+  LoginResponse,
+  SignupResponse,
+  VerifyLoginResponse,
+} from "./types/response";
+import { apiRequest } from "@/lib/apiRequest";
+import appConfig from "@/config/appConfig";
+import { authRoutes } from "@/config/apiRoutes";
 
 const login = async (params: LoginParams): Promise<ApiResponse<boolean>> => {
-  const response = await fetch(
-    `https://narenj.demo.khateroshan.com/api/v1/user/verify?mobile=${params.mobile}`,
-  );
-  const data = await response.json();
-  return data;
+  const url = `${appConfig.baseUrl}/${authRoutes.verifyLogin}?${new URLSearchParams(
+    {
+      mobile: params.mobile,
+    },
+  )}`;
+
+  return await apiRequest<ApiResponse<LoginResponse>>(url);
 };
 
 const verifyLogin = async (
   params: VerifyLoginParams,
 ): Promise<ApiResponse<VerifyLoginResponse | null>> => {
-  const response = await fetch(
-    `https://narenj.demo.khateroshan.com/api/v1/user/login?mobile=${params.mobile}&otp_token=${params.otp_token}`,
-  );
-  const data = await response.json();
-  return data;
+  const url = `${appConfig.baseUrl}/${authRoutes.login}?${new URLSearchParams({
+    mobile: params.mobile,
+    otp_token: params.otp_token,
+  })}`;
+
+  return await apiRequest<ApiResponse<VerifyLoginResponse>>(url);
 };
 
-export { verifyLogin, login };
+const signup = async (
+  params: SignupParams,
+): Promise<ApiResponse<SignupResponse | null>> => {
+  const url = `${appConfig.baseUrl}/${authRoutes.login}?${new URLSearchParams({
+    mobile: params.mobile,
+    otp_token: params.otp_token,
+    name: params.name,
+    lastname: params.lastname,
+    gender: params.gender,
+  })}`;
+
+  return await apiRequest<ApiResponse<SignupResponse>>(url);
+};
+
+export { verifyLogin, login, signup };

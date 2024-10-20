@@ -5,7 +5,7 @@ export type FormFieldNames =
   | "mobile"
   | "phone"
   | "name"
-  | "family_name"
+  | "lastname"
   | "verify_code"
   | "fullName"
   | "birthdate"
