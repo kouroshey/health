@@ -1,4 +1,4 @@
-export interface VerifyLoginResponse {
+type VerifyLoginResponse = {
   id: number;
   name: string;
   lastname: string;
@@ -13,4 +13,10 @@ export interface VerifyLoginResponse {
   createdAt: Date;
   updatedAt: Date;
   accessToken: string;
-}
+};
+
+type SignupResponse = VerifyLoginResponse;
+
+type LoginResponse = boolean;
+
+export type { VerifyLoginResponse, LoginResponse, SignupResponse };

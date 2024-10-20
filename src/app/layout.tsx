@@ -4,17 +4,19 @@ import localFont from "next/font/local";
 import MobileHeader from "@/components/layout/MobileHeader";
 
 import "./globals.css";
-import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
+import appConfig from "@/config/appConfig";
+import { Toaster } from "react-hot-toast";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
-  title: "نارنج",
-  description: "پایش و کنترل سلامت کودکان",
+  title: appConfig.app_name,
+  description: appConfig.app_description,
   generator: "Next.js",
   manifest: "/manifest.json",
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
   icons: [
-    { rel: "icon", url: "/icons-orange.png" },
-    { rel: "apple-touch-icon", url: "/icons-orange.png" },
+    { rel: "icon", url: appConfig.logo },
+    { rel: "apple-touch-icon", url: appConfig.logo },
   ],
 };
 
@@ -53,10 +55,20 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
-        <ReactQueryProvider>
+        <Providers>
           <MobileHeader />
+          <Toaster
+            toastOptions={{
+              className: "",
+              duration: 3000,
+              style: {
+                background: "#363636",
+                color: "#fff",
+              },
+            }}
+          />
           <div className="container pb-4">{children}</div>
-        </ReactQueryProvider>
+        </Providers>
       </body>
     </html>
   );

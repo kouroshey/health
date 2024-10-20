@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Spinner } from "../spinner/Spinner";
-import { acceptedFileTypes } from "@/enumerations";
+import { acceptedFileTypes } from "@/lib/enumurations";
 import Button from "../button/button";
 import { FaFileArrowUp } from "react-icons/fa6";
 
