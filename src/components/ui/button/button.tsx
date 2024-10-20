@@ -61,7 +61,7 @@ const Button: FC<ButtonProps> = ({
   endIcon,
   children,
   className,
-  isDisable, // توجه: تغییر `isDisable` به `isDisabled`
+  isDisable,
   ...other
 }) => {
   const colorStyle = variantStyles[variant]?.[color];
