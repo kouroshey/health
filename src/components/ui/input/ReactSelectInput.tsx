@@ -50,7 +50,7 @@ export const ReactSelectInput: FC<ReactSelectProps> = ({
 
   return (
     <div className="w-full">
-      <div className="mb-5">
+      <div>
         <label
           htmlFor={name}
           className="text-gray-400 font-light text-sm md:text-md"

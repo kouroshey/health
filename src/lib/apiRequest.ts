@@ -10,7 +10,7 @@ export const apiRequest = async <T>(
 
     if (!response.ok) {
       const data = await response.json();
-      if (response.status === 422) {
+      if (response.status === 400) {
         toast.error(data.message || "خطا در دریافت اطلاعات");
         return Promise.reject(
           new Error(data.message || "خطا در دریافت اطلاعات"),

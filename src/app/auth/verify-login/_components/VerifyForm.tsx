@@ -7,16 +7,18 @@ import Button from "@/components/ui/button/button";
 import { BiSolidMessage } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { getCookie, setCookie } from "@/lib/helpers/cookie";
+import { getCookie, removeCookie, setCookie } from "@/lib/helpers/cookie";
 import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 import { useEffect, useState } from "react";
 import { useLogin, useVerifyLogin } from "../../api/authHooks";
-import { useUserStore } from "@/store/users";
+import { useUserActions } from "@/store/users";
+import toast from "react-hot-toast";
+import { Spinner } from "@/components/ui/spinner/Spinner";
 
 const VerifyLoginForm = () => {
-  const { mutateAsync: verifyLogin } = useVerifyLogin();
+  const { mutateAsync: verifyLogin, isPending } = useVerifyLogin();
   const { mutateAsync: login } = useLogin();
-  const user = useUserStore((state) => state.user);
+  const { setUser } = useUserActions();
 
   const [isResendActive, setIsResendActive] = useState(false);
   const [mobile, setMobile] = useState("");
@@ -83,13 +85,16 @@ const VerifyLoginForm = () => {
         mobile: mobile,
         otp_token: data.otp_token,
       });
-      if (result.code === 200) {
-        setCookie(COOKIES_TEMPLATE.otpCode, data.otp_token);
-        if (user.isNewUser) {
-          router.push(PATH_TEMPLATE.auth.signUp);
-        } else {
-          router.push(PATH_TEMPLATE.main.home);
-        }
+      if (result.code === 200 && result.result) {
+        await setCookie(
+          COOKIES_TEMPLATE.accessToken,
+          result.result?.accessToken,
+        );
+        removeCookie(COOKIES_TEMPLATE.mobile);
+        removeCookie(COOKIES_TEMPLATE.otpCode);
+        setUser({ ...result.result, isNewUser: false });
+        router.push(PATH_TEMPLATE.main.home);
+        toast.success("شما با موفقیت وارد شدید");
       }
     }
   };
@@ -114,11 +119,11 @@ const VerifyLoginForm = () => {
           className={
             isResendActive
               ? "text-primary text-sm cursor-pointer"
-              : "text-gray-400 text-sm"
+              : "text-gray-300 text-sm"
           }
         >
           {isResendActive
-            ? "ارسال دوباره‌ی کد"
+            ? "ارسال مجدد کد"
             : `ارسال مجدد تا ${activationTime} ثانیه دیگر`}
         </span>
         <Image
@@ -127,7 +132,14 @@ const VerifyLoginForm = () => {
           width={100}
           height={100}
         />
-        <Button variant="contained" color="primary" className="w-full">
+        <Button
+          loadingContent={<Spinner size={"small"} />}
+          variant="contained"
+          color="primary"
+          className="w-full"
+          isDisable={isPending}
+          isLoading={isPending}
+        >
           تایید
         </Button>
       </form>

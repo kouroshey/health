@@ -15,13 +15,15 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { setCookie } from "@/lib/helpers/cookie";
 import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
+import { Spinner } from "@/components/ui/spinner/Spinner";
 
 const LoginForm = () => {
-  const { mutateAsync: login } = useLogin();
+  const { mutateAsync: login, isPending } = useLogin();
   const router = useRouter();
 
   const methods = useForm<LoginFormType>({
     resolver: zodResolver(LoginFormSchema),
+    mode: "all",
   });
 
   const {
@@ -62,7 +64,14 @@ const LoginForm = () => {
           width={100}
           height={100}
         />
-        <Button variant="contained" color="primary" className="w-full">
+        <Button
+          loadingContent={<Spinner size={"small"} />}
+          variant="contained"
+          color="primary"
+          className="w-full"
+          isDisable={isPending}
+          isLoading={isPending}
+        >
           ارسال کد تایید
         </Button>
       </form>
