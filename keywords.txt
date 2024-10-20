@@ -20,6 +20,5 @@ unindex
 vazir
 Vazirmatn
 webp
+zustand
 بروزرسانی
-lastname
-enumurations
