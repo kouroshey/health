@@ -1,6 +1,6 @@
-import SignupForm from "./_components/SignupForm";
+import SignUpForm from "./_components/SignUpForm";
 
-const SignupPage = () => {
+const SignUpPage = () => {
   return (
     <div className="w-full gap-3 px-3 backdrop-blur-lg">
       <div className="flex flex-col gap-4 justify-start items-center h-full w-full">
@@ -10,10 +10,10 @@ const SignupPage = () => {
             خوش آمدید! <br /> برای تکمیل ثبت نام لطفا اطلاعات خود را وارد کنید
           </p>
         </div>
-        <SignupForm />
+        <SignUpForm />
       </div>
     </div>
   );
 };
 
-export default SignupPage;
+export default SignUpPage;

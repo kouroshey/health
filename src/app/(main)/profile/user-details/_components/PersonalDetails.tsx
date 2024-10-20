@@ -57,7 +57,7 @@ const PersonalDetails = () => {
           <Input
             errors={errors}
             label="نام خانوادگی"
-            name="family_name"
+            name="lastname"
             placeholder="نام خانوادگی شما ..."
             type="text"
           />

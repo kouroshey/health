@@ -4,18 +4,14 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
-import {
-  SignupFormSchema,
-  SignupFormType,
-} from "@/app/auth/signup/_models/validations";
-// import { useSignup } from "../../api/authHooks";
+import { SignUpFormSchema, SignUpFormType } from "../_models/validations";
+// import { useSignUp } from "../../api/authHooks";
 import { useState } from "react";
 import { Option, SelectOptions } from "@/components/ui/input/types";
 import { ReactSelectInput } from "@/components/ui/input/ReactSelectInput";
-import { getCookie } from "@/lib/helpers/cookie";
 
-const SignupForm = () => {
-  // const { mutateAsync: signup } = useSignup();
+const SignUpForm = () => {
+  // const { mutateAsync: signUp } = useSignUp();
   const [genderOptions] = useState<SelectOptions>([
     { label: "مذکر", value: "male" },
     { label: "مونث", value: "female" },
@@ -24,8 +20,8 @@ const SignupForm = () => {
     value: "",
     label: "",
   });
-  const methods = useForm<SignupFormType>({
-    resolver: zodResolver(SignupFormSchema),
+  const methods = useForm<SignUpFormType>({
+    resolver: zodResolver(SignUpFormSchema),
     defaultValues: {
       name: "",
       lastname: "",
@@ -39,12 +35,8 @@ const SignupForm = () => {
     setValue,
   } = methods;
 
-  const onSubmit: SubmitHandler<SignupFormType> = async () => {
-    const mobileNumber = getCookie("mobile");
-    const otpCode = getCookie("otp_code");
-    console.log(mobileNumber, otpCode);
-
-    // const result = await signup(data);
+  const onSubmit: SubmitHandler<SignUpFormType> = async () => {
+    // const result = await signUp(data);
     // if (result.code == 200) {
     //   console.log(result);
     // } else {
@@ -88,4 +80,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default SignUpForm;

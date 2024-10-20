@@ -1,7 +1,9 @@
 chartjs
 clsx
 commitlint
+datepicker
 hookform
+lastname
 linebreak
 lucide
 metods
@@ -13,10 +15,10 @@ Repost
 serwist
 Swiper
 tailwindcss
+tanstack
 unindex
 vazir
 Vazirmatn
 webp
+zustand
 بروزرسانی
-lastname
-enumurations

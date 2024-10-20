@@ -13,6 +13,7 @@ module.exports = {
         "style",
         "refactor",
         "ci",
+        "merge",
         "test",
         "revert",
         "perf",

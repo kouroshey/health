@@ -35,7 +35,7 @@ const Result = () => {
           <ResultCard
             path="/diet/supplementary-advice"
             icon={<FaWeightScale />}
-            name="روش‌های کاهش وزن"
+            name="روش‌های کاهش استرس"
             bgColor="bg-green-500"
           />
         </div>
@@ -43,7 +43,7 @@ const Result = () => {
           <ResultCard
             path="/diet/supplementary-advice"
             icon={<FaArrowUpLong />}
-            name="توصیه‌های افزایش قد"
+            name="روش‌های شاد بودن"
             bgColor="bg-indigo-300"
           />
         </div>

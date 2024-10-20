@@ -19,24 +19,24 @@ const items: MealItem[] = [
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
 ];
 
-export default function Mealmanagement() {
+export default function MealManagement() {
   const router = useRouter();
   return (
     <main className="flex flex-col">
@@ -84,7 +84,7 @@ export default function Mealmanagement() {
         />
         <MealDetails items={items} label="شام" icon={<CiPizza />} />
       </div>
-      <div className="flex gap-2 justify-between">
+      <div className="flex gap-2 justify-between py-4">
         <div className="flex gap-2">
           <Button
             className="text-white"

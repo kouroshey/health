@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const SignupFormSchema = z.object({
+export const SignUpFormSchema = z.object({
   name: z.string().min(3, {
     message: "نام باید حداقل ۳ کاراکتر داشته باشد",
   }),
@@ -13,4 +13,4 @@ export const SignupFormSchema = z.object({
   }),
 });
 
-export type SignupFormType = z.infer<typeof SignupFormSchema>;
+export type SignUpFormType = z.infer<typeof SignUpFormSchema>;

@@ -8,7 +8,7 @@ import { BiSolidMessage } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { getCookie, setCookie } from "@/lib/helpers/cookie";
-import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumurations";
+import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 import { useEffect, useState } from "react";
 import { useLogin, useVerifyLogin } from "../../api/authHooks";
 

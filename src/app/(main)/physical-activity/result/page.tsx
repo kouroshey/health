@@ -1,9 +1,9 @@
 import BackPage from "@/components/layout/BackPage";
 import { routes } from "@/store/local/routes.static";
 import Image from "next/image";
-import Link from "next/link";
 import physicalActivityBg from "public/physical-activity-bg.jpg";
-import ResaultCard from "./_component/ResultCard";
+import ResultCard from "./_component/ResultCard";
+import { FaArrowUpLong, FaWeightScale } from "react-icons/fa6";
 
 const Result = () => {
   return (
@@ -34,28 +34,22 @@ const Result = () => {
         بردارید!
       </p>
       <div className="flex justify-between">
-        <Link
-          href={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
-          className="w-full h-24"
-        >
-          <ResaultCard
-            path={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
-            icon={"FaWeightScale"}
+        <div className="w-full h-24">
+          <ResultCard
+            path="/diet/supplementary-advice"
+            icon={<FaWeightScale />}
             name="روش‌های کاهش استرس"
             bgColor="bg-green-500"
           />
-        </Link>
-        <Link
-          href={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
-          className="w-full h-24"
-        >
-          <ResaultCard
-            path={`${routes.diet.root}/${routes.diet.supplementaryAdvice}`}
-            icon={"FaArrowUpLong"}
-            name="توصیه‌های شاد بودن"
+        </div>
+        <div className="w-full h-24">
+          <ResultCard
+            path="/diet/supplementary-advice"
+            icon={<FaArrowUpLong />}
+            name="روش‌های شاد بودن"
             bgColor="bg-indigo-300"
           />
-        </Link>
+        </div>
       </div>
     </main>
   );

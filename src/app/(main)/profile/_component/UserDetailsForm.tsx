@@ -61,7 +61,7 @@ const UserDetailsForm: React.FC<UserDetailsProps> = ({ setIsEditMode }) => {
           <Input
             errors={errors}
             label="نام خانوادگی"
-            name="family_name"
+            name="lastname"
             placeholder="نام خانوادگی خود را وارد کنید"
             type="text"
           />

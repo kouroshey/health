@@ -14,7 +14,7 @@ import { useLogin } from "../../api/authHooks";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { setCookie } from "@/lib/helpers/cookie";
-import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumurations";
+import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 
 const LoginForm = () => {
   const { mutateAsync: login } = useLogin();
