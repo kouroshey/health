@@ -19,24 +19,24 @@ const items: MealItem[] = [
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
   {
     img: SaladImg,
     title: "سالاد شیرازی",
-    callories: "۱۵۰",
+    calories: "۱۵۰",
     weight: "۱۸۰",
   },
 ];
 
-export default function Mealmanagement() {
+export default function MealManagement() {
   const router = useRouter();
   return (
     <main className="flex flex-col">

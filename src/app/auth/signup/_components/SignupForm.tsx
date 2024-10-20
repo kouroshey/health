@@ -6,16 +6,16 @@ import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
 import Image from "next/image";
 import {
-  SignupFormSchema,
-  SignupFormType,
-} from "@/app/auth/signup/_models/validations";
-// import { useSignup } from "../../api/authHooks";
+  SignUpFormSchema,
+  SignUpFormType,
+} from "@/app/auth/signUp/_models/validations";
+// import { useSignUp } from "../../api/authHooks";
 import { useState } from "react";
 import { Option, SelectOptions } from "@/components/ui/input/types";
 import { ReactSelectInput } from "@/components/ui/input/ReactSelectInput";
 
-const SignupForm = () => {
-  // const { mutateAsync: signup } = useSignup();
+const SignUpForm = () => {
+  // const { mutateAsync: signUp } = useSignUp();
   const [genderOptions] = useState<SelectOptions>([
     { label: "مذکر", value: "male" },
     { label: "مونث", value: "female" },
@@ -24,8 +24,8 @@ const SignupForm = () => {
     value: "",
     label: "",
   });
-  const methods = useForm<SignupFormType>({
-    resolver: zodResolver(SignupFormSchema),
+  const methods = useForm<SignUpFormType>({
+    resolver: zodResolver(SignUpFormSchema),
     defaultValues: {
       name: "",
       lastname: "",
@@ -39,8 +39,8 @@ const SignupForm = () => {
     setValue,
   } = methods;
 
-  const onSubmit: SubmitHandler<SignupFormType> = async () => {
-    // const result = await signup(data);
+  const onSubmit: SubmitHandler<SignUpFormType> = async () => {
+    // const result = await signUp(data);
     // if (result.code == 200) {
     //   console.log(result);
     // } else {
@@ -90,4 +90,4 @@ const SignupForm = () => {
   );
 };
 
-export default SignupForm;
+export default SignUpForm;

@@ -9,7 +9,7 @@ export interface MealItem {
   img: StaticImageData;
   title: string;
   weight: string;
-  callories: string;
+  calories: string;
 }
 
 export interface MealDetailsProps {
@@ -47,7 +47,7 @@ const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
                     {item.title}
                   </span>
                   <span className="text-sm md:text-md text-gray-500 font-normal">
-                    {item.callories} کالری
+                    {item.calories} کالری
                   </span>
                 </div>
                 <p className="text-xs text-gray-400 font-light">
