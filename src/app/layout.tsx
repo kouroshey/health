@@ -4,8 +4,9 @@ import localFont from "next/font/local";
 import MobileHeader from "@/components/layout/MobileHeader";
 
 import "./globals.css";
-import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
 import appConfig from "@/config/appConfig";
+import { Toaster } from "react-hot-toast";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: appConfig.app_name,
@@ -54,10 +55,20 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
       <body>
-        <ReactQueryProvider>
+        <Providers>
           <MobileHeader />
+          <Toaster
+            toastOptions={{
+              className: "",
+              duration: 3000,
+              style: {
+                background: "#363636",
+                color: "#fff",
+              },
+            }}
+          />
           <div className="container pb-4">{children}</div>
-        </ReactQueryProvider>
+        </Providers>
       </body>
     </html>
   );
