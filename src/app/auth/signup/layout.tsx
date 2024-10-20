@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "login",
-  description: "login page",
+  title: "ثبت نام",
+  description: "ثبت نام در ترنج",
 };
 
 const LoginLayout = ({ children }: { children: React.ReactNode }) => {

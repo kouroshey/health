@@ -32,6 +32,19 @@ const acceptedFileTypes = [
 const COOKIES_TEMPLATE = {
   accessToken: "access_token",
   refreshToken: "refresh_token",
+  otpCode: "otp_code",
+  mobile: "mobile",
 };
 
-export { acceptedFileTypes, COOKIES_TEMPLATE };
+const PATH_TEMPLATE = {
+  auth: {
+    login: "/auth/login",
+    signup: "/auth/signup",
+    verifyLogin: "/auth/verify-login",
+  },
+  main: {
+    home: "/",
+  },
+};
+
+export { acceptedFileTypes, COOKIES_TEMPLATE, PATH_TEMPLATE };

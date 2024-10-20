@@ -12,8 +12,9 @@ import {
 } from "@/app/auth/login/_models/validations";
 import { useLogin } from "../../api/authHooks";
 import { useRouter } from "next/navigation";
-import { authRoutes } from "@/config/apiRoutes";
 import toast from "react-hot-toast";
+import { setCookie } from "@/lib/helpers/cookie";
+import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumurations";
 
 const LoginForm = () => {
   const { mutateAsync: login } = useLogin();
@@ -30,8 +31,9 @@ const LoginForm = () => {
 
   const onSubmit: SubmitHandler<LoginFormType> = async (data) => {
     const result = await login(data);
-    if (result.code == 200) {
-      router.push(authRoutes.verifyLogin);
+    if (result.code === 200) {
+      setCookie(COOKIES_TEMPLATE.mobile, data.mobile);
+      router.push(PATH_TEMPLATE.auth.verifyLogin);
     } else {
       console.log("error!");
       toast.error("ش");

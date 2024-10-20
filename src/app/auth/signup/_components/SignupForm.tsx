@@ -4,7 +4,6 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
-import Image from "next/image";
 import {
   SignupFormSchema,
   SignupFormType,
@@ -13,6 +12,7 @@ import {
 import { useState } from "react";
 import { Option, SelectOptions } from "@/components/ui/input/types";
 import { ReactSelectInput } from "@/components/ui/input/ReactSelectInput";
+import { getCookie } from "@/lib/helpers/cookie";
 
 const SignupForm = () => {
   // const { mutateAsync: signup } = useSignup();
@@ -40,6 +40,10 @@ const SignupForm = () => {
   } = methods;
 
   const onSubmit: SubmitHandler<SignupFormType> = async () => {
+    const mobileNumber = getCookie("mobile");
+    const otpCode = getCookie("otp_code");
+    console.log(mobileNumber, otpCode);
+
     // const result = await signup(data);
     // if (result.code == 200) {
     //   console.log(result);
@@ -75,12 +79,6 @@ const SignupForm = () => {
             setActiveGender(value);
             setValue("gender", value);
           }}
-        />
-        <Image
-          src="/image/orange.svg"
-          alt="orange-image"
-          width={100}
-          height={100}
         />
         <Button variant="contained" color="primary" className="w-full">
           ثبت نام

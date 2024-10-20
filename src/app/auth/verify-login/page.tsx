@@ -9,7 +9,7 @@ const VerifyLoginPage = () => {
           <p className="primary-h2">لطفا کد تایید ارسال شده را وارد کنید</p>
           <Link
             href={"/login"}
-            className="text-gray-400 text-center w-max after:absolute after:w-full after:h-[2px] after:rounded-sm after:left-0 after:bg-primary relative after:-bottom-0 cursor-pointer hover:text-primary-600"
+            className="text-gray-400 text-center w-max cursor-pointer hover:text-primary-600"
           >
             تغییر شماره موبایل
           </Link>

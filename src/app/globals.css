@@ -4,9 +4,12 @@
 
 @layer components {
   .primary-h1 {
-    @apply font-bold text-xl text-center text-primary;
+    @apply font-bold text-2xl text-center text-primary;
   }
   .primary-h2 {
+    @apply font-bold text-xl text-center text-primary;
+  }
+  .primary-h3 {
     @apply font-bold text-lg text-center text-primary;
   }
   .flex-center {
