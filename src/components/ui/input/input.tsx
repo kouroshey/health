@@ -63,7 +63,7 @@ export const Input: FC<InputProps> = ({
             }}
           />
           {maxLength && (
-            <span className="absolute text-primary left-2 -bottom-6 text-sm">
+            <span className="absolute text-gray-500 left-0 -top-4 text-xs">
               {maxLength}/{inputPhrase.length}
             </span>
           )}
