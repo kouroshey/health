@@ -9,7 +9,9 @@ import { apiRequest } from "@/lib/apiRequest";
 import appConfig from "@/config/appConfig";
 import { authRoutes } from "@/config/apiRoutes";
 
-const login = async (params: LoginParams): Promise<ApiResponse<boolean>> => {
+const login = async (
+  params: LoginParams,
+): Promise<ApiResponse<LoginResponse>> => {
   const url = `${appConfig.baseUrl}/${authRoutes.verifyLogin}?${new URLSearchParams(
     {
       mobile: params.mobile,
