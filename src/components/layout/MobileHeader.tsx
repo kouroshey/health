@@ -8,7 +8,7 @@ import { RiHome5Fill } from "react-icons/ri";
 import { TbHeartRateMonitor } from "react-icons/tb";
 import { FaUsers } from "react-icons/fa6";
 
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import PaginationLink from "../ui/PaginationLink";
 import Button from "../ui/button/button";
 import { routes } from "@/store/local/routes.static";
@@ -45,7 +45,7 @@ const paths = [
     icon: <FaUsers size={20} />,
   },
   {
-    path: routes.logout,
+    path: "/logout",
     name: "خروج",
     knowAs: "personsList",
     icon: <IoExit size={20} />,
@@ -62,14 +62,6 @@ const MobileHeader = () => {
             <IoMenuOutline className="text-gray-500 outline-none" size={30} />
           </SheetTrigger>
           <SheetContent className="rounded-l-md text-xs">
-            <SheetHeader className="absolute left-2 top-0">
-              {/* <Image
-                src={"./icon512_maskable.png"}
-                alt="logo"
-                width={50}
-                height={50}
-              /> */}
-            </SheetHeader>
             <div className="py-5 text-xs">
               {paths.map((item, index) => {
                 const isActive = pathname === item.path;
