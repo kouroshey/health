@@ -7,9 +7,9 @@ export const apiRequest = async <T>(
 ): Promise<ApiResponse<T>> => {
   try {
     const response = await fetch(url, options);
+    const data: ApiResponse<T> = await response.json();
 
     if (!response.ok) {
-      const data = await response.json();
       if (response.status === 400) {
         toast.error(data.message || "خطا در دریافت اطلاعات");
         return Promise.reject(
@@ -20,7 +20,6 @@ export const apiRequest = async <T>(
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const data: ApiResponse<T> = await response.json();
     return data;
   } catch (error) {
     console.error("API Request Error:", error);
