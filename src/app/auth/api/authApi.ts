@@ -18,7 +18,7 @@ const login = async (
     },
   )}`;
 
-  return await apiRequest<ApiResponse<LoginResponse>>(url);
+  return await apiRequest<LoginResponse>(url);
 };
 
 const verifyLogin = async (
@@ -29,7 +29,7 @@ const verifyLogin = async (
     otp_token: params.otp_token,
   })}`;
 
-  return await apiRequest<ApiResponse<VerifyLoginResponse>>(url);
+  return await apiRequest<VerifyLoginResponse>(url);
 };
 
 const signup = async (
@@ -43,7 +43,9 @@ const signup = async (
     gender: params.gender,
   })}`;
 
-  return await apiRequest<ApiResponse<SignupResponse>>(url);
+  return await apiRequest<SignupResponse>(url, {
+    method: "POST",
+  });
 };
 
 export { verifyLogin, login, signup };
