@@ -67,17 +67,18 @@ const SignUpForm = () => {
 
   const resendCodeHandler = async () => {
     const formMobile = methods.getValues("mobile");
-    if (isResendActive && formMobile.length > 0) {
-      console.log("mobile exists");
-      try {
-        const result = await login({ mobile: formMobile });
-        if (result.code === 200) resetTimer();
-        else console.log("error!");
-      } catch (error) {
-        console.log(error);
-      }
+    if (isResendActive) {
+      if (formMobile.length > 0) {
+        console.log("mobile exists");
+        try {
+          const result = await login({ mobile: formMobile });
+          if (result.code === 200) resetTimer();
+          else console.log("error!");
+        } catch (error) {
+          console.log(error);
+        }
+      } else toast("لطفا شماره تلفن خود را وارد نمایید.");
     }
-    if (!formMobile) toast("لطفا شماره تلفن خود را وارد نمایید.");
   };
 
   return (
