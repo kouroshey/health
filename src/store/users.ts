@@ -2,11 +2,13 @@ import { create } from "zustand";
 
 import { VerifyLoginResponse } from "@/app/auth/api/types/response";
 
-type State = { user: Partial<VerifyLoginResponse> };
+type User = Partial<VerifyLoginResponse> & { isNewUser: boolean };
+
+type State = { user: User };
 
 type Action = {
   actions: {
-    setUser: (user: Partial<VerifyLoginResponse>) => void;
+    setUser: (user: User) => void;
   };
 };
 
@@ -26,6 +28,7 @@ export const useUserStore = create<State & Action>()((set) => ({
     createdAt: undefined,
     updatedAt: undefined,
     accessToken: undefined,
+    isNewUser: true,
   },
   actions: {
     setUser: (user) => set((state) => ({ user: { ...state.user, ...user } })),
