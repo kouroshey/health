@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl" className={vazir.variable}>
-      <body>
+      <body className="md:bg-slate-50">
         <Providers>
           <MobileHeader />
           <Toaster

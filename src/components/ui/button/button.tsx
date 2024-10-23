@@ -72,7 +72,7 @@ const Button: FC<ButtonProps> = ({
       colorStyle,
       sizeStyles[size],
       className,
-      isDisable,
+      isDisable && "opacity-50 cursor-not-allowed",
     ),
     children: (
       <>
@@ -81,6 +81,7 @@ const Button: FC<ButtonProps> = ({
         {endIcon && endIcon}
       </>
     ),
+    disabled: isDisable,
     ...other,
   };
 
