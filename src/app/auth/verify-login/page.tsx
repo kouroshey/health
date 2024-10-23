@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import VerifyLoginForm from "./_components/VerifyForm";
 import { PATH_TEMPLATE } from "@/lib/enumerations";
 

@@ -1,78 +1,46 @@
 "use client";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
-import { VerifyFormSchema, VerifyFormType } from "../_models/validations";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "@/components/ui/input/input";
-import Button from "@/components/ui/button/button";
-import { BiSolidMessage } from "react-icons/bi";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+
+import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { BiSolidMessage } from "react-icons/bi";
+import toast from "react-hot-toast";
+
+import { VerifyFormSchema, VerifyFormType } from "../_models/validations";
+import { Input } from "@/components/ui/input/input";
+import Button from "@/components/ui/button/button";
 import { getCookie, removeCookie, setCookie } from "@/lib/helpers/cookie";
 import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
-import { useEffect, useState } from "react";
 import { useLogin, useVerifyLogin } from "../../api/authHooks";
 import { useUserActions } from "@/store/users";
-import toast from "react-hot-toast";
 import { Spinner } from "@/components/ui/spinner/Spinner";
+import { useResendTimer } from "@/hooks/useResendTimer";
 
 const VerifyLoginForm = () => {
+  const router = useRouter();
+
   const { mutateAsync: verifyLogin, isPending } = useVerifyLogin();
-  const { mutateAsync: login } = useLogin();
+  const { mutateAsync: login, isPending: resendPending } = useLogin();
   const { setUser } = useUserActions();
 
-  const [isResendActive, setIsResendActive] = useState(false);
+  const { isResendActive, activationTime, resetTimer } = useResendTimer(30);
   const [mobile, setMobile] = useState("");
-  const [activationTime, setActivationTime] = useState(30);
 
   useEffect(() => {
-    const getMobileFromCookie = async () => {
+    const validateMobileCookie = async () => {
       const mobileNumber = await getCookie(COOKIES_TEMPLATE.mobile);
-      if (mobileNumber) {
-        setMobile(mobileNumber.value);
-      } else {
-        router.push(PATH_TEMPLATE.auth.login);
-      }
+      if (mobileNumber) setMobile(mobileNumber.value);
     };
-    getMobileFromCookie();
+    validateMobileCookie();
   });
-
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (!isResendActive) {
-      interval = setInterval(() => {
-        setActivationTime((prev) => {
-          if (prev > 0) return prev - 1;
-          clearInterval(interval);
-          setIsResendActive(true);
-          return 0;
-        });
-      }, 1000);
-    }
-
-    return () => clearInterval(interval);
-  }, [isResendActive]);
-
-  const resendCodeHandler = async () => {
-    if (isResendActive && mobile) {
-      try {
-        const result = await login({ mobile });
-        if (result.code === 200) {
-          setIsResendActive(false);
-          setActivationTime(30);
-        } else {
-          console.log("error!");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
 
   const methods = useForm<VerifyFormType>({
     resolver: zodResolver(VerifyFormSchema),
     mode: "onChange",
   });
-  const router = useRouter();
 
   const {
     handleSubmit,
@@ -86,15 +54,27 @@ const VerifyLoginForm = () => {
         otp_token: data.otp_token,
       });
       if (result.code === 200 && result.result) {
+        await removeCookie(COOKIES_TEMPLATE.mobile);
+        await removeCookie(COOKIES_TEMPLATE.isNew);
         await setCookie(
           COOKIES_TEMPLATE.accessToken,
           result.result?.accessToken,
         );
-        removeCookie(COOKIES_TEMPLATE.mobile);
-        removeCookie(COOKIES_TEMPLATE.otpCode);
         setUser({ ...result.result, isNewUser: false });
         router.push(PATH_TEMPLATE.main.home);
         toast.success("شما با موفقیت وارد شدید");
+      }
+    }
+  };
+
+  const resendCodeHandler = async () => {
+    if (isResendActive && mobile) {
+      try {
+        const result = await login({ mobile });
+        if (result.code === 200) resetTimer();
+        else console.log("error!");
+      } catch (error) {
+        console.log(error);
       }
     }
   };
@@ -114,18 +94,22 @@ const VerifyLoginForm = () => {
           maxLength={4}
         />
 
-        <span
-          onClick={resendCodeHandler}
-          className={
-            isResendActive
-              ? "text-primary text-sm cursor-pointer"
-              : "text-gray-300 text-sm"
-          }
-        >
-          {isResendActive
-            ? "ارسال مجدد کد"
-            : `ارسال مجدد تا ${activationTime} ثانیه دیگر`}
-        </span>
+        {resendPending ? (
+          <Spinner size={"small"} className="text-white" />
+        ) : (
+          <span
+            onClick={resendCodeHandler}
+            className={
+              isResendActive
+                ? "text-primary text-sm cursor-pointer"
+                : "text-gray-300 text-sm"
+            }
+          >
+            {isResendActive
+              ? "ارسال مجدد کد"
+              : `ارسال مجدد تا ${activationTime} ثانیه دیگر`}
+          </span>
+        )}
         <Image
           src="/image/orange-glasses.svg"
           alt="orange-image"
@@ -133,7 +117,7 @@ const VerifyLoginForm = () => {
           height={100}
         />
         <Button
-          loadingContent={<Spinner size={"small"} />}
+          loadingContent={<Spinner size={"small"} className="text-white" />}
           variant="contained"
           color="primary"
           className="w-full"

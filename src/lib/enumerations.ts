@@ -34,6 +34,7 @@ const COOKIES_TEMPLATE = {
   refreshToken: "refresh_token",
   otpCode: "otp_code",
   mobile: "mobile",
+  isNew: "isNew",
 };
 
 const PATH_TEMPLATE = {

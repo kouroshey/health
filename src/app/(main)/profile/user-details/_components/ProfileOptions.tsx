@@ -40,7 +40,7 @@ const ProfileOptions = () => {
           key={index}
           className="text-gray-600 text-md md:text-lg bg-slate-50 hover:bg-slate-100 shadow-sm p-4 rounded-sm border border-gray-100"
         >
-          <Link className="flex items-center gap-2  " href={option.path}>
+          <Link className="flex items-center gap-2" href={option.path}>
             <span className="text-primary">{option.icon}</span>
             <span>{option.name}</span>
           </Link>
