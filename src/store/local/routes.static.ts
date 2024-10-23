@@ -2,7 +2,10 @@ export const routes = {
   auth: {
     login: "/auth/login",
     verifyLogin: "/auth/verify-login",
+    signUp: "/auth/sign-up",
   },
+  home: "/",
+  logout: "/logout",
   diet: {
     root: "/diet",
     supplementaryAdvice: "supplementary-advice",
@@ -32,5 +35,4 @@ export const routes = {
     add: "subset/add",
     dashboard: "subset/dashboard",
   },
-  logout: "logout",
 };
