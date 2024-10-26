@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -15,20 +14,13 @@ import { SignUpFormSchema, SignUpFormType } from "../_models/validations";
 import { useLogin, useSignUp } from "../../api/authHooks";
 import { Option, SelectOptions } from "@/components/ui/input/types";
 import { ReactSelectInput } from "@/components/ui/input/ReactSelectInput";
-import { useUserActions } from "@/store/users";
-import { removeCookie, setCookie } from "@/lib/helpers/cookie";
-import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 import { Spinner } from "@/components/ui/spinner/Spinner";
 import { useResendTimer } from "@/hooks/useResendTimer";
 
 const SignUpForm = () => {
   const { isResendActive, activationTime, resetTimer } = useResendTimer(30);
 
-  const { mutateAsync: signUp, isPending } = useSignUp();
   const { mutateAsync: login, isPending: resendPending } = useLogin();
-  const { setUser } = useUserActions();
-
-  const router = useRouter();
 
   const [genderOptions] = useState<SelectOptions>([
     { label: "مذکر", value: "1" },
@@ -53,16 +45,10 @@ const SignUpForm = () => {
     setValue,
   } = methods;
 
+  const { mutate: signUp, isPending } = useSignUp();
+
   const onSubmit: SubmitHandler<SignUpFormType> = async (data) => {
-    const result = await signUp({ ...data, gender: data.gender.value });
-    if (result.code === 200 && result.result) {
-      await removeCookie(COOKIES_TEMPLATE.mobile);
-      await removeCookie(COOKIES_TEMPLATE.isNew);
-      await setCookie(COOKIES_TEMPLATE.accessToken, result.result?.accessToken);
-      setUser({ ...result.result, isNewUser: false });
-      router.push(PATH_TEMPLATE.main.home);
-      toast.success("شما با موفقیت وارد شدید");
-    }
+    signUp({ ...data, gender: data.gender.value });
   };
 
   const resendCodeHandler = async () => {
