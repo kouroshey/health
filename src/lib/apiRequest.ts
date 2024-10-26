@@ -1,5 +1,6 @@
+"use server";
+
 import { ApiResponse } from "@/types";
-import { toast } from "react-hot-toast";
 
 export const apiRequest = async <T>(
   url: string,
@@ -10,14 +11,8 @@ export const apiRequest = async <T>(
     const data: ApiResponse<T> = await response.json();
 
     if (!response.ok) {
-      if (response.status === 400) {
-        toast.error(data.message || "خطا در دریافت اطلاعات");
-        return Promise.reject(
-          new Error(data.message || "خطا در دریافت اطلاعات"),
-        );
-      }
-
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorMessage = data.message || "خطا در دریافت اطلاعات";
+      return Promise.reject(new Error(errorMessage));
     }
 
     return data;

@@ -1,8 +1,9 @@
 "use server";
 
 import { cookies } from "next/headers";
-import { COOKIES_TEMPLATE } from "@/lib/enumerations";
+import { COOKIES_TEMPLATE, PATH_TEMPLATE } from "@/lib/enumerations";
 import { login } from "../api/authApi";
+import { redirect } from "next/navigation";
 
 interface LoginParams {
   mobile: string;
@@ -23,6 +24,11 @@ export async function loginAction({ mobile }: LoginParams) {
       path: "/",
       maxAge: 3600,
     });
+
+    const route = result.result
+      ? PATH_TEMPLATE.auth.verifyLogin
+      : PATH_TEMPLATE.auth.signUp;
+    redirect(route);
   }
 
   return result;

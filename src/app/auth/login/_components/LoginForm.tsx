@@ -3,6 +3,7 @@
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BsPhone } from "react-icons/bs";
+import Image from "next/image";
 
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
@@ -12,6 +13,7 @@ import {
   LoginFormType,
 } from "@/app/auth/login/_models/validations";
 import { useLogin } from "../../api/authHooks";
+import orangeImage from "public/image/orange.svg";
 
 const LoginForm = () => {
   const methods = useForm<LoginFormType>({
@@ -42,6 +44,7 @@ const LoginForm = () => {
           errors={errors}
           maxLength={11}
         />
+        <Image src={orangeImage} alt="orange-image" width={100} height={100} />
         <Button
           variant="contained"
           color="primary"
