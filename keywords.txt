@@ -16,6 +16,7 @@ serwist
 Swiper
 tailwindcss
 tanstack
+turbopack
 unindex
 vazir
 Vazirmatn
