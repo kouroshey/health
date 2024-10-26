@@ -1,18 +1,29 @@
-"use server";
-
 import { ApiResponse } from "@/types";
+import { toast } from "react-hot-toast";
+import { getCookie } from "./helpers/cookie";
+import { COOKIES_TEMPLATE } from "./enumerations";
 
 export const apiRequest = async <T>(
   url: string,
   options?: RequestInit,
 ): Promise<ApiResponse<T>> => {
   try {
-    const response = await fetch(url, options);
+    const headers = {
+      Authorization: getCookie(COOKIES_TEMPLATE.accessToken)?.value || "",
+      ...options?.headers,
+    };
+    const response = await fetch(url, { ...options, headers });
     const data: ApiResponse<T> = await response.json();
 
     if (!response.ok) {
-      const errorMessage = data.message || "خطا در دریافت اطلاعات";
-      return Promise.reject(new Error(errorMessage));
+      if (response.status === 400) {
+        toast.error(data.message || "خطا در دریافت اطلاعات");
+        return Promise.reject(
+          new Error(data.message || "خطا در دریافت اطلاعات"),
+        );
+      }
+
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     return data;
