@@ -16,9 +16,8 @@ import { useResendTimer } from "@/hooks/useResendTimer";
 
 const VerifyLoginForm = () => {
   const mobile: string = Cookies.get(COOKIES_TEMPLATE.mobile);
-  const { mutateAsync: login, isPending: resendPending } = useLogin();
 
-  const { isResendActive, activationTime, resetTimer } = useResendTimer(30);
+  const { isResendActive, activationTime } = useResendTimer(30);
 
   const methods = useForm<VerifyFormType>({
     resolver: zodResolver(VerifyFormSchema),
@@ -27,10 +26,11 @@ const VerifyLoginForm = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = methods;
 
   const { mutate: verifyLogin, isPending } = useVerifyLogin();
+  const { mutate: login, isPending: resendPending } = useLogin();
 
   const onSubmit: SubmitHandler<VerifyFormType> = async (data) => {
     if (mobile) {
@@ -40,13 +40,7 @@ const VerifyLoginForm = () => {
 
   const resendCodeHandler = async () => {
     if (isResendActive && mobile) {
-      try {
-        const result = await login({ mobile });
-        if (result.code === 200) resetTimer();
-        else console.log("error!");
-      } catch (error) {
-        console.log(error);
-      }
+      login({ mobile });
     }
   };
 
@@ -66,7 +60,7 @@ const VerifyLoginForm = () => {
         />
 
         {resendPending ? (
-          <Spinner size={"small"} className="text-white" />
+          <Spinner size={"small"} className="text-primary" />
         ) : (
           <span
             onClick={resendCodeHandler}
@@ -92,7 +86,7 @@ const VerifyLoginForm = () => {
           variant="contained"
           color="primary"
           className="w-full"
-          isDisable={isPending}
+          isDisable={isPending || !isValid}
           isLoading={isPending}
         >
           تایید

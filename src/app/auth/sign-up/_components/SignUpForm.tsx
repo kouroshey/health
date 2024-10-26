@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BiSolidMessage } from "react-icons/bi";
 import { BsPhone } from "react-icons/bs";
-import toast from "react-hot-toast";
 
 import { Input } from "@/components/ui/input/input";
 import Button from "@/components/ui/button/button";
@@ -16,9 +15,11 @@ import { Option, SelectOptions } from "@/components/ui/input/types";
 import { ReactSelectInput } from "@/components/ui/input/ReactSelectInput";
 import { Spinner } from "@/components/ui/spinner/Spinner";
 import { useResendTimer } from "@/hooks/useResendTimer";
+import Cookies from "js-cookie";
+import { COOKIES_TEMPLATE } from "@/lib/enumerations";
 
 const SignUpForm = () => {
-  const { isResendActive, activationTime, resetTimer } = useResendTimer(30);
+  const { isResendActive, activationTime } = useResendTimer(30);
 
   const { mutateAsync: login, isPending: resendPending } = useLogin();
 
@@ -27,6 +28,13 @@ const SignUpForm = () => {
     { label: "مونث", value: "0" },
   ]);
   const [activeGender, setActiveGender] = useState<Option>(genderOptions[0]);
+
+  useEffect(() => {
+    const mobile: string = Cookies.get(COOKIES_TEMPLATE.mobile);
+    if (mobile) {
+      setValue("mobile", mobile);
+    }
+  });
 
   const methods = useForm<SignUpFormType>({
     resolver: zodResolver(SignUpFormSchema),
@@ -41,8 +49,9 @@ const SignUpForm = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     setValue,
+    getValues,
   } = methods;
 
   const { mutate: signUp, isPending } = useSignUp();
@@ -52,18 +61,9 @@ const SignUpForm = () => {
   };
 
   const resendCodeHandler = async () => {
-    const formMobile = methods.getValues("mobile");
-    if (isResendActive) {
-      if (formMobile.length > 0) {
-        console.log("mobile exists");
-        try {
-          const result = await login({ mobile: formMobile });
-          if (result.code === 200) resetTimer();
-          else console.log("error!");
-        } catch (error) {
-          console.log(error);
-        }
-      } else toast("لطفا شماره تلفن خود را وارد نمایید.");
+    const mobile = getValues("mobile");
+    if (isResendActive && mobile) {
+      login({ mobile });
     }
   };
 
@@ -118,7 +118,7 @@ const SignUpForm = () => {
         />
 
         {resendPending ? (
-          <Spinner size={"small"} className="text-white" />
+          <Spinner size={"small"} className="text-primary" />
         ) : (
           <span
             onClick={resendCodeHandler}
@@ -139,7 +139,7 @@ const SignUpForm = () => {
           variant="contained"
           color="primary"
           className="w-full"
-          isDisable={isPending}
+          isDisable={isPending || !isValid}
           isLoading={isPending}
         >
           ثبت نام

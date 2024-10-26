@@ -23,7 +23,7 @@ const LoginForm = () => {
 
   const {
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = methods;
 
   const { mutate: login, isPending } = useLogin();
@@ -49,7 +49,7 @@ const LoginForm = () => {
           variant="contained"
           color="primary"
           className="w-full"
-          isDisable={isPending}
+          isDisable={isPending || !isValid}
           isLoading={isPending}
           loadingContent={<Spinner size={"small"} className="text-white" />}
         >
