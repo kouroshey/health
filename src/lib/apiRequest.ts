@@ -8,8 +8,10 @@ export const apiRequest = async <T>(
   options?: RequestInit,
 ): Promise<ApiResponse<T>> => {
   try {
+    const accessTokenCookie = await getCookie(COOKIES_TEMPLATE.accessToken);
+
     const headers = {
-      Authorization: getCookie(COOKIES_TEMPLATE.accessToken)?.value || "",
+      Authorization: accessTokenCookie?.value || "",
       ...options?.headers,
     };
     const response = await fetch(url, { ...options, headers });
