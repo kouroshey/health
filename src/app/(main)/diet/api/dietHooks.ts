@@ -13,7 +13,7 @@ const useDietList = () => {
   });
 };
 
-const useCreateDitPlan = () => {
+const useCreateDietPlan = () => {
   return useMutation({
     mutationFn: (data: CreateDietPlanParams) => createDietPlan(data),
     onSuccess: () => {
@@ -36,4 +36,4 @@ const useDietListByUser = (data: DietByUserParams) => {
   });
 };
 
-export { useDietList, useCreateDitPlan, useDietListByUser };
+export { useDietList, useCreateDietPlan, useDietListByUser };
