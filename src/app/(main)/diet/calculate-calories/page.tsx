@@ -6,8 +6,8 @@ import {
 
 import BackPage from "@/components/layout/BackPage";
 import UserDetails from "./_component/UserDetails";
-import CreateMeal from "./_component/create-meal";
-import MealManagement from "./_component/meal-management";
+import CreateDiet from "./_component/create-diet";
+import DietManagement from "./_component/diet-management";
 import { routes } from "@/store/local/routes.static";
 import { getDietByUser } from "../api/dietApi";
 
@@ -25,7 +25,7 @@ export default async function CalculateCalories() {
     <div>
       {queryClient.getQueryData(["dietByUser", data]) ? (
         <HydrationBoundary state={dehydrate(queryClient)}>
-          <MealManagement />
+          <DietManagement />
         </HydrationBoundary>
       ) : (
         <>
@@ -34,7 +34,7 @@ export default async function CalculateCalories() {
             link={routes.diet.root}
           />
           <UserDetails />
-          <CreateMeal />
+          <CreateDiet />
         </>
       )}
     </div>
