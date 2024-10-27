@@ -1,4 +1,4 @@
-type VerifyLoginResponse = {
+type User = {
   id: number;
   name: string;
   lastname: string;
@@ -15,8 +15,8 @@ type VerifyLoginResponse = {
   accessToken: string;
 };
 
-type SignupResponse = VerifyLoginResponse;
+type SignupResponse = User;
 
 type LoginResponse = boolean;
 
-export type { VerifyLoginResponse, LoginResponse, SignupResponse };
+export type { User, LoginResponse, SignupResponse };
