@@ -4,4 +4,15 @@ const authRoutes = {
   signUp: "user/signup",
 };
 
-export { authRoutes };
+const appRoutes = {
+  subset: {
+    add: "user/add",
+    list: "user/list",
+  },
+  healthMetric: {
+    store: "user/health-metrics/store",
+    list: "user/health-metric/list",
+  },
+};
+
+export { authRoutes, appRoutes };
