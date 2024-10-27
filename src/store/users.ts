@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
-import { VerifyLoginResponse } from "@/app/auth/api/types/response";
+import { User } from "@/app/auth/api/types/response";
 
-type User = Partial<VerifyLoginResponse> & { isNewUser: boolean };
+type User = Partial<User> & { isNewUser: boolean };
 
 type State = { user: User };
 
