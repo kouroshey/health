@@ -4,4 +4,8 @@ const authRoutes = {
   signUp: "user/signup",
 };
 
-export { authRoutes };
+const dietRoutes = {
+  dietList: "diet-plan",
+};
+
+export { authRoutes, dietRoutes };
