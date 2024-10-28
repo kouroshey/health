@@ -10,16 +10,13 @@ import { CreateDietPlanParams, DietByUserParams } from "./types/request";
 const getDietList = async (): Promise<ApiResponse<DietPlansResponse[]>> => {
   const url = `${appConfig.baseUrl}/${dietRoutes.dietList}`;
 
-  return await apiRequest<DietPlansResponse[]>(url, {
-    next: { revalidate: 600 },
-  });
+  return await apiRequest<DietPlansResponse[]>(url);
 };
 
 const createDietPlan = async (
   params: CreateDietPlanParams,
 ): Promise<ApiResponse<DietPlansResponse[]>> => {
   const url = `${appConfig.baseUrl}/${dietRoutes.dietList}`;
-  console.log(params);
   return await apiRequest<DietPlansResponse[]>(url, {
     body: JSON.stringify(params),
     method: "POST",
@@ -35,9 +32,8 @@ const getDietByUser = async (
     },
   )}`;
 
-  return await apiRequest<DietByUserResponse[]>(url, {
-    next: { revalidate: 60 },
-  });
+  // back: make this ISR
+  return await apiRequest<DietByUserResponse[]>(url);
 };
 
 export { getDietList, createDietPlan, getDietByUser };
