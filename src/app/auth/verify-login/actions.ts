@@ -1,4 +1,3 @@
-// app/auth/login/actions.ts
 "use server";
 
 import { COOKIES_TEMPLATE } from "@/lib/enumerations";
@@ -13,6 +12,7 @@ export async function verifyLoginAction(params: VerifyLoginParams) {
     removeCookie(COOKIES_TEMPLATE.mobile);
     removeCookie(COOKIES_TEMPLATE.isNew);
     setCookie(COOKIES_TEMPLATE.accessToken, result.result?.accessToken);
+    setCookie(COOKIES_TEMPLATE.user_id, result.result?.id.toString());
   }
 
   return result;
