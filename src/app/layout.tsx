@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: appConfig.app_description,
   manifest: "/manifest.json",
   keywords: [
-    "parens",
+    "parents",
     "health",
     "sleep",
     "diet",
