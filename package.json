@@ -1,7 +1,19 @@
 {
-  "name": "my-app",
+  "name": "narenj",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/surenachiron/Health_Wellness/"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0"
+  },
+  "volta": {
+    "node": "18.17.0",
+    "yarn": "10.8.3"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
