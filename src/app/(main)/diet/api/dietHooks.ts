@@ -6,10 +6,7 @@ import toast from "react-hot-toast";
 const useDietList = () => {
   return useQuery({
     queryKey: ["dietList"],
-    queryFn: async () => {
-      const result = await getDietList();
-      return result.result;
-    },
+    queryFn: () => getDietList(),
   });
 };
 
@@ -28,11 +25,10 @@ const useCreateDietPlan = () => {
 const useDietListByUser = (data: DietByUserParams) => {
   return useQuery({
     queryKey: ["dietByUser", data],
-    queryFn: async () => {
-      const result = await getDietByUser(data);
-      return result.result;
-    },
+    queryFn: () => getDietByUser(data),
     enabled: !!data,
+    staleTime: 60000,
+    gcTime: 300000,
   });
 };
 
