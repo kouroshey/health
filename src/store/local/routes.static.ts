@@ -10,7 +10,7 @@ export const routes = {
     root: "/diet",
     supplementaryAdvice: "supplementary-advice",
     cookingMethods: "cooking-methods",
-    calculateCalories: "calculate-calories",
+    dietPlan: "diet-plan",
     mealManagement: "meal-management",
   },
   mentalHealth: {

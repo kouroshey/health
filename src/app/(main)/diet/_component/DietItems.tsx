@@ -14,7 +14,7 @@ export const dietItems = [
     icon: <FaPlateWheat />,
   },
   {
-    path: `${routes.diet.root}/${routes.diet.calculateCalories}`,
+    path: `${routes.diet.root}/${routes.diet.dietPlan}`,
     cover: "/slide-2.webp",
     name: "محاسبه کالری و برنامه غذایی",
     description:
