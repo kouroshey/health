@@ -8,7 +8,7 @@ export type FormFieldNames =
   | "lastname"
   | "otp_token"
   | "fullName"
-  | "birthDate"
+  | "birthdate"
   | "gender"
   | "weight"
   | "height"

@@ -9,4 +9,8 @@ type AddSubsetRequest = {
   city_id: string;
 };
 
-export type { AddSubsetRequest };
+type CitiesListRequest = {
+  province_id: string;
+};
+
+export type { AddSubsetRequest, CitiesListRequest };

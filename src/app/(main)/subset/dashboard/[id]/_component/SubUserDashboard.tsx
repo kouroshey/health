@@ -1,6 +1,7 @@
 "use client";
 
-import UserDetails from "@/app/(main)/diet/calculate-calories/_component/UserDetails";
+import { Subset } from "@/store/local/users.static";
+import UserDetails from "./UserDetails";
 import Link from "next/link";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoBody, IoDocumentText } from "react-icons/io5";
@@ -33,15 +34,15 @@ const optionDetails = [
   },
 ];
 
-const SubUserDashboard = () => {
+const SubUserDashboard = (user: Subset) => {
   return (
     <div className="flex flex-col gap-2">
-      <UserDetails />
+      <UserDetails {...user} />
       <ul className="flex flex-col gap-2">
         {optionDetails.map((option, index) => (
           <li
             key={index}
-            className="text-gray-600 text-md md:text-lg bg-slate-50 hover:bg-slate-100 shadow-sm p-4 rounded-sm border border-gray-100"
+            className="text-gray-600 text-md md:text-lg bg-white hover:bg-slate-50 shadow-sm p-4 rounded-sm border border-gray-100"
           >
             <Link className="flex items-center gap-2" href={option.path}>
               <span className="text-primary">{option.icon}</span>

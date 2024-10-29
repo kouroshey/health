@@ -5,4 +5,16 @@ type UserSubsetsResponse = PaginationResponse<User[]>;
 
 type AddSubsetResponse = null;
 
-export type { UserSubsetsResponse, AddSubsetResponse };
+type NameId = {
+  id: number;
+  name: string;
+};
+
+type ProvinceAndCitiesResponse = NameId[];
+
+export type {
+  UserSubsetsResponse,
+  AddSubsetResponse,
+  NameId,
+  ProvinceAndCitiesResponse,
+};

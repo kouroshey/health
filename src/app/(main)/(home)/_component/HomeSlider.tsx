@@ -8,13 +8,14 @@ import { usersData } from "@/store/local/users.static";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./homeClass.css";
-import { FaRegHeart, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import { FaWeightScale } from "react-icons/fa6";
 import { RxHeight } from "react-icons/rx";
 import { IoBody } from "react-icons/io5";
 import { MdOutlineUpdate } from "react-icons/md";
-import Button from "@/components/ui/button/button";
-import { PiSmileySad, PiWarningOctagonLight } from "react-icons/pi";
+// import Button from "@/components/ui/button/button";
+// import { PiSmileySad, PiWarningOctagonLight } from "react-icons/pi";
+import { dateToJalali } from "@/lib/helpers/jalali";
 
 export const slideThemes = {
   5: {
@@ -56,7 +57,7 @@ const HomeSlider = () => {
       >
         {usersData.subsets.map((subset) => {
           const subsetHeight = Number(subset.height) / 100;
-          const bmi = Number(subset.weight) / (subsetHeight * 2);
+          const bmi = Number(subset.weight) / (subsetHeight * 2) || "-";
           return (
             <SwiperSlide key={subset.id} className="w-full h-full relative">
               <div
@@ -68,7 +69,7 @@ const HomeSlider = () => {
                       <FaUser />
                       <span className="font-bold">نام: </span>
                     </span>
-                    <span>{subset.name + " " + subset.familyName}</span>
+                    <span>{subset.name + " " + subset.lastname}</span>
                   </p>
                   <p className="flex gap-1 items-center">
                     <span className="flex gap-1 items-center">
@@ -96,17 +97,17 @@ const HomeSlider = () => {
                       <MdOutlineUpdate />
                       <span className="font-bold">بروزرسانی: </span>
                     </span>
-                    <span>{subset.lastUpdate}</span>
+                    <span>{dateToJalali(subset.updatedAt)}</span>
                   </p>
                 </div>
                 <div className="flex text-sm">
                   <p className="flex gap-1 flex-col items-center">
-                    <span className="font-bold">وضعیت سلامت</span>
-                    <Button
+                    {/* <span className="font-bold">وضعیت سلامت</span> */}
+                    {/* <Button
                       className="text-white"
                       size="sm"
                       color={
-                        subset.healthStatus === "سالم"
+                        subset. === "سالم"
                           ? "success"
                           : subset.healthStatus === "ناسالم"
                             ? "error"
@@ -123,7 +124,7 @@ const HomeSlider = () => {
                       }
                     >
                       {subset.healthStatus}
-                    </Button>
+                    </Button> */}
                   </p>
                 </div>
               </div>

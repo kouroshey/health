@@ -8,20 +8,22 @@ const apiRequest = async <T>(
   options?: RequestInit,
 ): Promise<ApiResponse<T>> => {
   try {
+    const accessTokenCookie = await getCookie(COOKIES_TEMPLATE.accessToken);
+
     const headers = {
-      Authorization: getCookie(COOKIES_TEMPLATE.accessToken)?.value || "",
+      Authorization: accessTokenCookie?.value || "",
       ...options?.headers,
     };
     const response = await fetch(url, { ...options, headers });
     const data: ApiResponse<T> = await response.json();
 
     if (!response.ok) {
-      if (response.status === 400) {
-        toast.error(data.message || "خطا در دریافت اطلاعات");
-        return Promise.reject(
-          new Error(data.message || "خطا در دریافت اطلاعات"),
-        );
-      }
+      // if (response.status === 400) {
+      //   toast.error(data.message || "خطا در دریافت اطلاعات");
+      //   return Promise.reject(
+      //     new Error(data.message || "خطا در دریافت اطلاعات"),
+      //   );
+      // }
 
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -38,8 +40,10 @@ const paginationRequest = async <T>(
   options?: RequestInit,
 ): Promise<PaginationResponse<T>> => {
   try {
+    const accessTokenCookie = await getCookie(COOKIES_TEMPLATE.accessToken);
+
     const headers = {
-      Authorization: getCookie(COOKIES_TEMPLATE.accessToken)?.value || "",
+      Authorization: accessTokenCookie?.value || "",
       ...options?.headers,
     };
     const response = await fetch(url, { ...options, headers });
@@ -63,4 +67,4 @@ const paginationRequest = async <T>(
   }
 };
 
-export { apiRequest, paginationRequest };
+export { paginationRequest, apiRequest };

@@ -8,6 +8,7 @@ const appRoutes = {
   subset: {
     add: "user/add",
     list: "user/list",
+    provincesAndCities: "provinces-cities",
   },
   healthMetric: {
     store: "user/health-metrics/store",

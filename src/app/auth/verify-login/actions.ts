@@ -1,4 +1,3 @@
-// app/auth/login/actions.ts
 "use server";
 
 import { COOKIES_TEMPLATE } from "@/lib/enumerations";

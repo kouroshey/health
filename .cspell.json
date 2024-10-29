@@ -2,8 +2,12 @@
   "version": "0.2",
   "language": "fa,en",
   "useGitignore": true,
-  "import": ["@cspell/dict-fa-ir/cspell-ext.json"],
-  "ignorePaths": ["node_modules"],
+  "import": [
+    "@cspell/dict-fa-ir/cspell-ext.json"
+  ],
+  "ignorePaths": [
+    "node_modules"
+  ],
   "dictionaryDefinitions": [
     {
       "name": "keywords",
@@ -11,5 +15,7 @@
       "path": "./keywords.txt"
     }
   ],
-  "dictionaries": ["keywords"]
+  "dictionaries": [
+    "keywords"
+  ]
 }

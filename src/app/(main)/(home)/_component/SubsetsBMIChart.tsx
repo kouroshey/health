@@ -21,20 +21,25 @@ ChartJS.register(
   Legend,
 );
 import { usersData } from "@/store/local/users.static";
-
-const calculateBMI = (weight, height) => {
-  return (weight / (height / 100) ** 2).toFixed(1);
-};
+import { bmiCalculator } from "@/lib/helpers";
 
 const SubsetsBMIChart = () => {
+  const chartLabels = usersData.subsets.map((user) => {
+    if (Number(user.weight) && Number(user.height)) {
+      return `${user.name} ${user.lastname}`;
+    }
+  });
   const data = {
-    labels: usersData.subsets.map((user) => `${user.name} ${user.familyName}`), // اسامی کاربران به عنوان برچسب محور X
+    labels: chartLabels,
     datasets: [
       {
         label: "BMI کاربران",
-        data: usersData.subsets.map((user) =>
-          calculateBMI(user.weight, user.height),
-        ), // محاسبه BMI هر کاربر
+        data: usersData.subsets.map(
+          (user) =>
+            user.height &&
+            user.weight &&
+            bmiCalculator(Number(user.weight), Number(user.height)),
+        ),
         borderColor: "#f48e0c",
         borderWidth: 2,
         fill: false,
@@ -52,7 +57,7 @@ const SubsetsBMIChart = () => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: false, // برای مخفی کردن legend
+        display: false,
       },
       title: {
         display: true,

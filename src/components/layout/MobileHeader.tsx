@@ -10,8 +10,8 @@ import { FaUsers } from "react-icons/fa6";
 
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import PaginationLink from "../ui/PaginationLink";
-import Button from "../ui/button/button";
 import { routes } from "@/store/local/routes.static";
+import SubsetsCount from "../ui/SubsetsCount";
 
 const paths = [
   {
@@ -54,6 +54,7 @@ const paths = [
 
 const MobileHeader = () => {
   const pathname = usePathname();
+
   if (pathname === "/") {
     return (
       <div className="w-full px-4 sticky top-0 z-10 bg-white md:hidden h-12 flex justify-between items-center gap-2 shadow-sm mb-4 py-6 rounded-b-md">
@@ -89,9 +90,7 @@ const MobileHeader = () => {
             </div>
           </SheetContent>
         </Sheet>
-        <Button variant="contained" size="sm">
-          کاربران زیرمجموعه: ۶
-        </Button>
+        <SubsetsCount />
       </div>
     );
   }

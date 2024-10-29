@@ -1,15 +1,19 @@
 import { PaginationRequest } from "@/types";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { addSubset, getSubsetsList } from "./subsetApi";
-import { AddSubsetRequest } from "./types/request";
+import { addSubset, getCitiesListApi, getSubsetsList } from "./subsetApi";
+import { AddSubsetRequest, CitiesListRequest } from "./types/request";
+import { getProvincesAction } from "../actions";
 
-const useSubsetsList = () => {
-  return useMutation({
-    mutationFn: (data: PaginationRequest) => getSubsetsList(data),
-    onError: (error: Error) => {
-      toast.error(error.message);
-    },
+const useSubsetsList = (data: PaginationRequest) => {
+  return useQuery({
+    queryKey: ["subsetsList", data],
+    queryFn: () =>
+      getSubsetsList(data).catch((error: Error) => {
+        toast.error(error.message);
+        throw error;
+      }),
+    enabled: false,
   });
 };
 
@@ -22,4 +26,27 @@ const useAddSubset = () => {
   });
 };
 
-export { useSubsetsList, useAddSubset };
+const useProvincesList = () => {
+  return useQuery({
+    queryKey: ["provinces"],
+    queryFn: () =>
+      getProvincesAction().catch((error: Error) => {
+        toast.error(error.message);
+        throw error;
+      }),
+  });
+};
+
+const useCitiesList = (data: CitiesListRequest) => {
+  return useQuery({
+    queryKey: ["cities", data],
+    queryFn: () =>
+      getCitiesListApi(data).catch((error: Error) => {
+        toast.error(error.message);
+        throw error;
+      }),
+    enabled: false,
+  });
+};
+
+export { useSubsetsList, useAddSubset, useCitiesList, useProvincesList };

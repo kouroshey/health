@@ -29,7 +29,7 @@ export const DateInput: FC<DateInputProps> = ({
 
   return (
     <div className="w-full">
-      <div className="mb-5 flex flex-col w-full">
+      <div className="flex flex-col w-full">
         <label
           htmlFor={name}
           className="text-gray-400 font-light text-sm md:text-md"

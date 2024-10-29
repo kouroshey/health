@@ -3,13 +3,13 @@
 import { ReactElement } from "react";
 import BackButton from "../ui/button/BackButton";
 
-type backPageType = {
+type BackPageParams = {
   title: string;
   icon?: ReactElement;
   link?: string;
 };
 
-const BackPage = ({ title, icon, link }: backPageType) => {
+const BackPage = ({ title, icon, link }: BackPageParams) => {
   return (
     <div className="w-full rounded-b-sm px-4 bg-slate-50 relative md:hidden shadow-sm border border-t-0 border-gray-200 mb-4 flex-center">
       <div className="absolute right-5 top-0 h-full">
