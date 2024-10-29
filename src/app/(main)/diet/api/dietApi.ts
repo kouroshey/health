@@ -1,7 +1,12 @@
 import { ApiResponse } from "@/types";
 import { apiRequest } from "@/lib/apiRequest";
 
-import { DietByUserResponse, DietPlansResponse } from "./types/response";
+import {
+  CookingMethodsResponse,
+  DietByUserResponse,
+  DietPlansResponse,
+  SupplementationAdviseResponse,
+} from "./types/response";
 
 import appConfig from "@/config/appConfig";
 import { dietRoutes } from "@/config/apiRoutes";
@@ -36,4 +41,28 @@ const getDietByUser = async (
   return await apiRequest<DietByUserResponse[]>(url);
 };
 
-export { getDietList, createDietPlan, getDietByUser };
+const getCookingMethods = async (): Promise<
+  ApiResponse<CookingMethodsResponse[]>
+> => {
+  const url = `${appConfig.baseUrl}/${dietRoutes.cookingMethods}`;
+
+  // back: make this ISR
+  return await apiRequest<CookingMethodsResponse[]>(url);
+};
+
+const getSupplementationAdvise = async (): Promise<
+  ApiResponse<SupplementationAdviseResponse[]>
+> => {
+  const url = `${appConfig.baseUrl}/${dietRoutes.supplementationAdvice}`;
+
+  // back: make this ISR
+  return await apiRequest<SupplementationAdviseResponse[]>(url);
+};
+
+export {
+  getDietList,
+  createDietPlan,
+  getDietByUser,
+  getCookingMethods,
+  getSupplementationAdvise,
+};
