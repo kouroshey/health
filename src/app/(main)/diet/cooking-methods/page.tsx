@@ -1,45 +1,45 @@
 import BackPage from "@/components/layout/BackPage";
-import { ListItemProps } from "@/components/layout/ListItem";
-import SaladImg from "public/salad.png";
-import List from "@/components/layout/List";
 import { routes } from "@/store/local/routes.static";
+import ListItem from "@/components/layout/ListItem";
+import { Spinner } from "@/components/ui/spinner/Spinner";
+import { getCookingMethods } from "../api/dietApi";
+import { ApiResponse } from "@/types";
+import { CookingMethodsResponse } from "../api/types/response";
 
-const items: ListItemProps[] = [
-  {
-    id: 1,
-    image: SaladImg,
-    path: `${routes.diet.cookingMethods}/method`,
-    title: "روش اول",
-    description: "یک روش عالی برای شما",
-  },
-  {
-    id: 2,
-    image: SaladImg,
-    path: `${routes.diet.cookingMethods}/method`,
-    title: "روش دوم",
-    description: "یک روش عالی برای شما",
-  },
-  {
-    id: 3,
-    image: SaladImg,
-    path: `${routes.diet.cookingMethods}/method`,
-    title: "روش سوم",
-    description: "یک روش عالی برای شما",
-  },
-  {
-    id: 4,
-    image: SaladImg,
-    path: `${routes.diet.cookingMethods}/method`,
-    title: "روش چهارم",
-    description: "یک روش عالی برای شما",
-  },
-];
+// back: this should be SSG or ISR
+export const dynamic = "force-dynamic";
 
-export default function SupplementaryAdvice() {
+export default async function CookingMethodsPage() {
+  const cookingMethodData: ApiResponse<CookingMethodsResponse[]> | undefined =
+    await getCookingMethods();
+
   return (
     <>
       <BackPage title="روش‌های طبخ غذا" link={routes.diet.root} />
-      <List items={items} />
+      {cookingMethodData && cookingMethodData.result.length > 0 ? (
+        cookingMethodData?.result.map((method) => {
+          return (
+            <ListItem
+              key={method.id + method.title}
+              id={method.id}
+              image={method.image}
+              path={
+                routes.diet.cookingMethods +
+                "/" +
+                method.title +
+                "_" +
+                method.id
+              }
+              title={method.title}
+              description={method.description}
+            />
+          );
+        })
+      ) : (
+        <div className="h-[40vh] flex-center">
+          <Spinner size={"medium"} className="text-primary" />
+        </div>
+      )}
     </>
   );
 }
