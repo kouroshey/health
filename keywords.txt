@@ -3,6 +3,7 @@ clsx
 commitlint
 datepicker
 hookform
+Jalali
 lastname
 linebreak
 lucide
