@@ -1,9 +1,9 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
 
 export interface ListItemProps {
-  image: StaticImageData;
+  image: string;
   title: string;
   description?: string;
   path: string;
