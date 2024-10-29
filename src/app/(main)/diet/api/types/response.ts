@@ -8,4 +8,20 @@ type DietPlansResponse = {
 
 type DietByUserResponse = DietPlansResponse;
 
-export type { DietPlansResponse, DietByUserResponse };
+type CookingMethodsResponse = {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  video: string;
+  type: string;
+};
+
+type SupplementationAdviseResponse = CookingMethodsResponse;
+
+export type {
+  DietPlansResponse,
+  DietByUserResponse,
+  CookingMethodsResponse,
+  SupplementationAdviseResponse,
+};
