@@ -11,7 +11,6 @@ export const routes = {
     supplementaryAdvice: "supplementary-advice",
     cookingMethods: "cooking-methods",
     dietPlan: "diet-plan",
-    mealManagement: "meal-management",
   },
   mentalHealth: {
     root: "mental-health",
