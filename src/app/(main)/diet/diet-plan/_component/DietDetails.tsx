@@ -3,9 +3,9 @@ import { RiEditFill } from "react-icons/ri";
 import SaladImg from "public/salad.png";
 import { FaTrash } from "react-icons/fa6";
 import { BiRepost } from "react-icons/bi";
-import { DietItemT } from "../../_models/types";
+import { DietDetailsItemT } from "../_models/types";
 
-type DietSummary = Pick<DietItemT, "title" | "icon" | "meals">;
+type DietSummary = Pick<DietDetailsItemT, "title" | "icon" | "meals">;
 const DietDetails = ({ title, icon, meals }: DietSummary) => {
   return (
     <div>
