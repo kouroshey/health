@@ -2,7 +2,7 @@ type AddSubsetRequest = {
   name: string;
   lastname: string;
   birthdate: string;
-  gender: string;
+  gender: number;
   weight: string;
   height: string;
   province_id: string;

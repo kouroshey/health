@@ -70,8 +70,8 @@ const AddSubForm = () => {
   }, [citiesList]);
 
   const [genderOptions] = useState<SelectOptions>([
-    { label: "مذکر", value: "male" },
-    { label: "مونث", value: "female" },
+    { label: "مذکر", value: "1" },
+    { label: "مونث", value: "0" },
   ]);
 
   const [activeGender, setActiveGender] = useState<Option>({
@@ -104,7 +104,7 @@ const AddSubForm = () => {
       birthdate: data.birthdate.toString(),
       city_id: activeCity.value || data.city.value,
       province_id: activeProvince?.value || data.province.value,
-      gender: activeGender.value,
+      gender: Number(activeGender.value),
       height: data.height,
       weight: data.weight,
     };
