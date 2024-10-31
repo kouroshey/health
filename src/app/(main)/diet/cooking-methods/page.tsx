@@ -2,9 +2,9 @@ import BackPage from "@/components/layout/BackPage";
 import { routes } from "@/store/local/routes.static";
 import ListItem from "@/components/layout/ListItem";
 import { Spinner } from "@/components/ui/spinner/Spinner";
-import { getCookingMethods } from "../api/dietApi";
+import { getCookingMethods } from "../_api/dietApi";
 import { ApiResponse } from "@/types";
-import { CookingMethodsResponse } from "../api/types/response";
+import { CookingMethodsResponse } from "../_api/types/response";
 
 // back: this should be SSG or ISR
 export const dynamic = "force-dynamic";
