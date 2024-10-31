@@ -12,6 +12,7 @@ export const apiRequest = async <T>(
 
     const headers = {
       Authorization: accessTokenCookie?.value || "",
+      "Content-Type": "application/json",
       ...options?.headers,
     };
     const response = await fetch(url, { ...options, headers });
