@@ -20,6 +20,9 @@ const useSubsetsList = (data: PaginationRequest) => {
 const useAddSubset = () => {
   return useMutation({
     mutationFn: (data: AddSubsetRequest) => addSubset(data),
+    onSuccess: () => {
+      toast.success("مشخصات کاربر جدید با موفقیت ثبت شد");
+    },
     onError: (error: Error) => {
       toast.error(error.message);
     },

@@ -28,7 +28,7 @@ const addSubset = async (
   formData.append("name", params.name);
   formData.append("lastname", params.lastname);
   formData.append("birthdate", "1380/01/01");
-  formData.append("gender", params.gender);
+  formData.append("gender", params.gender.toString());
   formData.append("weight", params.weight);
   formData.append("height", params.height);
   formData.append("province_id", params.province_id);

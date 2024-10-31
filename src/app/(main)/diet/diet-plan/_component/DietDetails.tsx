@@ -1,32 +1,20 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { RiEditFill } from "react-icons/ri";
 import SaladImg from "public/salad.png";
 import { FaTrash } from "react-icons/fa6";
 import { BiRepost } from "react-icons/bi";
-import { ReactElement } from "react";
+import { DietDetailsItemT } from "../_models/types";
 
-export interface MealItem {
-  img: StaticImageData;
-  title: string;
-  weight: string;
-  calories: string;
-}
-
-export interface MealDetailsProps {
-  label: string;
-  icon: ReactElement;
-  items: MealItem[];
-}
-
-const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
+type DietSummary = Pick<DietDetailsItemT, "title" | "icon" | "meals">;
+const DietDetails = ({ title, icon, meals }: DietSummary) => {
   return (
     <div>
       <p className="text-md mb-3 flex gap-1 items-center after:absolute after:rounded-md after:right-0 after:w-full w-max after:h-[1px] after:bottom-0 after:bg-primary-500 relative">
         <span>{icon}</span>
-        {label}
+        {title}
       </p>
       <div className="flex flex-col gap-2 items-center w-full">
-        {items.map((item, index) => (
+        {meals?.map((item, index) => (
           <div
             key={index}
             className="flex items-center px-2 gap-x-2 border border-gray-100 bg-slate-50 pl-2 rounded-md h-full w-full"
@@ -34,7 +22,7 @@ const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
             <div className="h-24 w-2/6 relative">
               <Image
                 src={SaladImg}
-                alt={item.title}
+                alt={item.food}
                 className="rounded-r-md pb-[1px] object-contain"
                 fill={true}
                 sizes="(max-width: 768px) 80vw, (max-width: 1200px) 50vw, 33vw"
@@ -44,15 +32,12 @@ const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
               <div className="flex flex-col gap-2 w-full">
                 <div className="flex justify-between">
                   <span className="text-sm md:text-md text-gray-600">
-                    {item.title}
+                    {item.food}
                   </span>
                   <span className="text-sm md:text-md text-gray-500 font-normal">
-                    {item.calories} کالری
+                    {item.calorie} کالری
                   </span>
                 </div>
-                <p className="text-xs text-gray-400 font-light">
-                  {item.weight} گرم
-                </p>
                 <div className="flex gap-2 justify-end">
                   <div className="text-[10px] px-2 py-1 text-purple-600 bg-purple-50 rounded-sm gap-1 flex items-center font-normal md:text-lg justify-self-end self-end">
                     <span className="w-max">ویرایش</span>
@@ -76,4 +61,4 @@ const MealDetails: React.FC<MealDetailsProps> = ({ items, label, icon }) => {
   );
 };
 
-export default MealDetails;
+export default DietDetails;

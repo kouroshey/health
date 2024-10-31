@@ -10,7 +10,7 @@ const appConfig: AppConfig = {
   app_name: "نارنج",
   app_description: "سلامت کودکان",
   baseUrl:
-    process.env.NEXT_PUBLIC_API_BASE_URL ||
+    process.env.SECRET_API_BASE_URL ||
     "https://narenj.demo.khateroshan.com/api/v1",
 };
 

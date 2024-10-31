@@ -8,7 +8,18 @@ const withSerwist = withSerwistInit({
 export default withSerwist({
   reactStrictMode: true,
   images: {
-    remotePatterns: [{ hostname: "images.unsplash.com" }],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "/**",
+      },
+    ],
   },
   // swcMinify: true,
 });

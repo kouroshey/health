@@ -1,7 +1,7 @@
 "use client";
 
-import { Subset } from "@/store/local/users.static";
 import UserDetails from "./UserDetails";
+import { Subset } from "@/store/local/users.static";
 import Link from "next/link";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoBody, IoDocumentText } from "react-icons/io5";

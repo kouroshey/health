@@ -35,6 +35,7 @@ const COOKIES_TEMPLATE = {
   otpCode: "otp_code",
   mobile: "mobile",
   isNew: "isNew",
+  user_id: "user_id",
 };
 
 const PATH_TEMPLATE = {

@@ -9,6 +9,7 @@ lastname
 linebreak
 lucide
 metods
+narenj
 nextjs
 Parens
 Precache

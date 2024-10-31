@@ -2,13 +2,13 @@ import { create } from "zustand";
 
 import { User } from "@/app/auth/api/types/response";
 
-type User = Partial<User> & { isNewUser: boolean };
+type UserState = Partial<User> & { isNewUser: boolean };
 
-type State = { user: User };
+type State = { user: UserState };
 
 type Action = {
   actions: {
-    setUser: (user: User) => void;
+    setUser: (user: UserState) => void;
   };
 };
 

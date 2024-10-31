@@ -14,6 +14,14 @@ const appRoutes = {
     store: "user/health-metrics/store",
     list: "user/health-metric/list",
   },
+  diet: {
+    list: "diet-plan",
+    cookingMethods: "general-content/cooking_methods",
+    supplementationAdvice: "general-content/supplementation_advise",
+  },
+  public: {
+    foods: "food",
+  },
 };
 
 export { authRoutes, appRoutes };
