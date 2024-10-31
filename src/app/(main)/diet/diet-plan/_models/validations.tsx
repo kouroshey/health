@@ -1,21 +1,27 @@
 import z from "zod";
 
-export const mealPlanSchema = z.object({
-  breakfast: z
-    .string()
-    .min(1, { message: "شما باید یک گزینه برای صبحانه انتخاب کنید" }),
-  snack1: z
-    .string()
-    .min(1, { message: "شما باید یک گزینه برای میان وعده انتخاب کنید" }),
-  lunch: z
-    .string()
-    .min(1, { message: "شما باید یک گزینه برای ناهار انتخاب کنید" }),
-  snack2: z
-    .string()
-    .min(1, { message: "شما باید یک گزینه برای میان وعده انتخاب کنید" }),
-  dinner: z
-    .string()
-    .min(1, { message: "شما باید یک گزینه برای شام انتخاب کنید" }),
+export const dietPlanSchema = z.object({
+  breakfast: z.object({
+    food_id: z.number(),
+    meal: z.number(),
+  }),
+  snack1: z.object({
+    food_id: z.number(),
+    meal: z.number(),
+  }),
+  lunch: z.object({
+    food_id: z.number(),
+    meal: z.number(),
+  }),
+  snack2: z.object({
+    food_id: z.number(),
+    meal: z.number(),
+  }),
+  dinner: z.object({
+    food_id: z.number(),
+    meal: z.number(),
+  }),
+  Date: z.string().min(1),
 });
 
-export type MealPlanFormType = z.infer<typeof mealPlanSchema>;
+export type DietPlanFormType = z.infer<typeof dietPlanSchema>;
