@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getSupplementationAdvise } from "../../api/dietApi";
+import { getSupplementationAdvise } from "../../_api/dietApi";
 import { routes } from "@/store/local/routes.static";
 import { FaRegClock } from "react-icons/fa6";
 import { MdOutlineTimer } from "react-icons/md";
