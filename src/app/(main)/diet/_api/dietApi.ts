@@ -5,12 +5,19 @@ import {
   CookingMethodsResponse,
   DietByUserResponse,
   DietPlansResponse,
+  FoodsList,
   SupplementationAdviseResponse,
 } from "./types/response";
 
 import appConfig from "@/config/appConfig";
-import { dietRoutes } from "@/config/apiRoutes";
+import { dietRoutes, publicRoutes } from "@/config/apiRoutes";
 import { CreateDietPlanParams, DietByUserParams } from "./types/request";
+
+const getFoodsList = async (): Promise<ApiResponse<FoodsList[]>> => {
+  const url = `${appConfig.baseUrl}/${publicRoutes.foods}`;
+
+  return await apiRequest<FoodsList[]>(url);
+};
 
 const getDietList = async (): Promise<ApiResponse<DietPlansResponse[]>> => {
   const url = `${appConfig.baseUrl}/${dietRoutes.dietList}`;
@@ -19,7 +26,7 @@ const getDietList = async (): Promise<ApiResponse<DietPlansResponse[]>> => {
 };
 
 const createDietPlan = async (
-  params: CreateDietPlanParams,
+  params?: CreateDietPlanParams,
 ): Promise<ApiResponse<DietPlansResponse[]>> => {
   const url = `${appConfig.baseUrl}/${dietRoutes.dietList}`;
   return await apiRequest<DietPlansResponse[]>(url, {
@@ -60,6 +67,7 @@ const getSupplementationAdvise = async (): Promise<
 };
 
 export {
+  getFoodsList,
   getDietList,
   createDietPlan,
   getDietByUser,

@@ -1,5 +1,14 @@
+type FoodsList = {
+  id: number;
+  name: string;
+  description: string;
+  calorie: number;
+  created_at: string;
+  updated_at: string;
+};
+
 type DietPlansResponse = {
-  id: null;
+  id: number;
   food: string;
   calorie: number;
   meal: string;
@@ -20,6 +29,7 @@ type CookingMethodsResponse = {
 type SupplementationAdviseResponse = CookingMethodsResponse;
 
 export type {
+  FoodsList,
   DietPlansResponse,
   DietByUserResponse,
   CookingMethodsResponse,

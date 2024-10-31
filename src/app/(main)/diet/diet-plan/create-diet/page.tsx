@@ -5,15 +5,16 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { getDietList } from "../../../api/dietApi";
-import DietPlanList from "./DietPlanList";
+
+import { getFoodsList } from "../../_api/dietApi";
+import DietPlanList from "./_component/CreateDietPlanList";
 
 export default async function CreateDiet() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["dietList"],
-    queryFn: getDietList,
+    queryKey: ["foodsList"],
+    queryFn: getFoodsList,
   });
 
   return (

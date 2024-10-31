@@ -8,9 +8,10 @@ export const routes = {
   logout: "/logout",
   diet: {
     root: "/diet",
-    supplementaryAdvice: "supplementary-advice",
-    cookingMethods: "cooking-methods",
-    dietPlan: "diet-plan",
+    supplementaryAdvice: "/supplementary-advice",
+    cookingMethods: "/cooking-methods",
+    dietPlan: "/diet-plan",
+    createDiet: "/create-diet",
   },
   mentalHealth: {
     root: "mental-health",

@@ -10,4 +10,8 @@ const dietRoutes = {
   supplementationAdvice: "general-content/supplementation_advise",
 };
 
-export { authRoutes, dietRoutes };
+const publicRoutes = {
+  foods: "food",
+};
+
+export { authRoutes, dietRoutes, publicRoutes };

@@ -1,6 +1,6 @@
 "use client";
 
-import UserDetails from "@/app/(main)/diet/diet-plan/_component/UserDetails";
+import UserDetails from "@/app/(main)/diet/diet-plan/create-diet/_component/UserDetails";
 import Link from "next/link";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoBody, IoDocumentText } from "react-icons/io5";
